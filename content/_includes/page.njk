@@ -1,0 +1,14 @@
+---
+layout: base.njk
+---
+
+<div class="content post border-solid border-b-1 border-gray-700 pb-6 lg:ml-24 lg:mr-24">
+  	<h1>{{ title }}</h1>
+	{% if image %}
+	<img class="mb-8" src="{{ image }}" alt="{{ imageAlt }}" />
+	{% endif %}
+	<div class="text-gray-700 font-sans font-normal">
+  		{{ content | safe }}
+	</div>
+  	{% include "social.njk" %}
+</div>

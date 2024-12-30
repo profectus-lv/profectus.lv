@@ -1,0 +1,15 @@
+---
+layout: base.njk
+title: Raksti
+pagination:
+  data: collections.article
+  size: 10
+  alias: posts
+  reverse: true
+---
+
+<div class="postlist pb-8 mt-8 font-normal lg:ml-24 lg:mr-24">
+  <h1 class="text-center text-4xl font-bold">{{ title }}</h1>
+	{% include "postlist.njk" %}
+</div>
+{% include "postpagination.njk" %}
