@@ -13,20 +13,13 @@
     <div class="menu">
         <ul class="list-none pl-0">
             <li class="navitem text-center text-base font-header font-medium uppercase {{ page.url | isHomeLink('/') }}">
-                <a href="/" class="block no-underline">Uz sākumu</a>
+                <a href="/" class="block no-underline">{{ siteconfig.menuHome }}</a>
             </li>
-            <li class="navitem text-center text-base font-header font-medium uppercase {{ page.url | isActiveLink('/raksti/') }}">
-                <a href="/raksti/" class="block no-underline">Raksti</a>
+            {% for menuItem in siteconfig.menuItems %}
+            <li class="navitem text-center text-base font-header font-medium uppercase {{ page.url | isActiveLink(menuItem.link) }}">
+                <a href="{{ menuItem.link }}" class="block no-underline">{{ menuItem.name }}</a>
             </li>
-            <li class="navitem text-center text-base font-header font-medium uppercase {{ page.url | isActiveLink('/notikumi') }}">
-                <a href="/notikumi/" class="block no-underline">Notikumi</a>
-            </li>
-            <li class="navitem text-center text-base font-header font-medium uppercase {{ page.url | isActiveLink('/par-mums') }}">
-                <a href="/par-mums/" class="block no-underline">Par mums</a>
-            </li>
-            <li class="navitem text-center text-base font-header font-medium uppercase {{ page.url | isActiveLink('/ziedo') }}">
-                <a href="/ziedo/" class="block no-underline">Ziedo!</a>
-            </li>
+            {% endfor %}
         </ul>
     </div>
     <div class="grid grid-cols-2 xl:grid-cols-2 gap-5 mx-auto">

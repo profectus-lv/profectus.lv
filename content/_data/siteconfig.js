@@ -15,13 +15,34 @@ module.exports = {
     // set in your Markdown frontmatter; relevant for social
     // sharing.
     openGraphDefaultImage: "/images/profectus-logo-wt.png",
-//    // GitHub ID (optional, remove if not needed), used for link in the left sidebar
+    // Home menu name
+    menuHome: "Uz sākumu",
+    // Other menu links
+    menuItems: {
+        0: {
+            name: "Raksti",
+            link: "/raksti/"
+        },
+        2: {
+            name: "Notikumi",
+            link: "/notikumi/"
+        },
+        3: {
+            name: "Par mums",
+            link: "/par-mums/"
+        },
+        4: {
+            name: "Ziedo!",
+            link: "/ziedo/"
+        }
+    },
+    // GitHub ID (optional, remove if not needed), used for link in the left sidebar
 //    socialGitHub: "",
-//    // LinkedIn ID  (optional, remove if not needed), used for link in the left sidebar
+    // LinkedIn ID  (optional, remove if not needed), used for link in the left sidebar
 //    socialLinkedIn: "",
     // Twitter ID  (optional, remove if not needed), used for link in the left sidebar, and for OpenGraph sharing information
     socialTwitter: "ProfectusLV",
-//    // YouTube ID/Channel  (optional, remove if not needed), used for link in the left sidebar
+    // YouTube ID/Channel  (optional, remove if not needed), used for link in the left sidebar
 //    socialYouTube: "",
     // Facebook page  (optional, remove if not needed), used for link in the left sidebar
 //    socialFBPage: "",
