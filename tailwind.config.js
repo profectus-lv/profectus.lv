@@ -65,9 +65,6 @@ module.exports = {
             maxWidth: {
                 content: "80rem"
             },
-            textColor: {
-                "orange-hover": "#a300a3"
-            },
             colors: {
                 "lgtheme": "#a300a3",
                 gray: {

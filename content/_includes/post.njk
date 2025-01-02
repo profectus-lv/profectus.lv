@@ -31,7 +31,7 @@ layout: base.njk
         	</svg>
         	{{ page.date | readableDate }}
 		</div>
-		<div class="flex readingtime" data-words="{{ content | striptags | wordcount | formatWords }} vārdi">
+		<div class="flex readingtime" data-words="{{ content | striptags | wordcount | formatWords }} {{ sitestrings.words }}">
         	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 472.615 472.615" class="h-5 w-8 mr-2 ml-12">
   	    		<path d="M472.615,205.774h-25.344c-12.797-37.99-48.686-65.462-90.935-65.462c-43.224,0-79.837,28.73-91.823,68.087
         					c-7.582-5.011-17.305-8.115-28.211-8.115c-10.903,0-20.624,3.103-28.207,8.114c-11.989-39.357-48.608-68.085-91.831-68.085
@@ -60,14 +60,14 @@ layout: base.njk
 		{% set nextPost = collections.posts | getNextCollectionItem(page) %}	
 	  	<a href="{{ previousPost.url }}" class="flex-1">	
 			<div class="h-24 border-1 border-gray-700 leading-pagination text-center{% if previousPost.url %} hover:bg-gray-700 hover:text-lgtheme cursor-pointer{% else %} cursor-not-allowed{% endif %}">	
-				<span class="text-xs font-semibold block mt-1 mb-3">Older</span>	
-				<span class="text-xl font-medium">{% if not previousPost.url %} - {% else %}{{ previousPost.data.title | truncate(40) }}{% endif %}</span>	
+				<span class="text-xs font-semibold block mt-1 mb-3">{{ sitestrings.older }}</span>	
+				<span class="text-lg font-medium">{% if not previousPost.url %} - {% else %}{{ previousPost.data.title | truncate(40) }}{% endif %}</span>	
 			</div>	
 		</a>	
 	  	<a href="{{ nextPost.url }}" class="flex-1">	
 		  	<div class="h-24 border-1 border-gray-700 leading-pagination text-center{% if nextPost.url %} hover:bg-gray-700 hover:text-lgtheme cursor-pointer{% else %} cursor-not-allowed{% endif %} overflow-auto">	
-				<span class="text-xs font-semibold block mt-1 mb-3">Newer</span>	
-				<span class="text-xl font-medium">{% if not nextPost.url %} - {% else %}{{ nextPost.data.title | truncate(40) }}{% endif %}</span>	
+				<span class="text-xs font-semibold block mt-1 mb-3">{{ sitestrings.newer }}</span>	
+				<span class="text-lg font-medium">{% if not nextPost.url %} - {% else %}{{ nextPost.data.title | truncate(40) }}{% endif %}</span>	
 			</div>	
 		</a>	
 	</div>

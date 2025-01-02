@@ -31,34 +31,39 @@ div.menu ul > li:last-child::after {
     position: relative;
     right: -7.3rem;
     width: 3px;
-    background-color: #a300a3;
+    background-color: theme('colors.lgtheme');
     pointer-events: none;
-    border-right: solid 2px #a300a3;
+    border-right: solid 2px theme('colors.lgtheme');
     transition: top 0.5s ease;
 }
 
-div.menu ul > li.active:nth-child(1) ~ li:last-child::after,
-div.menu ul > li.navitem:nth-child(1):hover ~ li:last-child::after {
+div.menu ul > li.active:nth-last-child(6) ~ li:last-child::after,
+div.menu ul > li.navitem:nth-last-child(6):hover ~ li:last-child::after {
+    top: -15rem;
+    visibility: visible;
+}
+div.menu ul > li.active:nth-last-child(5) ~ li:last-child::after,
+div.menu ul > li.navitem:nth-last-child(5):hover ~ li:last-child::after {
     top: -12.5rem;
     visibility: visible;
 }
-div.menu ul > li.active:nth-child(2) ~ li:last-child::after,
-div.menu ul > li.navitem:nth-child(2):hover ~ li:last-child::after {
+div.menu ul > li.active:nth-last-child(4) ~ li:last-child::after,
+div.menu ul > li.navitem:nth-last-child(4):hover ~ li:last-child::after {
     top: -10rem;
     visibility: visible;
 }
-div.menu ul > li.active:nth-child(3) ~ li:last-child::after,
-div.menu ul > li.navitem:nth-child(3):hover ~ li:last-child::after {
+div.menu ul > li.active:nth-last-child(3) ~ li:last-child::after,
+div.menu ul > li.navitem:nth-last-child(3):hover ~ li:last-child::after {
     top: -7.5rem;
     visibility: visible;
 }
-div.menu ul > li.active:nth-child(4) ~ li:last-child::after,
-div.menu ul > li.navitem:nth-child(4):hover ~ li:last-child::after {
+div.menu ul > li.active:nth-last-child(2) ~ li:last-child::after,
+div.menu ul > li.navitem:nth-last-child(2):hover ~ li:last-child::after {
     top: -5rem;
     visibility: visible;
 }
-div.menu ul > li.active:nth-child(5):last-child::after,
-div.menu ul > li.navitem:nth-child(5):last-child:hover::after {
+div.menu ul > li.active:nth-last-child(1):last-child::after,
+div.menu ul > li.navitem:nth-last-child(1):last-child:hover::after {
     top: -2.5rem;
     visibility: visible;
 }

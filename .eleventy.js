@@ -4,6 +4,7 @@ const { MD5 } = require("crypto-js");
 const { URL } = require("url");
 const { readFileSync } = require("fs");
 const siteconfig = require("./content/_data/siteconfig.js");
+const sitestrings = require("./content/_data/sitestrings.js");
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
 const { eleventyImageTransformPlugin } = require("@11ty/eleventy-img");
@@ -53,9 +54,9 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addNunjucksFilter("readingTime", (wordcount) => {
         let readingTime = Math.ceil(wordcount / 250);
         if (readingTime === 1) {
-            return readingTime + " minūte";
+            return readingTime + " " + sitestrings.minute;
         }
-        return readingTime + " minūtes";
+        return readingTime + " " + sitestrings.minutes;
     });
 
     // Extract word count

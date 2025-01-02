@@ -33,11 +33,11 @@
 		</div>
 		{% if post.data.tags.includes("event") %}
 		<div class="flex h-5 w-8 mr-2 ml-12">
-			Notikums
+			{{ sitestrings.event }}
 			<span></span>
 		</div>
 		{% else %}
-		<div class="readingtime flex" data-words="{{ post.templateContent | striptags | wordcount | formatWords }} vārdi">
+		<div class="readingtime flex" data-words="{{ post.templateContent | striptags | wordcount | formatWords }} {{ sitestrings.words }}">
 			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 472.615 472.615" class="h-5 w-8 mr-2 ml-12">
 				<path d="M472.615,205.774h-25.344c-12.797-37.99-48.686-65.462-90.935-65.462c-43.224,0-79.837,28.73-91.823,68.087
 							c-7.582-5.011-17.305-8.115-28.211-8.115c-10.903,0-20.624,3.103-28.207,8.114c-11.989-39.357-48.608-68.085-91.831-68.085
