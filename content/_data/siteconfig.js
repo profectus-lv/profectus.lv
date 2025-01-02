@@ -19,22 +19,10 @@ module.exports = {
     menuHome: "Uz sākumu",
     // Other menu links
     menuItems: {
-        0: {
-            name: "Raksti",
-            link: "/raksti/"
-        },
-        2: {
-            name: "Notikumi",
-            link: "/notikumi/"
-        },
-        3: {
-            name: "Par mums",
-            link: "/par-mums/"
-        },
-        4: {
-            name: "Ziedo!",
-            link: "/ziedo/"
-        }
+        "Raksti": "/raksti/",
+        "Notikumi": "/notikumi/",
+        "Par mums": "/par-mums/",
+        "Ziedo!": "/ziedo/"
     },
     // GitHub ID (optional, remove if not needed), used for link in the left sidebar
 //    socialGitHub: "",

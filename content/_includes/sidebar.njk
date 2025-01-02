@@ -15,9 +15,9 @@
             <li class="navitem text-center text-base font-header font-medium uppercase {{ page.url | isHomeLink('/') }}">
                 <a href="/" class="block no-underline">{{ siteconfig.menuHome }}</a>
             </li>
-            {% for menuItem in siteconfig.menuItems %}
-            <li class="navitem text-center text-base font-header font-medium uppercase {{ page.url | isActiveLink(menuItem.link) }}">
-                <a href="{{ menuItem.link }}" class="block no-underline">{{ menuItem.name }}</a>
+            {% for name, link in siteconfig.menuItems %}
+            <li class="navitem text-center text-base font-header font-medium uppercase {{ page.url | isActiveLink(link) }}">
+                <a href="{{ link }}" class="block no-underline">{{ name }}</a>
             </li>
             {% endfor %}
         </ul>
