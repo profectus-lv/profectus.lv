@@ -126,6 +126,10 @@ svg.linkedin:hover {
     @apply text-indigo-900 underline;
 }
 
+.content a:hover {
+    @apply text-lgtheme underline;
+}
+
 .content p {
     @apply pb-4 pt-2 font-normal;
 }
@@ -296,6 +300,10 @@ ul.pagination div a {
 }
 
 .additions a {
+    @apply no-underline;
+}
+
+.additions a:hover {
     @apply no-underline;
 }
 

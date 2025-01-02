@@ -9,7 +9,6 @@ module.exports = {
             const extendUnderline = {
                 ".underline": {
                     textDecoration: "underline",
-                    "text-decoration-color": "text-indigo-300",
                     "text-underline-position": "under"
                 }
             };
