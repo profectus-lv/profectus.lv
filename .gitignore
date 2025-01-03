@@ -42,3 +42,6 @@ assets/js/min.*
 
 # Local Netlify folder
 .netlify
+
+# Local VSCode folder
+.vscode

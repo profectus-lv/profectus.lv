@@ -1,8 +1,8 @@
 // Transformer to ensure that non-relative links open in a new window
 // and have for SEO reasons `rel="noopener"` set.
 
-const { JSDOM } = require("jsdom");
-const siteconfig = require("../content/_data/siteconfig");
+import { JSDOM } from "jsdom";
+import siteconfig from "../content/_data/siteconfig.js";
 
 const processHrefs = async (el) => {
     if (
@@ -31,9 +31,6 @@ const convert = async (rawContent, outputPath) => {
     return content;
 };
 
-module.exports = {
-    initArguments: {},
-    configFunction: async (eleventyConfig = {}) => {
-        eleventyConfig.addTransform("externalContentLinks", convert);
-    }
+export default eleventyConfig => {
+    eleventyConfig.addTransform('externalContentLinks', convert);
 };
