@@ -14,7 +14,30 @@ module.exports = {
     // OpenGraph default image, in case you don't have an `image`
     // set in your Markdown frontmatter; relevant for social
     // sharing.
+    locale: "lv_LV",
+    fonts: {
+        body: {
+            family: "Montserrat",
+            weights: "0,400;0,700;1,400;1,700"
+        },
+        header: {
+            family: "Titillium+Web",
+            weights: "0,400;0,500;0,600;0,700"
+        }
+    },
     openGraphDefaultImage: "/images/profectus-logo-wt.png",
+    favicons: {
+        "16x16": "/assets/favicons/profectus-favicon-16.png",
+        "32x32": "/assets/favicons/profectus-favicon-32.png",
+        "64x64": "/assets/favicons/profectus-favicon-64.png"
+    },
+    appleicons: {
+        "180x180": "/assets/favicons/profectus-favicon-180.png"
+    },
+    webmanifest: {
+        "180x180": "/assets/favicons/profectus-favicon-180.png",
+        "512x512": "/assets/favicons/profectus-favicon-512.png"
+    },
     // Home menu name
     menuHome: "Uz sākumu",
     // Other menu links
@@ -24,26 +47,33 @@ module.exports = {
         "Par mums": "/par-mums/",
         "Ziedo!": "/ziedo/"
     },
-    // GitHub ID (optional, remove if not needed), used for link in the left sidebar
-//    socialGitHub: "",
-    // LinkedIn ID  (optional, remove if not needed), used for link in the left sidebar
-//    socialLinkedIn: "",
-    // Twitter ID  (optional, remove if not needed), used for link in the left sidebar, and for OpenGraph sharing information
-    socialTwitter: "ProfectusLV",
-    // YouTube ID/Channel  (optional, remove if not needed), used for link in the left sidebar
-//    socialYouTube: "",
-    // Facebook page  (optional, remove if not needed), used for link in the left sidebar
-//    socialFBPage: "",
-    // Personal Facebook profile  (optional, remove if not needed), used for link in the left sidebar
-    socialFBProfile: "ProfectusLV",
-    // Google Analytics ID  (optional, remove if not needed), used for... well, Google Analytics
-    googleAnalytics: "UA-16574330-6",
-    // Facebook App ID (optional, remove if not needed)
-//    fbAppId: "",
-    // Facebook Pixel (optional, remove if not needed)
-//    fbPixelId: "",
-    // Mastodon profile link
-//    mastodonProfile: "",
-    // Bluesky profile link
-//    blueskyProfile: "",
+    // Social links (optional, used for links in the left sidebar)
+    social: {
+        // GitHub ID
+//        github: "",
+        // Linkedin ID
+//        linkedin: "",
+        // Twitter ID
+        twitter: "ProfectusLV",
+        // YouTube ID/Channel
+//        youtube: "",
+        // Facebook page ID
+//        fbPage: "",
+        // Facebook profile ID
+        fbProfile: "ProfectusLV",
+        // Mastodon profile link
+//        mastodon: "",
+        // Bluesky profile link
+//        bluesky: ""
+    },
+    // Analytics pixels and other IDs for sharing and tracking
+    // (optional)
+    pixels: {
+        // Facebook App ID
+//        fbApp: "",
+        // Facebook Pixel
+//        fbPixel: "",
+        // Google Analytics ID
+        googleTag: "UA-16574330-6",
+    }
 };

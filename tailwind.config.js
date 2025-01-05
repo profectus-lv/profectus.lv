@@ -4,6 +4,11 @@ module.exports = {
         "./content/**/*.{js,njk}",
         "./src/*.js"
     ],
+    safelist: [
+        {
+            pattern: /grid-cols-.+/,
+        }
+    ],
     plugins: [
         function ({ addUtilities }) {
             const extendUnderline = {
@@ -26,7 +31,7 @@ module.exports = {
     },
     theme: {
         fontFamily: {
-            'sans': ['Montserrat', 'Verdana', 'Geneva', 'ui-sans-serif', 'sans-serif', 'system-ui'],
+            'body': ['Montserrat', 'Verdana', 'Geneva', 'ui-sans-serif', 'sans-serif', 'system-ui'],
             'header': ['"Titillium Web"', 'Verdana', 'Geneva', 'ui-sans-serif', 'sans-serif', 'system-ui']
         },
         extend: {

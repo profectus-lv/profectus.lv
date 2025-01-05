@@ -7,7 +7,7 @@ layout: base.njk
 	{% if image %}
 	<img class="mb-8" src="{{ image }}" alt="{{ imageAlt }}" />
 	{% endif %}
-	<div class="text-gray-700 font-sans font-normal">
+	<div class="text-gray-700 font-body font-normal">
   		{{ content | safe }}
 	</div>
   	{% include "social.njk" %}

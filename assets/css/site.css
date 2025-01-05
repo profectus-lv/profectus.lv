@@ -142,7 +142,8 @@ svg.linkedin:hover {
     @apply ml-4 py-2;
 }
 
-.content h1 {
+.content h1,
+.postlist h1 {
     @apply text-3xl font-bold py-6 text-gray-900 font-header;
 }
 

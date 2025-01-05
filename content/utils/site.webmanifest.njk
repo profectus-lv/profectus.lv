@@ -1,0 +1,19 @@
+---
+eleventyExcludeFromCollections: true
+permalink: /site.webmanifest
+---
+{
+    "name": "{{ siteconfig.title }}",
+    "icons": [
+        {% for iconsize, iconsrc in siteconfig.webmanifest  %}
+        {
+            "src": "{{ iconsrc | addHash }}",
+            "sizes": "{{ iconsize }}",
+            "type": "image/png"
+        },
+        {% endfor %}
+    ],
+    "theme_color": "#000000",
+    "background_color": "#000000",
+    "display": "standalone"
+}

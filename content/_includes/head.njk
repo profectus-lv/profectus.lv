@@ -10,45 +10,49 @@
 <meta property="og:description" content="{% if title and title != 'Posts' %}{{ currentPost.templateContent | safe | striptags | truncate(150) }}{% else %}{{ siteconfig.description }}{% endif %}">
 <meta property="og:image" content="{% if image %}{{ image | addHash  | absoluteUrl }}{% else %}{{ siteconfig.openGraphDefaultImage | addHash | absoluteUrl }}{% endif %}">
 <meta property="og:image:url" content="{% if image %}{{ image | addHash  | absoluteUrl }}{% else %}{{ siteconfig.openGraphDefaultImage | addHash | absoluteUrl }}{% endif %}">
-<meta property="og:locale" content="lv_LV" />
+<meta property="og:locale" content="{{ siteconfig.locale }}" />
 <meta name="twitter:card" content="summary_large_image">
 <meta nema="twitter:title" content="{% if title and title != 'Posts' %}{{ title }} - {% endif %}{{ siteconfig.title }}">
 <meta name="twitter:description" content="{% if title and title != 'Posts' %}{{ currentPost.templateContent | safe | striptags | truncate(150) }}{% else %}{{ siteconfig.description }}{% endif %}">
 <meta name="twitter:image" content="{% if image %}{{ image | addHash | absoluteUrl }}{% else %}{{ siteconfig.openGraphDefaultImage | addHash | absoluteUrl }} {% endif %}">
-<meta name="twitter:site" content="@{{ siteconfig.socialTwitter }}">
-<meta name="twitter:creator" content="@{{ siteconfig.socialTwitter }}">
-{% if siteconfig.fbAppId %}
-<meta property="fb:app_id" content="{{ siteconfig.fbAppId }}">
+{% if siteconfig.social.twitter %}
+<meta name="twitter:site" content="@{{ siteconfig.social.twitter }}">
+<meta name="twitter:creator" content="@{{ siteconfig.social.twitter }}">
 {% endif %}
-<meta property="article:publisher" content="https://www.facebook.com/{{ siteconfig.socialFBPage }}/">
+{% if siteconfig.pixels.fbApp %}<meta property="fb:app_id" content="{{ siteconfig.pixels.fbApp }}">{% endif %}
+{% if siteconfig.social.fbPage %}<meta property="article:publisher" content="https://www.facebook.com/{{ siteconfig.social.fbPage }}/">{% endif %}
 {% for name, item in meta %}
 <meta name="{{ name }}" content="{{ item.value }}">
 {% endfor %}
-<link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/favicons/profectus-favicon-180.png' | addHash }}">
-<link rel="icon" type="image/png" sizes="64x64" href="{{ '/assets/favicons/profectus-favicon-64.png' | addHash }}">
-<link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/favicons/profectus-favicon-32.png' | addHash }}">
-<link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/favicons/profectus-favicon-16.png' | addHash }}">
-<link rel="manifest" href="{{ '/assets/favicons/site.webmanifest' | addHash }}" crossorigin="use-credentials">
+{% for iconsize, iconsrc in siteconfig.appleicons %}
+<link rel="apple-touch-icon" sizes="{{ iconsize }}" href="{{ iconsrc | addHash }}">
+{% endfor %}
+{% for iconsize, iconsrc in siteconfig.favicons %}
+<link rel="icon" type="image/png" sizes="{{ iconsize }}" href="{{ iconsrc | addHash }}">
+{% endfor %}
+{% if siteconfig.webmanifest %}<link rel="manifest" href="/site.webmanifest" crossorigin="use-credentials">{% endif %}
 <link rel="canonical" href="{{ page.url | absoluteUrl }}" />
 <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+{% if siteconfig.pixels.fbPixel %}<link rel="preconnect" href="https://connect.facebook.net">{% endif %}
+{% if siteconfig.fonts %}
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://connect.facebook.net">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&family=Titillium+Web:wght@400;500;600;700">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family={{ siteconfig.fonts.body.family }}:ital,wght@{{ siteconfig.fonts.body.weights }}&family={{ siteconfig.fonts.header.family }}:ital,wght@{{ siteconfig.fonts.header.weights }}">
+{% endif %}
 <link rel="stylesheet" href="{{ '/assets/css/site-build.css' | addHash }}">
 <script src="{{ '/assets/js/min.js' | addHash }}" type="module"></script>
-{% if siteconfig.googleAnalytics %}
+{% if siteconfig.pixels.googleTag %}
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id={{ siteconfig.googleAnalytics }}"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ siteconfig.pixels.googleTag }}"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', '{{ siteconfig.googleAnalytics }}');
+  gtag('config', '{{ siteconfig.pixels.googleTag }}');
 </script>
 {% endif %}
-{% if siteconfig.fbPixelId %}
+{% if siteconfig.pixels.fbPixel %}
 <!-- Meta Pixel Code -->
 <script>
     setTimeout(function() {
@@ -60,7 +64,7 @@
         t.src=v;s=b.getElementsByTagName(e)[0];
         s.parentNode.insertBefore(t,s)}(window, document,'script',
         'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '{{ siteconfig.fbPixelId }}');
+        fbq('init', '{{ siteconfig.pixels.fbPixel }}');
         fbq('track', 'PageView');
     }, 750);
 </script>

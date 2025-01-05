@@ -3,7 +3,7 @@
 	<div class="pb-4 pt-4">
 		<a class="text-gray-900 text-2xl font-semibold font-header postlistheading" href="{{ post.url | url }}">{{ post.data.title }}</a>
 	</div>
-	<div class="pb-4 text-gray-700 font-sans font-normal">{% if post.data.excerpt %} {{ post.data.excerpt }} {% else %} {% excerpt post %} {% endif %}</div>
+	<div class="pb-4 text-gray-700 font-body font-normal">{% if post.data.excerpt %} {{ post.data.excerpt }} {% else %} {% excerpt post %} {% endif %}</div>
 	<div class="pb-6 text-sm text-gray-500 border-b-1 border-gray-700 border-opacity-20 flex">
 		<div class="flex">
 			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600.112 600.111" class="h-5 w-4 mr-2">
