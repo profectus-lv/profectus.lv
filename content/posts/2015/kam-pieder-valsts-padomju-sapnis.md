@@ -3,6 +3,7 @@ title: "Kam pieder valsts: Padomju sapnis"
 date: "2015-01-13"
 image: /images/2015/padomju-sapnis.jpg
 tags: article
+author: "Dmitrijs Golubevs"
 categories: 
   - "politics"
 ---

@@ -49,7 +49,7 @@
         {% endif %}
         {% if siteconfig.social.youtube %}
         <a href="https://www.youtube.com/channel/{{ siteconfig.social.youtube }}" aria-label="Open YouTube channel" target="_blank" class="w-5 h-5" rel="noopener">
-            <svg role="img" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="{{ inlinesvg.youtube.viewBox }}" class="p-0.5">
+            <svg role="img" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="{{ inlinesvg.youtube.viewBox }}">
                 <title>YouTube</title> 
                 <path d="{{ inlinesvg.youtube.path }}" id="Shape"></path>
             </svg>
@@ -57,7 +57,7 @@
         {% endif %}
         {% if siteconfig.social.fbPage %}
         <a href="https://facebook.com/{{ siteconfig.social.fbPage }}" aria-label="Open Facebook page" target="_blank" class="w-5 h-5" rel="noopener">
-            <svg role="img" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="{{ inlinesvg.facebookInverse.viewBox }}" class="p-0.5">
+            <svg role="img" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="{{ inlinesvg.facebookInverse.viewBox }}">
                 <title>Facebook page</title>
                 <path d="{{ inlinesvg.facebookInverse.path }}" />
             </svg>
@@ -65,7 +65,7 @@
         {% endif %}
         {% if siteconfig.social.fbProfile %}
         <a href="https://facebook.com/{{ siteconfig.social.fbProfile }}" aria-label="Open Facebook profile" target="_blank" class="w-5 h-5" rel="noopener">
-            <svg role="img" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="{{ inlinesvg.facebook.viewBox }}" class="p-0.5">
+            <svg role="img" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="{{ inlinesvg.facebook.viewBox }}">
                 <title>Facebook</title>
                 <path d="{{ inlinesvg.facebook.path }}" />
             </svg>
@@ -73,7 +73,7 @@
         {% endif %}
         {% if siteconfig.social.mastodon %}
         <a href="{{ siteconfig.social.mastodon }}" aria-label="Open Mastodon profile" target="_blank" class="w-5 h-5" rel="me noopener">
-            <svg role="img" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="{{ inlinesvg.mastodon.viewBox }}" class="p-0.5">
+            <svg role="img" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="{{ inlinesvg.mastodon.viewBox }}">
                 <title>Mastodon</title>
                 <path d="{{ inlinesvg.mastodon.path }}" />
             </svg>
@@ -81,7 +81,7 @@
         {% endif %}
         {% if siteconfig.social.bluesky %}
         <a href="{{ siteconfig.social.bluesky }}" aria-label="Open Bluesky profile" target="_blank" class="w-5 h-5" rel="me noopener">
-            <svg role="img" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="{{ inlinesvg.bluesky.viewBox }}" class="p-[0.1rem]">
+            <svg role="img" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="{{ inlinesvg.bluesky.viewBox }}">
                 <title>Bluesky</title>
                 <path d="{{ inlinesvg.bluesky.path }}" />
             </svg>

@@ -3,6 +3,7 @@ title: "Latvijas imaginārijs: mediju katastrofa"
 date: "2015-04-21"
 image: /images/2015/tanki.jpg
 tags: article
+author: "Dmitrijs Golubevs"
 categories: 
   - "politics"
 ---

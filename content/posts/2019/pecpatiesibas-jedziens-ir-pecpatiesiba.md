@@ -5,6 +5,7 @@ image: /images/2019/pecpatiesiba.png
 categories: 
   - "politics"
 tags: article
+author: "Dmitrijs Golubevs"
 ---
 
 Bieži var dzirdēt, ka dzīvojam kādā jaunā ērā: pēcpatiesības, pēcfaktu, viltusziņu ērā. Cik ļoti tas tā ir, un vai mēs kaut ko nepalaižam garām?

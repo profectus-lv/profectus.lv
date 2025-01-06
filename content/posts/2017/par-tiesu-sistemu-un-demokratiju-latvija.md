@@ -3,6 +3,7 @@ title: "Par tiesu sistēmu un demokrātiju Latvijā"
 date: "2017-07-27"
 image: /images/2017/tiesas-sede.jpg
 tags: article
+author: "Dāvids Zalāns"
 ---
 
 Demokrātija 21. gadsimtā Latvijā. Skan skaisti, vai ne? Bet kam ir jānotiek, lai demokrātija kā pārvaldes sistēma patiešām funkcionētu labi un Latvijas valsts pilsoņi būtu ar to apmierināti? Kas ir tie kritēriji un tās lietas, kam obligāti jābūt demokrātijā un, visbeidzot, ņemot vērā “”Rīdzenes” sarunas”, kāda ir tiesu sistēmas jeb tautā sauktās “trešās varas” loma un nozīme demokrātijas veiksmīgai attīstībai? Par šiem jautājumiem sniegšu nelielu ieskatu.

@@ -3,6 +3,7 @@ title: "3 aspekti vērtību diskusijā"
 date: "2019-03-13"
 image: /images/2019/trompete-2019-03-06-post.png
 tags: article
+author: "Dmitrijs Golubevs"
 ---
 
 Vērtības, vērtību sistēmas ir noteikumi, kā katrs no mums nosaka labo un ļauno, ko var darīt un nevar darīt. Šī sistēma parasti ir hierarhiska: kādas vērtības mēs vērtējam augstāk par citām. Piemēram, dzīvību mēs vērtējam augstāk par mantu. Tā ir bāze likumiem un tikumiem. Ļoti vienkāršojot, taču arī abrahāmiskajā un kristīgajā tradīcijā mēs redzam vērtības kā sākumu cilvēku civilizācijai, varētu pat teikt, vēstures sākumu, jo aizliegtais auglis atklāja labā un ļaunā kategorijas jeb pirmās vērtības.

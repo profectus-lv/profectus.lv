@@ -4,6 +4,7 @@ date: "2014-12-22"
 permalink: /kam-pieder-valsts/
 image: /images/2014/ole-bailey.jpg
 tags: article
+author: "Dmitrijs Golubevs"
 categories: 
   - "politics"
 ---

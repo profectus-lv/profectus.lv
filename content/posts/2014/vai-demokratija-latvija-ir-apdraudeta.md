@@ -3,6 +3,7 @@ title: "Vai demokrātija Latvijā ir apdraudēta?"
 date: "2014-09-29"
 image: /images/2014/vai-demokratija-apdraudeta.jpeg
 tags: article
+author: "Dmitrijs Golubevs"
 categories: 
   - "politics"
 ---

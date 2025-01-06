@@ -3,6 +3,7 @@ title: "Kāda jēga kaut ko mainīt Latvijā?"
 date: "2017-07-17"
 image: /images/2017/mainit.jpg
 tags: article
+author: "Dāvids Zalāns"
 ---
 
 Latviešu valodā ir kāds zīmīgs teiciens: “Ko tad es, es jau neko.” Vēl Latvijā arī pieņemts uzskatīt, ka neko mainīt nav iespējams un ka principā viss ir slikti. Diezgan populāri ir arī neinteresēties par lietām – vienalga, sabiedriskajām aktualitātēm vai politiku –, kamēr tās neskar paša dzīvi personiski. No šī visa izriet loģisks jautājums – vai Latvijas valstī vispār ir iespējams kaut ko izmainīt? Un kas ir cilvēki, kas nolemj to darīt, un kāpēc? Laikā, kad nupat pašvaldību vēlēšanās Rīgā vairāk nekā ceturtdaļu balsu ieguva jauni, pārmaiņas alkstoši politiskie spēki, laikā, kad publicētas tā sauktās Rīdzenes sarunas un tika rīkots protests ar mērķi panākt valsts ģenerālprokurora atkāpšanos, visbeidzot, laikā, kad gaisā atkal virmo runas par Ceturto atmodu, ir vērts apstāties un pajautāt – bet kāda gan jēga kaut ko mainīt Latvijā?
