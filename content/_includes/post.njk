@@ -31,13 +31,13 @@ layout: base.njk
 		{% set previousPost = collections.posts | getPreviousCollectionItem(page) %}	
 		{% set nextPost = collections.posts | getNextCollectionItem(page) %}	
 	  	<a href="{{ previousPost.url }}" class="flex-1">	
-			<div class="h-24 border-1 border-gray-700 leading-pagination text-center{% if previousPost.url %} hover:bg-gray-700 hover:text-lgtheme cursor-pointer{% else %} cursor-not-allowed{% endif %}">	
+			<div class="h-24 border-1 border-gray-700 leading-pagination text-center{% if previousPost.url %} hover:bg-gray-400 hover:text-lgtheme cursor-pointer{% else %} cursor-not-allowed{% endif %}">	
 				<span class="text-xs font-semibold block mt-1 mb-3">{{ sitestrings.older }}</span>	
 				<span class="text-lg font-medium">{% if not previousPost.url %} - {% else %}{{ previousPost.data.title | truncate(40) }}{% endif %}</span>	
 			</div>	
 		</a>	
 	  	<a href="{{ nextPost.url }}" class="flex-1">	
-		  	<div class="h-24 border-1 border-gray-700 leading-pagination text-center{% if nextPost.url %} hover:bg-gray-700 hover:text-lgtheme cursor-pointer{% else %} cursor-not-allowed{% endif %} overflow-auto">	
+		  	<div class="h-24 border-1 border-gray-700 leading-pagination text-center{% if nextPost.url %} hover:bg-gray-400 hover:text-lgtheme cursor-pointer{% else %} cursor-not-allowed{% endif %} overflow-auto">	
 				<span class="text-xs font-semibold block mt-1 mb-3">{{ sitestrings.newer }}</span>	
 				<span class="text-lg font-medium">{% if not nextPost.url %} - {% else %}{{ nextPost.data.title | truncate(40) }}{% endif %}</span>	
 			</div>	

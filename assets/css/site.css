@@ -80,8 +80,8 @@ svg.twitter {
 }
 
 svg.twitter:hover {
-    fill: #1b90d8;
-    stroke: #1b90d8;
+    @apply fill-lgtheme;
+    @apply stroke-lgtheme;
 }
 
 svg.facebook {
@@ -90,8 +90,8 @@ svg.facebook {
 }
 
 svg.facebook:hover {
-    fill: #375593;
-    stroke: #375593;
+    @apply fill-lgtheme;
+    @apply stroke-lgtheme;
 }
 
 svg.linkedin {
@@ -100,8 +100,13 @@ svg.linkedin {
 }
 
 svg.linkedin:hover {
-    fill: #006398;
-    stroke: #006398;
+    @apply fill-lgtheme;
+    @apply stroke-lgtheme;
+}
+
+svg.share:hover {
+    @apply fill-lgtheme;
+    @apply stroke-lgtheme;
 }
 
 .sidebar svg {
