@@ -4,16 +4,16 @@ permalink: /site.webmanifest
 ---
 {
     "name": "{{ siteconfig.title }}",
+    "theme_color": "#000000",
+    "background_color": "#000000",
+    "display": "standalone",
     "icons": [
-        {% for iconsize, iconsrc in siteconfig.webmanifest  %}
+    {% for iconsize, iconsrc in siteconfig.webmanifest %}
         {
             "src": "{{ iconsrc | addHash }}",
             "sizes": "{{ iconsize }}",
             "type": "image/png"
-        },
-        {% endfor %}
-    ],
-    "theme_color": "#000000",
-    "background_color": "#000000",
-    "display": "standalone"
+        }{% if not loop.last %},{% endif %}
+    {% endfor %}
+    ]
 }

@@ -4,15 +4,15 @@ layout: base.njk
 
 <div class="content post border-solid border-b-1 border-gray-700 pb-6 lg:ml-24 lg:mr-24">
   	<h1>{{ title }}</h1>
-  	<div class="mb-4 flex text-gray-600 text-sm font-normal">
-		<div class="flex">
+  	<div class="mb-4 flex text-gray-600 text-sm font-normal flex flex-wrap gap-x-10 gap-y-4">
+		<div class="flex flex-none">
         	<svg role="img" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="{{ inlinesvg.calendar.viewBox }}" class="h-5 w-5 mr-2">
 	    		<path d="{{ inlinesvg.calendar.path }}" />
         	</svg>
         	{{ page.date | readableDate }}
 		</div>
 		{% if author %}
-		<div class="flex ml-10">
+		<div class="flex flex-none">
         	<svg role="img" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="{{ inlinesvg.author.viewBox }}" class="h-5 w-5 mr-2">
 	    		<path d="{{ inlinesvg.author.path }}" />
         	</svg>
@@ -20,13 +20,13 @@ layout: base.njk
 		</div>
 		{% endif %}
 		{% if tags.includes("event") %}
-		<div class="flex h-5 w-8 mr-2 ml-10">
+		<div class="flex flex-none h-5 w-5 mr-2">
 			{{ sitestrings.event }}
 			<span></span>
 		</div>
 		{% else %}
-		<div class="flex ml-10 readingtime" data-words="{{ content | striptags | wordcount | formatWords }} {{ sitestrings.words }}">
-        	<svg role="img" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="{{ inlinesvg.readingTime.viewBox }}" class="h-5 w-8 mr-2">
+		<div class="flex flex-none readingtime" data-words="{{ content | striptags | wordcount | formatWords }} {{ sitestrings.words }}">
+        	<svg role="img" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="{{ inlinesvg.readingTime.viewBox }}" class="h-5 w-5 mr-2">
   	    		<path d="{{ inlinesvg.readingTime.path }}" />
         	</svg>
         	{{ content | striptags | wordcount | readingTime }}

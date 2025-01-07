@@ -37,7 +37,8 @@
 {% if siteconfig.fonts %}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family={{ siteconfig.fonts.body.family }}:ital,wght@{{ siteconfig.fonts.body.weights }}&family={{ siteconfig.fonts.header.family }}:ital,wght@{{ siteconfig.fonts.header.weights }}">
+<link rel="preload" href="https://fonts.googleapis.com/css2?family={{ siteconfig.fonts.body.family }}:ital,wght@{{ siteconfig.fonts.body.weights }}&family={{ siteconfig.fonts.header.family }}:ital,wght@{{ siteconfig.fonts.header.weights }}{% if siteconfig.fonts.swap %}&display=swap{% endif %}" as="style">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family={{ siteconfig.fonts.body.family }}:ital,wght@{{ siteconfig.fonts.body.weights }}&family={{ siteconfig.fonts.header.family }}:ital,wght@{{ siteconfig.fonts.header.weights }}{% if siteconfig.fonts.swap %}&display=swap{% endif %}">
 {% endif %}
 <link rel="stylesheet" href="{{ '/assets/css/site-build.css' | addHash }}">
 <script src="{{ '/assets/js/min.js' | addHash }}" type="module"></script>

@@ -290,7 +290,7 @@ ul.pagination div.active {
 }
 
 ul.pagination div a {
-    padding-top: 2px;
+    padding-top: 1.5px;
 }
 
 ::placeholder {
