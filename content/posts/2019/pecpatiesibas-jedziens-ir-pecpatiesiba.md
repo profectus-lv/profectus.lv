@@ -2,8 +2,6 @@
 title: "Pēcpatiesības jēdziens ir pēcpatiesība"
 date: "2019-03-28"
 image: /images/2019/pecpatiesiba.png
-categories: 
-  - "politics"
 tags: article
 author: "Dmitrijs Golubevs"
 ---
@@ -39,3 +37,5 @@ Un treškārt, pasaule ir kļuvusi daudz sarežģītāka. Gadsimtiem, gadu tūks
 Šobrīdējās problēmas, piemēram, vai vakcinācija ir droša, vai klimata pārmaiņas eksistē, kādi nodokļi ir efektīvāki, kāda pensiju sistēma ir labāka visai sabiedrībai, kādus enerģijas veidus attīstīt un kādā proporcijā, un tā tālāk (tādu ir simtiem), ir neiedomājami sarežģītas, un tām allaž ir nevis lokālais, bet gan globālais efekts. Mēs kā suga neesam raduši risināt tik daudz tik sarežģītu problēmu vienlaikus, un neesam raduši domāt cilvēces mērogā, nevis lokāli, tāpēc biežāk kā jebkad izmantojam smadzeņu "īsceļus": domāšanas mehānismus, kas nodrošina nedomāšanu. Ir ērtāk būt stāstā.
 
 Ir ērtāk būt stāstā arī par kādu jauno laikmetu, kurā valda pēcpatiesība, kad patiesībā pasaule vienkārši ir kļuvusi par sarežģītu cilvēkiem. Einšteins savulaik esot teicis, ka mēs nevaram atrisināt problēmas tai pašā domāšanas līmenī, kādā esam tās radījuši. Tā kā, iespējams, šo problēmu atrisināt ir mūsu sarežģītākais uzdevums. Negaidām postcilvēkus.
+
+_Raksts ir pārpublicēts no [lastguru.lv](https://lastguru.lv/pecpatiesibas-jedziens-ir-pecpatiesiba/)_

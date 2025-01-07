@@ -4,8 +4,6 @@ date: "2014-09-29"
 image: /images/2014/vai-demokratija-apdraudeta.jpeg
 tags: article
 author: "Dmitrijs Golubevs"
-categories: 
-  - "politics"
 ---
 
 Pēdējā laikā mani arvien biežāk pārņem pārdomas par demokrātijas nākotni Latvijā. Un nevis Krievijas, bet mūsu pašu sabiedrības ietekmē. Vēlēšanu priekšvakarā mēģināšu parādīt notiekošo caur citu, varbūt neierastu, prizmu, neaģitējot par kādu konkrētu partiju.
@@ -29,3 +27,5 @@ Jebkurš cilvēks domā par sevi un savu ģimeni. Arī politiķis un ierēdnis. 
 Reizēm sastopos arī ar priekšstatu, "kāpēc viņiem maksāt, ja tik un tā zog". No vienas puses gribas atbildēt, ka lielākā daļa nezog, un, ja maksātu vairāk, zagtu mazāk. Bet no otras, tā dziļāk padomājot, atkal jau jānorāda ar pirkstu uz to sabiedrības daļu, kas uzskata, ka "zog bet dalās" ir pieņemams princips. Nav labo zagļu - ir vienkārši zagļi, kas, pat ja sakārto \[sev\] pilsētu kurā dzīvo, tik un tā paliek tikai un vienīgi zagļi. Turklāt, ne tikai katrs korumpētais ierēdnis, bet arī katrs aplokšņu algas saņēmējs apzog pašreizējos pensionārus, skolotājus, mediķus. Valstī ir krietni vairāk aplokšņu algu saņēmēju, neka zaglīgo ierēdņu un politiķu. Atkārtošos, ka politiķi un ierēdniecība tomēr ir sabiedrības spogulis. Diemžēl, PSRS dažiem ir atstājis mantojumā apziņu, ka nemaksāt visus nodokļus ir varoņdarbs, valsti apzagt ir svēta lieta un kukuļi ir normāla parādība. Jāziņo par katru šādu gadījumu, nevis jāsaka abstrakti "viņi visi zog". Vārdus un uzvārdus studijā - es gribu skaļus procesus! Katrs klusētājs, lai kādu motīvu vadīts, atbalsta valsts nozagšanu. Katrs kukuļa devējs, aplokšņu algas saņēmējs vai nodokļu "optimizētājs", kas saka ka citi ir zagļi, pats ir divkosis.
 
 Ja gribam labāk dzīvot, labāku Latviju, jāsāk ar to, no kā sākas mūsu valsts. Jāsāk ar ikkatru pilsoni, ar sevi. Un jābeidz sevi valstij pretnostatīt. Pagaidām jāsecina, ka tomēr demokrātija ir apdraudēta.
+
+_Raksts ir pārpublicēts no [lastguru.lv](https://lastguru.lv/vai-demokratija-latvija-ir-apdraudeta/)_

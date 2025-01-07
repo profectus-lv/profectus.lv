@@ -33,3 +33,5 @@ No otras puses, tad, kad mēs salīdzinām dažādas valstis vai sabiedrības, m
 Tad, laikam, sanāk, ka vispārcilvēciskās vērtības pastāv, tikai cilvēces (civilizācijas?) ir dažādas. Vienīgi, ne Hantingtona izpratnē teritoriāli nospraustas, bet gan savā domāšanā/vērtībās katrā valstī līdzpastāv pārstāvji no katras no šīm cilvēcēm dažādā skaitā. Cilvēces, savukārt, ir globālas. Varbūt apziņa, ka, līdzīgi kā mūsu pašu sabiedrībā nav vienādas vērtības, arī citās sabiedrībā nav, ir ceļš, kā mazināt konfliktus.
 
 _Raksta melnraksts kalpoja par ievadu Domnīcas Profectus 2019. gada 6. marta diskusijā “[Kur rodas vērtības? Cik tās var būt vispārcilvēciskas?](https://profectus.lv/kur-rodas-vertibas-cik-tas-var-but-visparcilveciskas/)”_
+
+_Raksts ir pārpublicēts no [lastguru.lv](https://lastguru.lv/3-aspekti-vertibu-diskusija/)_

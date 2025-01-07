@@ -4,8 +4,6 @@ date: "2015-04-21"
 image: /images/2015/tanki.jpg
 tags: article
 author: "Dmitrijs Golubevs"
-categories: 
-  - "politics"
 ---
 
 Ilglaicīgi vērojot Latvijas mediju telpu, nepamet sajūta, ka dzīvoju nevis realitātē, bet hibrīdkara propagandas imaginārijā...
@@ -21,3 +19,5 @@ Tā analītiskā žurnālistika, tie viedokļu līderi ir aizmirsuši savu sūt�
 Visi mediji, toties, ir aizņemti ar sazvērestībām, ar pseidozinātni (vai ar abiem kopā, sākot ar ārstu sazvērestībām, par ko tie negribot mums stāstīt, un beidzot ar reptiļcilvēku sazvērestībām, ko mums atklāj Urantija un citas garīgās kustības), ar ārējiem apdraudējumiem un ar stāstiem par neizdevušos valsti jeb "Failed State" Latviju, un, pats galvenais, ka mēs, pilsoņi, ne pie kā neesam vainīgi un neko nevaram izdarīt. Var, protams, iet protestēt: uz katru praidu atradīsies antipraids, uz katru starptautisko kongresu "par tikumību" (tikumiba.net) var uztaisīt starptautisko kongresu par netikumību. Kur ir protesti pret vīzijas trūkumu valstī (pārmaiņas pēc, par to lietu, kas tiešām ir svarīga ikkatram)? Nevienam neinteresē? Nav svarīgi? Bet kas ies mūsu valsti aizstāvēt? Tie, kas uzskata, ka šī ir neizdevusies valsts? Lūk arī propagandas mērķis! Tā turpinot, paši vien iesim draudzīgi tankus bučot!
 
 Gribu vērst uzmanību, ka nedzīvojam vairs viduslaikos, kur cilvēku dzīve bija nemainīga gadsimtiem ilgi (ja neskaita reizēm valdnieku nomaiņu). Līdz industriālajai revolūcijai, attīstības tempi pasaulē bija lēni, gandrīz namanāmi, bet mūsdienās tie pieaug aizvien ātrāk. Uzskatāmi to var redzēt tehnoloģiju mūžā: svece nāk no senajiem laikiem, spuldze īsti nav mainījusies kādu gadsimtu (tikai nesen sāka ieviest ekonomiskās un gaismas diožu spuldzes), bet ja 10-20 gadu veca automašīna ir pilnīgi normāla parādība un cilvēki brauc arī ar vecākām, datortehnika jau pēc 5-7 gadiem skaitās pilnīgi novecojusi, nemaz nerunājot par viedtālruņiem, ko maina ik pēc 2-3 gadiem. Ja automašīnas attīstītos tādos pašos tempos kā datortehnika, ar vienu uzpildi varētu braukt nedēļām ilgi. Šādu eksponenciālo attīstību cilvēka prātam grūti saprast. Bieži vien, mēs dzīvojam ar Otrā pasaules kara laika apziņu par progresu, par nākotni. Attīstība šai gadsimtā būs cita, ievērojami ātrāka, un tāpēc mums vajag spēcīgus viedokļu līderus, kas to nākotni mums parāda, kas mūs sagatavo nākamajiem progresa lēcieniem. Diemžēl gan, ne politiskajā diskursā, ne medijos nav šīs nākotnes vīzijas - ir tikai plēšanās par gultas lietām. Kā lai Latvija nokļūst nākotnē, ja mēs paši labprātīgi atsakāmies domāt par nākotni? Tā ir mediju katastrofa! Tas ir ļaunais imaginārijs, kurā dzīvojam...
+
+_Raksts ir pārpublicēts no [lastguru.lv](https://lastguru.lv/latvijas-imaginarijs-mediju-katastrofa/)_

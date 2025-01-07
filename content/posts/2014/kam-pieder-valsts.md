@@ -5,8 +5,6 @@ permalink: /kam-pieder-valsts/
 image: /images/2014/ole-bailey.jpg
 tags: article
 author: "Dmitrijs Golubevs"
-categories: 
-  - "politics"
 ---
 
 Kam pieder Latvijas valsts? Tik vienkāršs jautājums, vai ne? Latvijas Republikas Satversmes 2. pants nosaka, ka "Latvijas valsts suverēnā vara pieder Latvijas tautai". Suverēnās varas jēdzien nebūt nav vienkāršs. Vai tautas vara ir absolūta? Vai vairākuma viedoklis var būt radikāls? Vai demokrātijai sevi ir jāsargā? Par šiem jautājumiem lauzts ne viens vien šķēps...
@@ -36,3 +34,5 @@ Diemžēl, visi cilvēki vēl nav vienlīdzīgi. Pret to cīnās ar tiem pašie
 Daži uzskata, ka īstā ģimene ir tikai laulātie tēvs ar māti un viņu bērni – kā _Kellogg's_ pārslu reklāmās un uz Tautas partijas logo. Rodas gan šaubas par moralizētāju saikni ar realitāti, jo apmēram puse bērnu Latvijā piedzimst vecākiem, kas nav laulībā. Vai laulības institūts cilvēkiem ir jāuzspiež? Vai tas var būt vērtība pats par sevi, pāri individuālo cilvēku, bērnu vērtībai? Atgādināšu, ka tradicionāli laulību šķirt nedrīkstēja, bet ārlaulības bērni bija beztiesiski. Vai ir jāatļauj laulība, kurā vismaz viens cilvēks ir neauglīgs, ja tradicionālā ģimene ir domāta bērnu radīšanai? Vai māte ar omīti, kas audzina bērnu vienas, arī ir ģimene, lai gan viendzimuma?
 
 Lai stiprinātu vienlīdzību ir pieļaujams iet pret vairākuma viedokli – līdzīgi kā to darīja iepriekš gan rasu, gan dzimuma līdztiesības jautājumos. Lai kāda nebūtu dilema, pati svarīgākā vērtība, pats patiesākais skatpunkts, no kura vērtību jautājumu apskatīt, ir vienlīdzība. Visiem.
+
+_Raksts ir pārpublicēts no [lastguru.lv](https://lastguru.lv/kam-pieder-valsts/)_

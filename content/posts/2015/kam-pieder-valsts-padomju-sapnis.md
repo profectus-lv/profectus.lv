@@ -4,8 +4,6 @@ date: "2015-01-13"
 image: /images/2015/padomju-sapnis.jpg
 tags: article
 author: "Dmitrijs Golubevs"
-categories: 
-  - "politics"
 ---
 
 Turpinot stāstu par to, kam pieder valsts, nevar nepieminēt sapni, kuram pieder daudzu cilvēku prāti. Ieaudzināts ar propagandu, selekcionēts ar represijām, iesakņojies zemapziņā, šis sapnis dzīvo un tiek nodots nākamajām paaudzēm. Padomju sapnis. Proletariāta sapnis. Nerakstīšu par tā noziedzīgā režīma šausmām un upuriem – rakstīšu par šķietami pozitīvo.
@@ -29,3 +27,5 @@ Cilvēkiem, kas vēlas darbu, ir jāsaprot, ka "darbu" skaits tuvākajā desmitg
 Bieži nākas dzirdēt, ka valstij vajadzēja radīt darbavietas, uzturēt uzņēmumus, bankas utml. Tā ir padomju domāšanas kulminācija un atbilde uz daudzām mūsdienu problēmām. Kad es atbildu "nē, nevajadzēja!", uz mani skatās kā uz raganu pirms dedzināšanas. Tā ir PSRS ieaudzinātā bezpalīdzība - paļāvība uz valsti, bez kuras pilsonis nav nekas. Pirms tam nevienam šādas domas galvā nevarēja ienākt, ka valstij būtu pienākums radīt darbavietas vai vēl ko... Citās zemēs gan cilvēki nesapņo, ka viņiem valsts dos darbu – viņi paši ņem un strādā. Un ar savu uzņēmīgumu spēj nodrošināt darbiniekus (tai skaitā mūsu tautiešus) ar pienācīgām algām. Tie ir privātie uzņēmumi, kur latvieši brauc strādāt! Ekonomika ir novērojošā zinātne, un mēs varam novērot, kur cilvēki dzīvo labāk, tur kur slimo ar padomju sapni, vai tur, kur neslimo. Lielākajā daļā postpadomju valstu dzīves līmenis nav pat salīdzināms ar Latviju!
 
 Bet mēs turamies... pie tā, ka jāatnāk valstij, labam ķeizaram, un viss jāsaliek pa plauktiņiem, jānodrošina ar darbu utml. Pukstam par to, ka kādreiz ražojām to un to, bet vairāk neražojam. Un aizmirstam Raini, kas teica, ka pastāvēs tas, kas mainīsies. Nav traģēdija mainīties, pat ja sāp ko zaudēt – traģēdija ir nemainīties! Nav pašmērķis kaut ko ražot, pat ja tas ir nerentabli un nekonkurētspējīgi – pašmērķis ir dzīvot labāk!  Un tas arī notiek pamazām. Jāpārstāj tikai pukstēt... Kā dziedāja Krokodils Gena, "un, lai gan pagātnes mums drusku žēl, labākais, protams, ir priekšā!"
+
+_Raksts ir pārpublicēts no [lastguru.lv](https://lastguru.lv/kam-pieder-valsts-padomju-sapnis/)_
