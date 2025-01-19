@@ -86,7 +86,7 @@ div.menu > * {
 
 /* Mobile top bar */
 
-#top-bar a:hover {
+#top-bar {
     @apply border-gray-700 border-b-1 border-opacity-30 shadow-lg;
     @apply bg-white;
 }
