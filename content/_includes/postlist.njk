@@ -1,10 +1,10 @@
 {% for post in posts %}
 <div>
 	<div class="pb-4 pt-4">
-		<a class="text-gray-900 text-2xl font-semibold font-header postlistheading" href="{{ post.url | url }}">{{ post.data.title }}</a>
+		<a class="postlistheading" href="{{ post.url | url }}">{{ post.data.title }}</a>
 	</div>
-	<div class="pb-4 text-gray-700 font-body font-normal">{% if post.data.excerpt %} {{ post.data.excerpt }} {% else %} {% excerpt post %} {% endif %}</div>
-	<div class="pb-6 text-sm text-gray-500 border-b-1 border-gray-700 border-opacity-20 flex flex-wrap gap-x-10 gap-y-4">
+	<div class="pb-4 postexcerpt">{% if post.data.excerpt %} {{ post.data.excerpt }} {% else %} {% excerpt post %} {% endif %}</div>
+	<div class="pb-6 postproperties flex flex-wrap gap-x-10 gap-y-4">
 		<div class="flex flex-none">
 			<svg role="img" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="{{ inlinesvg.calendar.viewBox }}" class="h-5 w-5 mr-2">
 				<path d="{{ inlinesvg.calendar.path }}" />

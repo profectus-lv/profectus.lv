@@ -1,4 +1,4 @@
-module.exports = {
+export default {
     content: [
         "./content/**/*.{js,njk}",
         "./src/*.js"
@@ -44,10 +44,7 @@ module.exports = {
                 content: "80rem"
             },
             colors: {
-                "lgtheme": "#a300a3",
-                gray: {
-                    "350" : "#b7bcc5"
-                }
+                "accent": "#a300a3"
             }
         }
     }

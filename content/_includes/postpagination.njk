@@ -1,12 +1,12 @@
-<div class="mt-2 mx-8 lg:ml-32">
-	<ul class="pagination flex list-none center pb-12 sm:pb-8 font-body font-normal text-lg">
+<div class="mt-2 mx-8 lg:ml-24">
+	<ul class="pagination flex list-none center pb-12 sm:pb-8">
 	    {% if pagination.pageNumber > 0 %}
 	    <li class="mr-3">
 			<div class="leading-relaxed">
 				{% if not pagination.href.first %}
 				<span class="block cursor-not-allowed">&lt;&lt;</a>
 				{% else %}
-				<a href="{{ pagination.href.first }}" class="block hover:no-underline">&lt;&lt;</a>
+				<a href="{{ pagination.href.first }}" class="block">&lt;&lt;</a>
 				{% endif %}
 			</div>
 		</li>
@@ -15,7 +15,7 @@
 				{% if not pagination.href.previous %}
 				<span class="block cursor-not-allowed">&lt;</a>
 				{% else %}
-				<a href="{{ pagination.href.previous }}" class="block hover:no-underline">&lt;</a>
+				<a href="{{ pagination.href.previous }}" class="block">&lt;</a>
 				{% endif %}
 			</div>
 		</li>
@@ -24,7 +24,7 @@
 		{% if loop.index0 < 6  and pagination.hrefs[loop.index0 + pagination.pageNumber] %}
 	    <li class="mr-3">
 			<div class="leading-pagination{% if pagination.hrefs[loop.index0 + pagination.pageNumber] === page.url %} active{% endif %}">
-				<a href="{{ pagination.hrefs[loop.index0 + pagination.pageNumber] }}" class="block hover:no-underline">{{ loop.index + pagination.pageNumber }}</a>
+				<a href="{{ pagination.hrefs[loop.index0 + pagination.pageNumber] }}" class="block">{{ loop.index + pagination.pageNumber }}</a>
 			</div>
 		</li>
 		{% endif %}
@@ -32,12 +32,12 @@
 		{% if (pagination.pageNumber + 5) < pagination.pages.length %}
 	    <li class="mr-3">
 			<div class="leading-relaxed">
-				<a href="{{ pagination.href.next }}" class="block hover:no-underline">&gt;</a>
+				<a href="{{ pagination.href.next }}" class="block">&gt;</a>
 			</div>
 		</li>
 	    <li class="mr-3">
 			<div class="leading-relaxed">
-				<a href="{{ pagination.href.last }}" class="block hover:no-underline">&gt;&gt;</a>
+				<a href="{{ pagination.href.last }}" class="block">&gt;&gt;</a>
 			</div>
 		</li>
 		{% endif %}

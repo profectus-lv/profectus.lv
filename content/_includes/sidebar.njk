@@ -1,22 +1,22 @@
-<div id="sidebar-contents" class="bg-sidebar-dark grid-cols-1 gap-4 px-2 h-screen grid w-60 font-normal">
+<div id="sidebar-contents" class="grid-cols-1 gap-4 px-2 h-screen grid w-60">
     <div class="pt-8">
         <a href="/" aria-label="Home link">
             <img alt="{{ siteconfig.imageAlt }}" src="{{ siteconfig.image }}" class="" width="192px" loading="eager"/>
         </a>
-        <div class="sitetitle text-center font-semibold font-header pt-6 text-gray-100">
-            <a href="/" class="mx-auto text-2xl">{{ siteconfig.title }}</a>
+        <div class="sitetitle pt-6">
+            <a href="/" class="mx-auto">{{ siteconfig.title }}</a>
         </div>
-        <div class="text-center text-sm pt-3 text-gray-400">
+        <div class="sitedesc pt-3">
             {{ siteconfig.description }}
         </div>
     </div>
     <div class="menu">
         <ul class="list-none pl-0">
-            <li class="navitem text-center text-base font-header font-medium uppercase {{ page.url | isHomeLink('/') }}">
+            <li class="navitem {{ page.url | isHomeLink('/') }}">
                 <a href="/" class="block no-underline">{{ siteconfig.menuHome }}</a>
             </li>
             {% for name, link in siteconfig.menuItems %}
-            <li class="navitem text-center text-base font-header font-medium uppercase {{ page.url | isActiveLink(link) }}">
+            <li class="navitem {{ page.url | isActiveLink(link) }}">
                 <a href="{{ link }}" class="block no-underline">{{ name }}</a>
             </li>
             {% endfor %}

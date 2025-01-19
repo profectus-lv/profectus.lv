@@ -33,9 +33,6 @@ _site/
 # Uncomment the following line if you want to commit all images to source control. This will def speed up build time.
 # !_site/assets/images
 
-# Temporary file for changed pages
-scripts/temp-output/*
-
 # Locally built assets
 assets/css/*-build.css
 assets/js/min.*

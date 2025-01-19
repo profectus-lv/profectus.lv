@@ -6,7 +6,9 @@ export default eleventyConfig => {
         // which file extensions to process
         extensions: "html",
 
-        // Add any other Image utility options here:
+        // filename configuration
+        outputDir: "./_site/images/",
+        urlPath: "/images/",
         filenameFormat: function (id, src, width, format, options) {
             const extension = path.extname(src);
             const name = path.basename(src, extension);

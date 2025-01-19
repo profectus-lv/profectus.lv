@@ -14,10 +14,10 @@ Gaidām uz diskusiju festivāla LAMPA “DOTS” skatuvē, 2018. gada 29. jūnij
 
 Dalībnieki:
 
-– Velta Čebotarenoka, 4. maija deklarācijas kluba prezidente
-– Laimdota Straujuma, Saeimas Ilgtspējīgas attīstības komisijas priekšsēdētāja
-– Andris Pauls-Pāvuls, bijušās Augstākās Padomes un Ministru padomes darbības izmeklēšanas komisijas lietpratējs
-– Līga Leitāne, Latvijas Universitātes Biznesa, vadības un ekonomikas fakultātes lektore, pētniece
-– Dāvids Zalāns, neatkarīgais pētnieciskais žurnālists
+- Velta Čebotarenoka, 4. maija deklarācijas kluba prezidente
+- Laimdota Straujuma, Saeimas Ilgtspējīgas attīstības komisijas priekšsēdētāja
+- Andris Pauls-Pāvuls, bijušās Augstākās Padomes un Ministru padomes darbības izmeklēšanas komisijas lietpratējs
+- Līga Leitāne, Latvijas Universitātes Biznesa, vadības un ekonomikas fakultātes lektore, pētniece
+- Dāvids Zalāns, neatkarīgais pētnieciskais žurnālists
 
 Diskusiju vadīs IT eksperts Dmitrijs Golubevs

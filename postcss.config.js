@@ -1,5 +1,5 @@
 const isProduction = process.env.NODE_ENV === "production";
-const cssnano = require("cssnano");
+import cssnano from "cssnano";
 
 // We want optimization only in production
 if (isProduction) {
@@ -12,6 +12,6 @@ const plugins = {
     cssnano: isProduction ? {} : false
 };
 
-module.exports = {
+export default {
     plugins
 };

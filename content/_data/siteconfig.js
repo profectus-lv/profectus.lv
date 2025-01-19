@@ -1,4 +1,4 @@
-module.exports = {
+export default {
     // Website title, shown in left sidebar and in page title
     title: "Domnīca Profectus",
     // Site URL to generate absolute URLs. Used across the board.

@@ -1,10 +1,10 @@
 import terser from "@rollup/plugin-terser";
-import siteconfig from "../content/_data/siteconfig.js";
+import siteconfig from "./content/_data/siteconfig.js";
 
 const isProduction = process.env.NODE_ENV === "production";
 
 export default {
-    input: "src/index.js",
+    input: "assets/js/index.js",
     treeshake: false,
     output: [
         {

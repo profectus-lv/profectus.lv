@@ -1,4 +1,4 @@
-module.exports = {
+export default {
     // Calendar icon ri:calendar-line by Iconify
     calendar: {
         viewBox: "0 0 24 24",
