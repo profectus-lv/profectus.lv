@@ -8,7 +8,7 @@ A minimalistic Eleventy template, loosely based on [Eleventy Chirpy Blog Templat
 
 ## Current features
 
-- Eleventy 3.0 theme with Tailwind CSS 3
+- Eleventy 3.0 theme with Tailwind CSS 4
 - Fast and minimalistic responsive design
 - Can be used for a text-based (Markdown) blog
 - Logo, site name and main menu are placed on the left sidebar

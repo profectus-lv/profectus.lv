@@ -1,9 +1,14 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@import "./theme.css";
+@source "./safelist.txt";
 
 img {
     @apply rounded-lg shadow-lg block mx-auto h-auto;
+}
+
+img.siteheader {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
 }
 
 /* Left sidebar */
@@ -38,14 +43,14 @@ div.menu ul > li:last-child > a {
 }
 
 div.menu ul > li:last-child::after {
+    @apply bg-accent;
+    @apply border-solid border-r-2 border-r-accent;
     visibility: hidden;
     content: "";
     position: relative;
     right: -7.3rem;
     width: 3px;
-    background-color: theme('colors.accent');
     pointer-events: none;
-    border-right: solid 2px theme('colors.accent');
     transition: top 0.5s ease;
 }
 
@@ -87,7 +92,7 @@ div.menu > * {
 /* Mobile top bar */
 
 #top-bar {
-    @apply border-gray-700 border-b-1 border-opacity-30 shadow-lg;
+    @apply border-gray-700/30 border-b-1 shadow-lg;
     @apply bg-white;
 }
 
@@ -101,7 +106,7 @@ div.menu > * {
 }
 
 #top-bar.hide {
-    @apply transform -translate-y-12;
+    @apply -translate-y-12;
 }
 
 /* SVGs */
@@ -156,7 +161,7 @@ svg.share:hover {
 
 .content {
     @apply border-solid border-b-1 border-gray-700;
-    @apply mt-4 mx-8 lg:mr-32 lg:ml-32;
+    @apply pb-6 mt-4 mx-8 lg:mr-24 lg:ml-24;
     @apply leading-relaxed tracking-wider;
 }
 
@@ -386,7 +391,7 @@ div.readingtime:hover::before {
 /* Post list */
 
 .postlist {
-    @apply mt-4 mx-8 lg:mr-32 lg:ml-32;
+    @apply pb-8 mt-4 mx-8 lg:mr-24 lg:ml-24;
     @apply leading-relaxed tracking-wider;
     @apply font-normal;
 }
@@ -416,7 +421,7 @@ a.postlistheading:hover,
 .postlist .postproperties {
     @apply text-gray-500;
     @apply text-sm font-normal;
-    @apply border-b-1 border-gray-700 border-opacity-20;
+    @apply border-b-1 border-gray-700/20;
 }
 
 

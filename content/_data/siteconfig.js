@@ -7,6 +7,10 @@ export default {
     image: "/images/profectus-logo-wt.png",
     // Image alt text for left sidebar
     imageAlt: "Domnīca Profectus",
+    // Header image fot the landing page
+    header: "",
+    // Image alt text for the header
+    headerAlt: "",
     // Author name, shown in left sidebar, and used in JSON-LD
     author: "Domnīca Profectus",
     // Site description, shown below site image (optional)

@@ -9,7 +9,10 @@ pagination:
   reverse: true
 ---
 
-<div class="postlist pb-8 mt-8 lg:ml-24 lg:mr-24">
+<div class="postlist">
+  {% if siteconfig.header %}
+  <img class="siteheader -mt-4" src="{{ siteconfig.header }}" alt="{{ siteconfig.headerAlt }}" />
+  {% endif %}
 	{% include "postlist.njk" %}
 </div>
 {% include "postpagination.njk" %}

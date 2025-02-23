@@ -7,8 +7,7 @@ if (isProduction) {
 }
 
 const plugins = {
-    tailwindcss: {},
-    autoprefixer: {},
+    "@tailwindcss/postcss": {},
     cssnano: isProduction ? {} : false
 };
 
