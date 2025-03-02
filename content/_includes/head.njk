@@ -15,9 +15,9 @@
 <meta nema="twitter:title" content="{% if title and title != 'Posts' %}{{ title }} - {% endif %}{{ siteconfig.title }}">
 <meta name="twitter:description" content="{% if title and title != 'Posts' %}{{ currentPost.templateContent | safe | striptags | truncate(150) }}{% else %}{{ siteconfig.description }}{% endif %}">
 <meta name="twitter:image" content="{% if image %}{{ image | addHash | absoluteUrl }}{% else %}{{ siteconfig.openGraphDefaultImage | addHash | absoluteUrl }} {% endif %}">
-{% if siteconfig.social.twitter %}
-<meta name="twitter:site" content="@{{ siteconfig.social.twitter }}">
-<meta name="twitter:creator" content="@{{ siteconfig.social.twitter }}">
+{% if siteconfig.social.twitter_x %}
+<meta name="twitter:site" content="@{{ siteconfig.social.twitter_x }}">
+<meta name="twitter:creator" content="@{{ siteconfig.social.twitter_x }}">
 {% endif %}
 {% if siteconfig.pixels.fbApp %}<meta property="fb:app_id" content="{{ siteconfig.pixels.fbApp }}">{% endif %}
 {% if siteconfig.social.fbPage %}<meta property="article:publisher" content="https://www.facebook.com/{{ siteconfig.social.fbPage }}/">{% endif %}

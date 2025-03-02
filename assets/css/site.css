@@ -121,6 +121,16 @@ svg.twitter:hover {
     @apply stroke-accent;
 }
 
+svg.twitter_x {
+    fill: black;
+    stroke: black;
+}
+
+svg.twitter_x:hover {
+    @apply fill-accent;
+    @apply stroke-accent;
+}
+
 svg.facebook {
     fill: #4267b2;
     stroke: #4267b2;

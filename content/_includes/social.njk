@@ -17,10 +17,10 @@
             <path d="{{ inlinesvg.linkedin.path }}" />
         </svg>
     </a>
-    <a href="https://twitter.com/intent/tweet/?text={{ title }}&url={{ page.url | absoluteUrl }}&via={{ siteconfig.twitterHandle }}" target="_blank" rel="noopener" aria-label="Share on Twitter (opens new tab)" class="fill">
+    <a href="https://x.com/intent/post?text={{ title }}&url={{ page.url | absoluteUrl }}&via={{ siteconfig.social.twitter_x }}" target="_blank" rel="noopener" aria-label="Share on X (opens new tab)" class="fill">
         <span></span>
-        <svg role="img" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="{{ inlinesvg.twitter.viewBox }}" class="twitter">
-            <path d="{{ inlinesvg.twitter.path }}" />
+        <svg role="img" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="{{ inlinesvg.twitter_x.viewBox }}" class="twitter_x">
+            <path d="{{ inlinesvg.twitter_x.path }}" />
         </svg>
     </a>
     <span class="mr-1">{{ sitestrings.share }}: </span>

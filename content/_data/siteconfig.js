@@ -69,7 +69,7 @@ export default {
         // Linkedin ID
 //        linkedin: "",
         // Twitter ID
-        twitter: "ProfectusLV",
+        twitter_x: "ProfectusLV",
         // YouTube ID/Channel
 //        youtube: "",
         // Facebook page ID

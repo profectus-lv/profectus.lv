@@ -1,4 +1,5 @@
 <div class="mt-2 mx-8 lg:ml-24">
+	{% if pagination.pages.length > 1 %}
 	<ul class="pagination flex list-none center pb-12 sm:pb-8">
 	    {% if pagination.pageNumber > 0 %}
 	    <li class="mr-3">
@@ -42,4 +43,5 @@
 		</li>
 		{% endif %}
 	</ul>
+	{% endif %}
 </div>
