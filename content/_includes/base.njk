@@ -6,24 +6,14 @@
     </head>
     <body class="tracking-wider overflow-x-hidden sm:overflow-auto">
         <div class="grid grid-flow-col grid-cols-[0_auto] sm:grid-cols-[minmax(auto,_0fr)_auto] h-screen overflow-y-hidden">
-            <div id="sidebar" class="sidebar transition-transform -translate-x-60 sm:translate-x-0 sm:transition-none">
+            <div id="sidebar" class="transition-transform -translate-x-60 sm:translate-x-0 sm:transition-none">
                 {% include "sidebar.njk" %}
             </div>
             <div id="right-area" class="overflow-x-hidden sm:overflow-auto transition-transform sm:translate-x-0 sm:transition-none">
-                <div id="top-bar" class="sm:hidden h-12 z-10 transition-transform duration-200 ease-in sm:sticky top-0">
-                    <div class="grid grid-flow-col grid-cols-auto md:grid-cols-[auto_6rem] max-w-content">
-                        <div id="mobile-top-bar" class="flex leading-12 sm:hidden col-span-2">
-                            <svg viewBox="0 0 100 80" class="block align-middle h-12 leading-12 ml-3 py-3 pt-4" onclick="slideLeftSidebar()">
-                                <rect width="60" height="7"></rect>
-                                <rect y="30" width="60" height="7"></rect>
-                                <rect y="60" width="60" height="7"></rect>
-                            </svg>
-                            <a href="/" class="grow inline">{{ siteconfig.title }}</a>
-                        </div>
-                    </div>
-                    <div></div>
+                <div id="top-bar" class="sm:hidden h-12 z-10 transition-transform duration-200 ease-in top-0">
+                    {% include "topbar.njk" %}
                 </div>
-                <div class="grid grid-flow-col grid-cols-auto xl:grid-cols-[auto_6rem] max-w-content mb-12">
+                <div class="grid grid-flow-col grid-cols-auto xl:grid-cols-[auto_6rem] max-w-content">
                     <main class="min-w-0">
                         {{ content | safe }}
                     </main>
