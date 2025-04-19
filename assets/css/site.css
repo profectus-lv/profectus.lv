@@ -15,16 +15,27 @@ img.siteheader {
 
 .sidebar {
     @apply bg-sidebar-dark;
+    @apply px-2 h-screen w-60;
+}
+
+.sidebar .sitehero {
+    @apply pt-8;
 }
 
 .sidebar .sitetitle {
     @apply text-center font-semibold font-header text-2xl;
     @apply text-white hover:text-accent;
+    @apply pt-6;
+}
+
+.sidebar .sitetitle a {
+    @apply mx-auto;
 }
 
 .sidebar .sitedesc {
     @apply text-center font-normal text-sm;
     @apply text-gray-400;
+    @apply pt-3;
 }
 
 .sidebar .navitem {
@@ -35,6 +46,10 @@ img.siteheader {
 
 .sidebar .navitem.active {
     @apply text-white hover:text-accent;
+}
+
+div.menu ul {
+    @apply pl-0;
 }
 
 div.menu ul > li:last-child > a {
@@ -87,6 +102,14 @@ div.menu ul > li.navitem:nth-last-child(1):last-child:hover::after {
 
 div.menu > * {
     transition: transform 0.4s ease;
+}
+
+.sidebar .sitesocial {
+    @apply gap-5 mx-auto;
+}
+
+.sidebar .sitesocial a {
+    @apply w-5 h-5;
 }
 
 /* Mobile top bar */
@@ -183,6 +206,11 @@ svg.share:hover {
 .content .postproperties {
     @apply text-gray-500;
     @apply text-sm font-normal;
+    @apply mb-4;
+}
+
+.content .postproperties svg {
+    @apply h-5 w-5 mr-2;
 }
 
 .content a {
@@ -431,9 +459,13 @@ a.postlistheading:hover,
 .postlist .postproperties {
     @apply text-gray-500;
     @apply text-sm font-normal;
+    @apply pb-6;
     @apply border-b-1 border-gray-700/20;
 }
 
+.postlist .postproperties svg {
+    @apply h-5 w-5 mr-2;
+}
 
 /* Collection pagination */
 

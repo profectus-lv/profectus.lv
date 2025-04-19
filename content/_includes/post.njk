@@ -4,29 +4,40 @@ layout: base.njk
 
 <div class="content post">
   	<h1>{{ title }}</h1>
-  	<div class="postproperties mb-4 flex flex-wrap gap-x-10 gap-y-4">
+  	<div class="postproperties flex flex-wrap gap-x-10 gap-y-4">
 		<div class="flex flex-none">
-        	<svg role="img" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="{{ inlinesvg.calendar.viewBox }}" class="h-5 w-5 mr-2">
+        	<svg role="img" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="{{ inlinesvg.calendar.viewBox }}">
 	    		<path d="{{ inlinesvg.calendar.path }}" />
         	</svg>
         	{{ page.date | readableDate }}
 		</div>
 		{% if author %}
 		<div class="flex flex-none">
-        	<svg role="img" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="{{ inlinesvg.author.viewBox }}" class="h-5 w-5 mr-2">
+        	<svg role="img" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="{{ inlinesvg.author.viewBox }}">
 	    		<path d="{{ inlinesvg.author.path }}" />
         	</svg>
         	{{ author }}
 		</div>
 		{% endif %}
-		{% if tags.includes("event") %}
-		<div class="flex flex-none h-5 w-5 mr-2">
-			{{ sitestrings.event }}
+		{% for posttag in tags %}
+		{% if not sitetags.notag.includes(posttag) %}
+		{% if sitestrings[posttag] %}{% set posttag = sitestrings[posttag] %}{% endif %}
+		<div class="flex flex-none">
+			<svg role="img" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="{{ inlinesvg.hashtag.viewBox }}">
+				<path d="{{ inlinesvg.hashtag.path }}" />
+			</svg>
+			{{ posttag | capitalize }}
 			<span></span>
 		</div>
-		{% else %}
+		{% endif %}
+		{% endfor %}
+		{% set notime = false %}
+		{% for notimetag in sitetags.notime %}
+		{% if tags.includes(notimetag) %}{% set notime = true %}{% endif %}
+		{% endfor %}
+		{% if not notime %}
 		<div class="flex flex-none readingtime" data-words="{{ content | striptags | wordcount | formatWords }} {{ sitestrings.words }}">
-        	<svg role="img" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="{{ inlinesvg.readingTime.viewBox }}" class="h-5 w-5 mr-2">
+        	<svg role="img" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="{{ inlinesvg.readingTime.viewBox }}">
   	    		<path d="{{ inlinesvg.readingTime.path }}" />
         	</svg>
         	{{ content | striptags | wordcount | readingTime }}

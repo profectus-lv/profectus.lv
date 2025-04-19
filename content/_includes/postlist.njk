@@ -4,29 +4,40 @@
 		<a class="postlistheading" href="{{ post.url | url }}">{{ post.data.title }}</a>
 	</div>
 	<div class="pb-4 postexcerpt">{% if post.data.excerpt %} {{ post.data.excerpt }} {% else %} {% excerpt post %} {% endif %}</div>
-	<div class="pb-6 postproperties flex flex-wrap gap-x-10 gap-y-4">
+	<div class="postproperties flex flex-wrap gap-x-10 gap-y-4">
 		<div class="flex flex-none">
-			<svg role="img" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="{{ inlinesvg.calendar.viewBox }}" class="h-5 w-5 mr-2">
+			<svg role="img" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="{{ inlinesvg.calendar.viewBox }}">
 				<path d="{{ inlinesvg.calendar.path }}" />
 			</svg>
 			{{ post.date | readableDate }}
 		</div>
 		{% if post.data.author %}
 		<div class="flex flex-none">
-        	<svg role="img" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="{{ inlinesvg.author.viewBox }}" class="h-5 w-5 mr-2">
+        	<svg role="img" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="{{ inlinesvg.author.viewBox }}">
 	    		<path d="{{ inlinesvg.author.path }}" />
         	</svg>
         	{{ post.data.author }}
 		</div>
 		{% endif %}
-		{% if post.data.tags.includes("event") %}
-		<div class="flex flex-none h-5 w-5 mr-2">
-			{{ sitestrings.event }}
+		{% for posttag in post.data.tags %}
+		{% if not sitetags.notag.includes(posttag) %}
+		{% if sitestrings[posttag] %}{% set posttag = sitestrings[posttag] %}{% endif %}
+		<div class="flex flex-none">
+			<svg role="img" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="{{ inlinesvg.hashtag.viewBox }}">
+				<path d="{{ inlinesvg.hashtag.path }}" />
+			</svg>
+			{{ posttag | capitalize }}
 			<span></span>
 		</div>
-		{% else %}
+		{% endif %}
+		{% endfor %}
+		{% set notime = false %}
+		{% for notimetag in sitetags.notime %}
+		{% if post.data.tags.includes(notimetag) %}{% set notime = true %}{% endif %}
+		{% endfor %}
+		{% if not notime %}
 		<div class="flex flex-none readingtime" data-words="{{ post.templateContent | striptags | wordcount | formatWords }} {{ sitestrings.words }}">
-			<svg role="img" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="{{ inlinesvg.readingTime.viewBox }}" class="h-5 w-5 mr-2">
+			<svg role="img" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="{{ inlinesvg.readingTime.viewBox }}">
 				<path d="{{ inlinesvg.readingTime.path }}" />
 			</svg>
 			{{ post.templateContent | striptags | wordcount | readingTime }}

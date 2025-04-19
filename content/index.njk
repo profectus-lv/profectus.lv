@@ -1,6 +1,5 @@
 ---
 layout: base.njk
-title: Posts
 sitemapPriority: 1
 pagination:
   data: collections.posts
@@ -13,6 +12,7 @@ pagination:
   {% if siteconfig.header %}
   <img class="siteheader -mt-4" src="{{ siteconfig.header }}" alt="{{ siteconfig.headerAlt }}" />
   {% endif %}
+  {% if title %}<h1>{{ title }}</h1>{% endif %}
 	{% include "postlist.njk" %}
 </div>
 {% include "postpagination.njk" %}

@@ -11,7 +11,7 @@ export default {
     header: "",
     // Image alt text for the header
     headerAlt: "",
-    // Author name, shown in left sidebar, and used in JSON-LD
+    // Author name, used in JSON-LD
     author: "Domnīca Profectus",
     // Site description, shown below site image (optional)
     description: "Stiprinām demokrātiju un pilsonisko sabiedrību Latvijā un veicinām tās ilgtspēju",

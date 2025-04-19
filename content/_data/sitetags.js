@@ -1,5 +1,9 @@
 export default {
-    event: {
-        notime: true,
-    }
+    notime: [
+        "event"
+    ],
+    notag: [
+        "article",
+        "posts"
+    ]
 };

@@ -3,7 +3,7 @@
     {
         "@context": "https://schema.org",
         "@type": "Article",
-        "headline": "{% if title and title != 'Posts' %}{{ title }} - {% endif %}{{ siteconfig.title }}",
+        "headline": "{% if title %}{{ title }} - {% endif %}{{ siteconfig.title }}",
         "image": ["{% if image %}{{ image | absoluteUrl }}{% else %}{{ siteconfig.openGraphDefaultImage | absoluteUrl }}{% endif %}"],
         "author": {
             "@type": "Person",
@@ -11,6 +11,6 @@
         },
         "mainEntityOfPage": "{{ page.url | absoluteUrl }}",
         "datePublished": "{{ page.date | isodate }}",
-        "description": "{% if title and title != 'Posts' %}{{ currentPost.templateContent | safe | striptags | truncate(150) }}{% else %}{{ siteconfig.description }}{% endif %}"
+        "description": "{% if title %}{{ currentPost.templateContent | safe | striptags | truncate(150) }}{% else %}{{ siteconfig.description }}{% endif %}"
     }
 </script>

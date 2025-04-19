@@ -9,7 +9,7 @@ pagination:
 ---
 
 <div class="postlist">
-  <h1>{{ title }}</h1>
+  {% if title %}<h1>{{ title }}</h1>{% endif %}
 	{% include "postlist.njk" %}
 </div>
 {% include "postpagination.njk" %}

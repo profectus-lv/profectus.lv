@@ -1,17 +1,17 @@
-<div id="sidebar-contents" class="sidebar grid-cols-1 gap-4 px-2 h-screen grid w-60">
-    <div class="pt-8">
+<div id="sidebar-contents" class="sidebar grid grid-cols-1 gap-4">
+    <div class="sitehero">
         <a href="/" aria-label="Home link">
             <img alt="{{ siteconfig.imageAlt }}" src="{{ siteconfig.image }}" class="" width="192px" loading="eager"/>
         </a>
-        <div class="sitetitle pt-6">
-            <a href="/" class="mx-auto">{{ siteconfig.title }}</a>
+        <div class="sitetitle">
+            <a href="/">{{ siteconfig.title }}</a>
         </div>
-        <div class="sitedesc pt-3">
+        <div class="sitedesc">
             {{ siteconfig.description }}
         </div>
     </div>
     <div class="menu">
-        <ul class="list-none pl-0">
+        <ul class="list-none">
             <li class="navitem {{ page.url | isHomeLink('/') }}">
                 <a href="/" class="block no-underline">{{ siteconfig.menuHome }}</a>
             </li>
@@ -22,9 +22,9 @@
             {% endfor %}
         </ul>
     </div>
-    <div class="grid grid-cols-{{ siteconfig.social | length }} gap-5 mx-auto">
+    <div class="sitesocial grid grid-cols-{{ siteconfig.social | length }}">
         {% if siteconfig.social.linkedin %}
-        <a href="https://linkedin.com/in/{{ siteconfig.social.linkedin }}" aria-label="Open LinkedIn profile" target="_blank" class="w-5 h-5" rel="noopener">
+        <a href="https://linkedin.com/in/{{ siteconfig.social.linkedin }}" aria-label="Open LinkedIn profile" target="_blank" rel="noopener">
             <svg role="img" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="{{ inlinesvg.linkedin.viewBox }}">
                 <title>LinkedIn</title>
                 <path d="{{ inlinesvg.linkedin.path }}" />
@@ -32,7 +32,7 @@
         </a>
         {% endif %}
         {% if siteconfig.social.github %}
-        <a href="https://github.com/{{ siteconfig.social.github }}" aria-label="Open GitHub profile" target="_blank" class="w-5 h-5" rel="noopener">
+        <a href="https://github.com/{{ siteconfig.social.github }}" aria-label="Open GitHub profile" target="_blank" rel="noopener">
             <svg role="img" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="{{ inlinesvg.github.viewBox }}">
                 <title>GitHub</title>
                 <path d="{{ inlinesvg.github.path }}" />
@@ -40,7 +40,7 @@
         </a>
         {% endif %}
         {% if siteconfig.social.twitter_x %}
-        <a href="https://x.com/{{ siteconfig.social.twitter_x }}" aria-label="Open X profile" target="_blank" class="w-5 h-5" rel="noopener">
+        <a href="https://x.com/{{ siteconfig.social.twitter_x }}" aria-label="Open X profile" target="_blank" rel="noopener">
             <svg role="img" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="{{ inlinesvg.twitter_x.viewBox }}">
                 <title>X</title>
                 <path d="{{ inlinesvg.twitter_x.path }}" />
@@ -48,15 +48,15 @@
         </a>
         {% endif %}
         {% if siteconfig.social.youtube %}
-        <a href="https://www.youtube.com/channel/{{ siteconfig.social.youtube }}" aria-label="Open YouTube channel" target="_blank" class="w-5 h-5" rel="noopener">
+        <a href="https://www.youtube.com/channel/{{ siteconfig.social.youtube }}" aria-label="Open YouTube channel" target="_blank" rel="noopener">
             <svg role="img" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="{{ inlinesvg.youtube.viewBox }}">
                 <title>YouTube</title> 
-                <path d="{{ inlinesvg.youtube.path }}" id="Shape"></path>
+                <path d="{{ inlinesvg.youtube.path }}" />
             </svg>
         </a>
         {% endif %}
         {% if siteconfig.social.fbPage %}
-        <a href="https://facebook.com/{{ siteconfig.social.fbPage }}" aria-label="Open Facebook page" target="_blank" class="w-5 h-5" rel="noopener">
+        <a href="https://facebook.com/{{ siteconfig.social.fbPage }}" aria-label="Open Facebook page" target="_blank" rel="noopener">
             <svg role="img" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="{{ inlinesvg.facebookInverse.viewBox }}">
                 <title>Facebook page</title>
                 <path d="{{ inlinesvg.facebookInverse.path }}" />
@@ -64,7 +64,7 @@
         </a>
         {% endif %}
         {% if siteconfig.social.fbProfile %}
-        <a href="https://facebook.com/{{ siteconfig.social.fbProfile }}" aria-label="Open Facebook profile" target="_blank" class="w-5 h-5" rel="noopener">
+        <a href="https://facebook.com/{{ siteconfig.social.fbProfile }}" aria-label="Open Facebook profile" target="_blank" rel="noopener">
             <svg role="img" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="{{ inlinesvg.facebook.viewBox }}">
                 <title>Facebook</title>
                 <path d="{{ inlinesvg.facebook.path }}" />
@@ -72,7 +72,7 @@
         </a>
         {% endif %}
         {% if siteconfig.social.mastodon %}
-        <a href="{{ siteconfig.social.mastodon }}" aria-label="Open Mastodon profile" target="_blank" class="w-5 h-5" rel="me noopener">
+        <a href="{{ siteconfig.social.mastodon }}" aria-label="Open Mastodon profile" target="_blank" rel="me noopener">
             <svg role="img" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="{{ inlinesvg.mastodon.viewBox }}">
                 <title>Mastodon</title>
                 <path d="{{ inlinesvg.mastodon.path }}" />
@@ -80,7 +80,7 @@
         </a>
         {% endif %}
         {% if siteconfig.social.bluesky %}
-        <a href="{{ siteconfig.social.bluesky }}" aria-label="Open Bluesky profile" target="_blank" class="w-5 h-5" rel="me noopener">
+        <a href="{{ siteconfig.social.bluesky }}" aria-label="Open Bluesky profile" target="_blank" rel="me noopener">
             <svg role="img" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="{{ inlinesvg.bluesky.viewBox }}">
                 <title>Bluesky</title>
                 <path d="{{ inlinesvg.bluesky.path }}" />
