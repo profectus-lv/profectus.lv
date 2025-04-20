@@ -71,6 +71,22 @@
             </svg>
         </a>
         {% endif %}
+        {% if siteconfig.social.instagram %}
+        <a href="https://instagram.com/{{ siteconfig.social.instagram }}" aria-label="Open Instagram profile" target="_blank" rel="noopener">
+            <svg role="img" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="{{ inlinesvg.instagram.viewBox }}">
+                <title>Instagram</title>
+                <path d="{{ inlinesvg.instagram.path }}" />
+            </svg>
+        </a>
+        {% endif %}
+        {% if siteconfig.social.threads %}
+        <a href="https://threads.net/@{{ siteconfig.social.threads }}" aria-label="Open Threads profile" target="_blank" rel="noopener">
+            <svg role="img" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="{{ inlinesvg.threads.viewBox }}">
+                <title>Threads</title>
+                <path d="{{ inlinesvg.threads.path }}" />
+            </svg>
+        </a>
+        {% endif %}
         {% if siteconfig.social.mastodon %}
         <a href="{{ siteconfig.social.mastodon }}" aria-label="Open Mastodon profile" target="_blank" rel="me noopener">
             <svg role="img" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="{{ inlinesvg.mastodon.viewBox }}">

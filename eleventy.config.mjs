@@ -2,6 +2,16 @@ import { URL } from "url";
 import siteconfig from "./content/_data/siteconfig.js";
 import markdownIt from "markdown-it";
 import markdownItAnchor from "markdown-it-anchor";
+import markdownItDeflist from "markdown-it-deflist";
+import { full as markdownItEmoji} from "markdown-it-emoji";
+import markdownItFootnote from "markdown-it-footnote";
+import markdownItMark from "markdown-it-mark";
+import markdownItPrism from "markdown-it-prism";
+import markdownItSub from "markdown-it-sub";
+import markdownItSup from "markdown-it-sup";
+import markdownItTasklists from "markdown-it-task-lists";
+import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
+import embedEverything from "eleventy-plugin-embed-everything";
 import excerpt from "./_11ty/excerpt.js";
 import readingInfo from "./_11ty/reading-info.js";
 import css from "./_11ty/css.js";
@@ -20,8 +30,23 @@ export default eleventyConfig => {
             xhtmlOut: true,
             linkify: true,
             typographer: true
-        }).use(markdownItAnchor)
+        })
+        .use(markdownItAnchor)
+        .use(markdownItDeflist)
+        .use(markdownItEmoji)
+        .use(markdownItFootnote)
+        .use(markdownItMark)
+        .use(markdownItPrism)
+        .use(markdownItSub)
+        .use(markdownItSup)
+        .use(markdownItTasklists)
     );
+
+    // Syntax highlighting plugin
+    eleventyConfig.addPlugin(syntaxHighlight);
+
+    // Embed common media formats
+    eleventyConfig.addPlugin(embedEverything);
 
     // Define passthrough for assets
     eleventyConfig.addPassthroughCopy("assets");

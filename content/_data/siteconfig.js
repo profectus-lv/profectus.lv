@@ -79,7 +79,11 @@ export default {
         // Mastodon profile link
 //        mastodon: "",
         // Bluesky profile link
-//        bluesky: ""
+//        bluesky: "",
+        // Instagram profile ID
+//        instagram: "-",
+        // Threads profile ID
+//        threads: "-",
     },
     // Analytics pixels and other IDs for sharing and tracking
     // (optional)

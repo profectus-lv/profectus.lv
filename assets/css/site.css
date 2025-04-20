@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "./theme.css";
+@import "./prism-okaidia.css";
 @source "./safelist.txt";
 
 img {
@@ -136,58 +137,67 @@ div.menu > * {
 
 svg.twitter {
     fill: #1da1f2;
-    stroke: #1da1f2;
 }
 
 svg.twitter:hover {
     @apply fill-accent;
-    @apply stroke-accent;
 }
 
 svg.twitter_x {
     fill: black;
-    stroke: black;
 }
 
 svg.twitter_x:hover {
     @apply fill-accent;
-    @apply stroke-accent;
 }
 
 svg.facebook {
     fill: #4267b2;
-    stroke: #4267b2;
 }
 
 svg.facebook:hover {
     @apply fill-accent;
-    @apply stroke-accent;
 }
 
 svg.linkedin {
     fill: #0072b1;
-    stroke: #0072b1;
 }
 
 svg.linkedin:hover {
     @apply fill-accent;
-    @apply stroke-accent;
+}
+
+svg.bluesky {
+    fill: #0a7aff;
+}
+
+svg.bluesky:hover {
+    @apply fill-accent;
+}
+
+svg.threads {
+    fill: black;
+}
+
+svg.threads:hover {
+    @apply fill-accent;
 }
 
 svg.share:hover {
     @apply fill-accent;
-    @apply stroke-accent;
 }
 
 .sidebar svg {
     @apply fill-gray-400;
-    @apply stroke-gray-400;
     @apply transition duration-200 ease-in;
 }
 
 .sidebar svg:hover {
     @apply fill-accent;
-    @apply stroke-accent;
+}
+
+.social svg {
+    @apply transition duration-200 ease-in;
 }
 
 /* Content area */
@@ -210,7 +220,7 @@ svg.share:hover {
 }
 
 .content .postproperties svg {
-    @apply h-5 w-5 mr-2;
+    @apply h-5 w-5 mr-1;
 }
 
 .content a {
@@ -233,7 +243,7 @@ svg.share:hover {
 }
 
 .content blockquote {
-    @apply border-l-2 border-gray-400;
+    @apply border-l-4 border-accent;
     @apply my-4;
 }
 
@@ -267,12 +277,40 @@ svg.share:hover {
     @apply pl-10;
 }
 
+.content li ol,
+.content li ul {
+    @apply pl-5;
+}
+
+.content ul.contains-task-list {
+    @apply list-none;
+    @apply pl-5;
+}
+
+.content input.task-list-item-checkbox {
+    @apply appearance-none inline-grid place-content-center;
+    @apply w-4 h-4;
+    @apply bg-gray-100 checked:bg-accent;
+    @apply border-accent rounded-sm border-2;
+    @apply before:text-white before:-mb-0.5;
+    @apply before:content-['\00a0'] checked:before:content-['\2713']
+}
+
+dt {
+    @apply font-bold;
+}
+
+dd {
+    @apply pl-5 pb-2;
+}
+
 .content table {
-    @apply table-auto w-full;
+    @apply table-auto w-full mt-2 mb-2;
 }
 
 .content table thead tr {
-    @apply leading-12;
+    @apply leading-10;
+    @apply border-b-2 border-gray-400;
 }
 
 .content table tbody tr:nth-child(even) {
@@ -290,6 +328,10 @@ svg.share:hover {
 .content.page a:hover {
     @apply text-accent;
     @apply underline;
+}
+
+.content .footnotes p {
+    @apply pt-0 pb-0
 }
 
 /* Social links for content */
@@ -464,7 +506,7 @@ a.postlistheading:hover,
 }
 
 .postlist .postproperties svg {
-    @apply h-5 w-5 mr-2;
+    @apply h-5 w-5 mr-1;
 }
 
 /* Collection pagination */

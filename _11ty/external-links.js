@@ -7,6 +7,7 @@ import siteconfig from "../content/_data/siteconfig.js";
 const checkHrefs = (href) => {
     return (
         !href.startsWith("/") &&
+        !href.startsWith("#") &&
         !href.startsWith(siteconfig.url) &&
         !href.startsWith("about:blank")
     );
