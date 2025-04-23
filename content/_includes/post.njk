@@ -4,6 +4,7 @@ layout: base.njk
 
 <div class="content post">
   	<h1>{{ title }}</h1>
+	{% if siteconfig.features.postproperties %}
   	<div class="postproperties flex flex-wrap gap-x-10 gap-y-4">
 		<div class="flex flex-none">
         	<svg role="img" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="{{ inlinesvg.calendar.viewBox }}">
@@ -45,28 +46,31 @@ layout: base.njk
 		</div>
 		{% endif %}
 	</div>
+	{% endif %}
 	{% if image %}
-	<img class="-mt-3 mb-8" src="{{ image }}" alt="{{ imageAlt }}" />
+	<img class="postimage" src="{{ image }}" alt="{{ imageAlt }}" />
 	{% endif %}
 	<div class="incontent">
   		{{ content | safe }}
 	</div>
-  	{% include "social.njk" %}
-	<div class="postbreak block w-full h-1"></div>
-	<div class="additions flex flex-col sm:flex-row gap-3 mt-6 px-4 w-full">	
+  	{% if siteconfig.features.sharer %}{% include "social.njk" %}{% endif %}
+	{% if siteconfig.features.prevnext %}
+	<div class="postbreak"></div>
+	<div class="additions flex flex-col sm:flex-row gap-3">	
 		{% set previousPost = collections.posts | getPreviousCollectionItem(page) %}	
 		{% set nextPost = collections.posts | getNextCollectionItem(page) %}	
 	  	<a href="{{ previousPost.url }}" class="flex-1">	
-			<div class="h-24{% if previousPost.url %} prevnextyes{% else %} prevnextno{% endif %}">	
-				<span class="prevnexttitle block mt-1 mb-3">{{ sitestrings.older }}</span>	
+			<div class="{% if previousPost.url %} prevnextyes{% else %} prevnextno{% endif %}">	
+				<span class="prevnexttitle">{{ sitestrings.older }}</span>	
 				<span class="prevnextlink">{% if not previousPost.url %} - {% else %}{{ previousPost.data.title | truncate(40) }}{% endif %}</span>	
 			</div>	
 		</a>	
 	  	<a href="{{ nextPost.url }}" class="flex-1">	
-		  	<div class="h-24{% if nextPost.url %} prevnextyes{% else %} prevnextno{% endif %} overflow-auto">	
-				<span class="prevnexttitle block mt-1 mb-3">{{ sitestrings.newer }}</span>	
+		  	<div class="{% if nextPost.url %} prevnextyes{% else %} prevnextno{% endif %}">	
+				<span class="prevnexttitle">{{ sitestrings.newer }}</span>	
 				<span class="prevnextlink">{% if not nextPost.url %} - {% else %}{{ nextPost.data.title | truncate(40) }}{% endif %}</span>	
 			</div>	
 		</a>	
 	</div>
+	{% endif %}
 </div>

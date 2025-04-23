@@ -2,23 +2,29 @@
 <html lang="{{ siteconfig.locale | truncate(2, true, "") }}">
     <head>
         {% include "head.njk" %}
-        {% include "json-ld.njk" %}
+        {% if siteconfig.features.json_ld %}{% include "json-ld.njk" %}{% endif %}
     </head>
-    <body class="tracking-wider overflow-x-hidden sm:overflow-auto">
-        <div class="grid grid-flow-col grid-cols-[0_auto] sm:grid-cols-[minmax(auto,_0fr)_auto] h-screen overflow-y-hidden">
-            <div id="sidebar" class="transition-transform -translate-x-60 sm:translate-x-0 sm:transition-none">
+    <body>
+    {% if siteconfig.features.base == "primitive" %}
+        {{ content | safe }}
+    {% else %}
+        <div class="grid grid-flow-col grid-cols-[0_auto] sm:grid-cols-[minmax(auto,_0fr)_auto] h-screen">
+            <div id="sidebar" class="-translate-x-60 sm:translate-x-0">
                 {% include "sidebar.njk" %}
             </div>
-            <div id="right-area" class="overflow-x-hidden sm:overflow-auto transition-transform sm:translate-x-0 sm:transition-none">
-                <div id="top-bar" class="sm:hidden h-12 z-10 transition-transform duration-200 ease-in top-0">
+            <div id="right-area">
+                {% if siteconfig.features.topbar %}
+                <div {% if siteconfig.features.topbar == "dynamic" %}id="top-bar"{% endif %} class="top-bar">
                     {% include "topbar.njk" %}
                 </div>
+                {% endif %}
                 <div class="grid grid-flow-col grid-cols-auto xl:grid-cols-[auto_6rem] max-w-content">
-                    <main class="min-w-0">
+                    <main>
                         {{ content | safe }}
                     </main>
                 </div>
             </div>
         </div>
+    {% endif %}
     </body>
 </html>

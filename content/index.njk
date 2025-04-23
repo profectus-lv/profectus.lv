@@ -10,7 +10,7 @@ pagination:
 
 <div class="postlist">
   {% if siteconfig.header %}
-  <img class="siteheader -mt-4" src="{{ siteconfig.header }}" alt="{{ siteconfig.headerAlt }}" />
+  <img class="siteheader" src="{{ siteconfig.header }}" alt="{{ siteconfig.headerAlt }}" />
   {% endif %}
   {% if title %}<h1>{{ title }}</h1>{% endif %}
 	{% include "postlist.njk" %}

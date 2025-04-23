@@ -32,7 +32,7 @@
 {% endfor %}
 {% if siteconfig.webmanifest %}<link rel="manifest" href="/site.webmanifest" crossorigin="use-credentials">{% endif %}
 <link rel="canonical" href="{{ page.url | absoluteUrl }}" />
-<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+{% if siteconfig.features.sitemap %}<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">{% endif %}
 {% if siteconfig.pixels.fbPixel %}<link rel="preconnect" href="https://connect.facebook.net">{% endif %}
 {% if siteconfig.fonts %}
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -41,7 +41,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family={{ siteconfig.fonts.body.family }}:ital,wght@{{ siteconfig.fonts.body.weights }}&family={{ siteconfig.fonts.header.family }}:ital,wght@{{ siteconfig.fonts.header.weights }}{% if siteconfig.fonts.swap %}&display=swap{% endif %}">
 {% endif %}
 <link rel="stylesheet" href="{{ '/assets/css/site-build.css' | addHash }}">
-<script src="{{ '/assets/js/min.js' | addHash }}" type="module"></script>
+{% if siteconfig.features.js %}<script src="{{ '/assets/js/min.js' | addHash }}" type="module"></script>{% endif %}
 {% if siteconfig.pixels.googleTag %}
 {% include "google-tag.njk" %}
 {% endif %}

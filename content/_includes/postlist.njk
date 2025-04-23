@@ -1,9 +1,10 @@
 {% for post in posts %}
 <div>
-	<div class="pb-4 pt-4">
-		<a class="postlistheading" href="{{ post.url | url }}">{{ post.data.title }}</a>
+	<div class="postlistheading">
+		<a href="{{ post.url | url }}">{{ post.data.title }}</a>
 	</div>
-	<div class="pb-4 postexcerpt">{% if post.data.excerpt %} {{ post.data.excerpt }} {% else %} {% excerpt post %} {% endif %}</div>
+	<div class="postexcerpt">{% if post.data.excerpt %} {{ post.data.excerpt }} {% else %} {% excerpt post %} {% endif %}</div>
+	{% if siteconfig.features.postproperties %}
 	<div class="postproperties flex flex-wrap gap-x-10 gap-y-4">
 		<div class="flex flex-none">
 			<svg role="img" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="{{ inlinesvg.calendar.viewBox }}">
@@ -45,5 +46,6 @@
 		</div>
 		{% endif %}
 	</div>
+	{% endif %}
 </div>
 {% endfor %}

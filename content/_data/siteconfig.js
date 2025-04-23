@@ -94,5 +94,23 @@ export default {
 //        fbPixel: "",
         // Google Analytics ID
         googleTag: "UA-16574330-6",
+    },
+    features: {
+        // Should the postproperties be displayed?
+        postproperties: true,
+        // Should JSON-LD be compiled and included?
+        json_ld: true,
+        // Should sitemap be included?
+        sitemap: true,
+        // Should the local javascript be included?
+        js: true,
+        // Should sharer be enabled on pages and posts?
+        sharer: true,
+        // Should previous/next post navigation be enabled on posts?
+        prevnext: true,
+        // Regular base template (regular) or alternative base template without sidebar and other features (primitive)
+        base: "regular",
+        // Top bar: none (false), always present (static), appearing and disappearing on scroll (dynamic)
+        topbar: "dynamic",
     }
 };
