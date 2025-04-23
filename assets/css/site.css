@@ -34,6 +34,10 @@ img.siteheader {
     @apply pt-8;
 }
 
+.sidebar .sitehero img {
+    @apply max-h-48 max-w-56 object-cover;
+}
+
 .sidebar .sitetitle {
     @apply font-semibold text-2xl;
     @apply text-white hover:text-accent;
@@ -127,7 +131,7 @@ div.menu > * {
 
 .top-bar {
     @apply sm:hidden;
-    @apply border-gray-700/30 border-b-1 shadow-lg;
+    @apply border-accent border-b-1 shadow-lg;
     @apply bg-white;
     @apply top-0 h-12 z-10;
     @apply transition-transform duration-200 ease-in;
@@ -213,8 +217,8 @@ main {
 }
 
 .content a {
-    @apply text-gray-500 hover:text-accent;
-    @apply underline hover:underline;
+    @apply text-accent;
+    @apply underline hover:no-underline;
 }
 
 .content blockquote {
@@ -256,7 +260,7 @@ main {
     @apply bg-gray-100 checked:bg-accent;
     @apply border-accent rounded-sm border-2;
     @apply before:text-white before:-mb-0.5;
-    @apply before:content-['\00a0'] checked:before:content-['\2713']
+    @apply before:content-['\00a0'] checked:before:content-['\2713'];
 }
 
 dt {
@@ -269,11 +273,12 @@ dd {
 
 .content table {
     @apply table-auto w-full mt-2 mb-2;
+    @apply border-b-1 border-accent;
 }
 
 .content table thead tr {
     @apply leading-10;
-    @apply border-b-2 border-gray-400;
+    @apply border-b-1 border-accent;
 }
 
 .content table tbody tr:nth-child(even) {
@@ -287,8 +292,11 @@ dd {
     @apply max-w-full;
 }
 
+.content hr {
+    @apply text-accent;
+}
 .content .footnotes p {
-    @apply pt-0 pb-0
+    @apply pt-0 pb-0;
 }
 
 /* Social links for content */
@@ -365,7 +373,7 @@ svg.threads {
 
 .postbreak {
     @apply block w-full h-1;
-    @apply border-solid border-b-1 border-gray-700/30;
+    @apply border-solid border-b-1 border-accent;
 
 }
 
@@ -379,7 +387,7 @@ svg.threads {
 
 .additions div {
     @apply text-gray-700 bg-white;
-    @apply border-solid border-1 border-gray-700;
+    @apply border-solid border-1 border-gray-400;
     @apply h-24 overflow-auto;
     @apply leading-pagination text-center no-underline hover:no-underline;
 }
@@ -440,18 +448,13 @@ div.readingtime:hover::before {
 }
 
 .postlist .postlistitem {
-    @apply border-b-1 border-gray-700/30;
+    @apply border-b-1 border-accent;
 }
 
 .postlist h1 {
     @apply text-gray-900;
     @apply text-center text-3xl font-bold font-header;
     @apply py-6;
-}
-
-.postlist a:hover {
-    @apply text-accent;
-    @apply underline;
 }
 
 .postlist .postlistheading {
@@ -494,7 +497,7 @@ ul.pagination li {
 }
 
 ul.pagination div {
-    @apply border-1 border-gray-700 rounded-full;
+    @apply border-1 border-accent rounded-full;
     @apply bg-white hover:text-accent;
     @apply text-center;
     @apply h-8 w-8;

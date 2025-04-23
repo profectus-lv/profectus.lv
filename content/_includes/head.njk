@@ -7,13 +7,13 @@
 <meta property="og:url" content="{{ page.url | absoluteUrl }}">
 <meta property="og:type" content="{% if title %}article{% else %}website{% endif %}">
 <meta property="og:title" content="{% if title %}{{ title }} - {% endif %}{{ siteconfig.title }}">
-<meta property="og:description" content="{% if title %}{{ currentPost.templateContent | safe | striptags | truncate(150) }}{% else %}{{ siteconfig.description }}{% endif %}">
+{% if siteconfig.features.og_description %}<meta property="og:description" content="{% if title %}{{ currentPost.templateContent | safe | striptags | truncate(150) }}{% else %}{{ siteconfig.description }}{% endif %}">{% endif %}
 <meta property="og:image" content="{% if image %}{{ image | addHash  | absoluteUrl }}{% else %}{{ siteconfig.openGraphDefaultImage | addHash | absoluteUrl }}{% endif %}">
 <meta property="og:image:url" content="{% if image %}{{ image | addHash  | absoluteUrl }}{% else %}{{ siteconfig.openGraphDefaultImage | addHash | absoluteUrl }}{% endif %}">
 <meta property="og:locale" content="{{ siteconfig.locale }}" />
 <meta name="twitter:card" content="summary_large_image">
 <meta nema="twitter:title" content="{% if title %}{{ title }} - {% endif %}{{ siteconfig.title }}">
-<meta name="twitter:description" content="{% if title %}{{ currentPost.templateContent | safe | striptags | truncate(150) }}{% else %}{{ siteconfig.description }}{% endif %}">
+{% if siteconfig.features.og_description %}<meta name="twitter:description" content="{% if title %}{{ currentPost.templateContent | safe | striptags | truncate(150) }}{% else %}{{ siteconfig.description }}{% endif %}">{% endif %}
 <meta name="twitter:image" content="{% if image %}{{ image | addHash | absoluteUrl }}{% else %}{{ siteconfig.openGraphDefaultImage | addHash | absoluteUrl }} {% endif %}">
 {% if siteconfig.social.twitter_x %}
 <meta name="twitter:site" content="@{{ siteconfig.social.twitter_x }}">

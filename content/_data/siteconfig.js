@@ -98,6 +98,8 @@ export default {
     features: {
         // Should the postproperties be displayed?
         postproperties: true,
+        // Should description also be put in OpenGraph and Twitter meta tags?
+        og_description: true,
         // Should JSON-LD be compiled and included?
         json_ld: true,
         // Should sitemap be included?
