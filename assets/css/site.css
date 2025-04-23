@@ -3,6 +3,12 @@
 @import "./prism-okaidia.css";
 @source "./safelist.txt";
 
+.h-screen {
+    @apply min-h-screen max-h-screen overflow-x-hidden overflow-y-hidden;
+}
+
+/* Images */
+
 img {
     @apply rounded-lg shadow-lg block mx-auto h-auto;
 }
@@ -132,12 +138,9 @@ div.menu > * {
 }
 
 .top-bar a {
-    @apply align-middle leading-12 text-2xl text-center font-semibold font-header;
-}
-
-.top-bar a:hover {
-    @apply text-accent;
-    @apply underline;
+    @apply align-middle text-center leading-12;
+    @apply text-2xl font-semibold font-header hover:underline;
+    @apply hover:text-accent;
 }
 
 .top-bar.hide {
@@ -147,7 +150,7 @@ div.menu > * {
 /* Content area */
 
 #right-area {
-    @apply overflow-x-hidden sm:overflow-auto;
+    @apply overflow-x-hidden overflow-y-auto;
     @apply transition-transform sm:translate-x-0 sm:transition-none;
 }
 
@@ -156,7 +159,7 @@ main {
 }
 
 .content {
-    @apply pb-14 mt-4 mx-8 lg:mr-24 lg:ml-24;
+    @apply pb-16 mt-4 mx-8 lg:mr-24 lg:ml-24;
     @apply leading-relaxed tracking-wider;
 }
 
@@ -179,34 +182,6 @@ main {
     @apply h-5 w-5 mr-1;
 }
 
-.content a {
-    @apply text-gray-500;
-    @apply underline;
-}
-
-.content a:hover {
-    @apply text-accent;
-    @apply underline;
-}
-
-.content p {
-    @apply pb-4 pt-2;
-    @apply font-normal;
-}
-
-.content p strong {
-    @apply font-bold;
-}
-
-.content blockquote {
-    @apply border-l-4 border-accent;
-    @apply my-4;
-}
-
-.content blockquote > p {
-    @apply ml-4 py-2;
-}
-
 .content h1 {
     @apply text-gray-900;
     @apply text-3xl font-bold font-header;
@@ -219,8 +194,36 @@ main {
 }
 
 .content h3 {
+    @apply text-xl font-medium font-header;
+    @apply mt-6;
+}
+
+.content h4 {
     @apply text-lg font-medium font-header;
     @apply mt-6;
+}
+
+.content p {
+    @apply pb-4 pt-2;
+    @apply font-normal text-base;
+}
+
+.content p strong {
+    @apply font-bold;
+}
+
+.content a {
+    @apply text-gray-500 hover:text-accent;
+    @apply underline hover:underline;
+}
+
+.content blockquote {
+    @apply border-l-4 border-accent;
+    @apply my-4;
+}
+
+.content blockquote > p {
+    @apply ml-4 py-2;
 }
 
 .content ol {
@@ -282,12 +285,6 @@ dd {
 
 .content img {
     @apply max-w-full;
-}
-
-.content.post > p > a:hover,
-.content.page a:hover {
-    @apply text-accent;
-    @apply underline;
 }
 
 .content .footnotes p {
@@ -377,22 +374,14 @@ svg.threads {
 }
 
 .additions a {
-    @apply no-underline;
-}
-
-.additions a:hover {
-    @apply no-underline;
+    @apply no-underline hover:no-underline;
 }
 
 .additions div {
     @apply text-gray-700 bg-white;
     @apply border-solid border-1 border-gray-700;
     @apply h-24 overflow-auto;
-    @apply leading-pagination text-center no-underline;
-}
-
-.additions div:hover {
-    @apply no-underline;
+    @apply leading-pagination text-center no-underline hover:no-underline;
 }
 
 .prevnextyes {
@@ -450,14 +439,17 @@ div.readingtime:hover::before {
     @apply font-normal;
 }
 
+.postlist .postlistitem {
+    @apply border-b-1 border-gray-700/30;
+}
+
 .postlist h1 {
     @apply text-gray-900;
     @apply text-center text-3xl font-bold font-header;
     @apply py-6;
 }
 
-.postlist a:hover,
-.postlistheading a:hover {
+.postlist a:hover {
     @apply text-accent;
     @apply underline;
 }
@@ -467,13 +459,13 @@ div.readingtime:hover::before {
 }
 
 .postlist .postlistheading a {
-    @apply text-gray-900;
-    @apply text-2xl font-semibold font-header;
+    @apply text-gray-900 hover:text-accent;
+    @apply text-2xl font-semibold font-header hover:underline;
 }
 
 .postlist .postexcerpt {
     @apply text-gray-700;
-    @apply font-body font-normal;
+    @apply font-body font-normal text-base;
     @apply pb-4;
 }
 
@@ -481,7 +473,6 @@ div.readingtime:hover::before {
     @apply text-gray-500;
     @apply text-sm font-normal;
     @apply pb-6;
-    @apply border-b-1 border-gray-700/30;
 }
 
 .postlist .postproperties svg {
@@ -491,12 +482,11 @@ div.readingtime:hover::before {
 /* Collection pagination */
 
 .postpagination {
-    @apply mt-2 mx-8 lg:ml-24;
+    @apply mt-2 mx-8 lg:ml-24 pb-16;
 }
 
 ul.pagination {
     @apply list-none;
-    @apply pb-12 sm:pb-8;
 }
 
 ul.pagination li {
@@ -528,11 +518,6 @@ ul.pagination div a {
 
 :-ms-input-placeholder {
     @apply text-gray-800;
-}
-
-/* fixing 100vh for mobiles */
-.h-screen {
-    @apply min-h-screen max-h-screen overflow-x-hidden overflow-y-hidden;
 }
 
 /* Print media style */
