@@ -2,7 +2,9 @@
 title: "Maģiskā domāšana un civilizācijas nākotne"
 date: "2017-06-30"
 image: /images/2017/lampa2017-magic-banner.png
-tags: event
+tags:
+    - events
+    - notikumi
 excerpt: "2017. gada 30. jūnijā, 18:30, festivāla LAMPA skeptiskā telts. Daudz tiek runāts par pēcpatiesības sabiedrību, sazvērestības teorijām un “fake news”, taču palaisti garām fundamentālie iemesli, kāpēc šie fenomeni var eksistēt."
 ---
 

@@ -2,7 +2,9 @@
 title: "Vai sabiedrība ir gatava nākotnei?"
 date: "2016-06-01"
 image: /images/2016/lampa-narrow.png
-tags: event
+tags:
+    - events
+    - notikumi
 excerpt: "2016. gada 1. jūlijā, 18:30, festivāla LAMPA “STARO” skatuve. Pagātnes rēgi, krīzes un ugunsgrēki ir lielākās tēmas ko aktīvi apspriež Latvijas domu līderi. Mēs paļaujamies uz izmaiņu lēnīgumu, un nemanām, ka esam revolūcijas priekšvakarā."
 ---
 

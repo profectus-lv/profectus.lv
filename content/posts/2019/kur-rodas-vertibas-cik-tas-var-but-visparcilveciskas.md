@@ -2,7 +2,9 @@
 title: "Kur rodas vērtības? Cik tās var būt vispārcilvēciskas?"
 date: "2019-03-06"
 image: /images/2019/trompete-2019-03-06.png
-tags: event
+tags:
+    - events
+    - notikumi
 excerpt: "2019. gada 6. martā, 18:30, Trompetē, Peldu Ielā 24, Rīgā. Daļa mūsu identitātes sakņojas vērtībās. Kopējās vērtības tiek piesauktas kā sabiedrības līme. No kurienes šīs vērtības rodas? Cik vispārcilvēciskas ir vispārcilvēciskās vērtības?"
 ---
 

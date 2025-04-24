@@ -2,7 +2,9 @@
 title: "Kurš kaut ko mainīs Latvijā?"
 date: "2017-12-07"
 image: /images/2017/kurs-mainis.jpg
-tags: article
+tags:
+    - article
+    - raksti
 author: "Dāvids Zalāns"
 ---
 

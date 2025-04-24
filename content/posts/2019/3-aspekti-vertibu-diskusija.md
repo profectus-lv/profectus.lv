@@ -2,7 +2,9 @@
 title: "3 aspekti vērtību diskusijā"
 date: "2019-03-13"
 image: /images/2019/trompete-2019-03-06-post.png
-tags: article
+tags:
+    - article
+    - raksti
 author: "Dmitrijs Golubevs"
 ---
 

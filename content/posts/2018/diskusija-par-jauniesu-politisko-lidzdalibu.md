@@ -2,7 +2,9 @@
 title: "Diskusija par jauniešu politisko līdzdalību"
 date: "2018-09-11"
 image: /images/2018/kkc-2018-09-11-plakats.jpg
-tags: event
+tags:
+    - events
+    - notikumi
 excerpt: "2018. gada 11. septembrī, 18:00, Kaņepes Kultūras centrs. Nereti dzirdēts, ka politika jauniešus neinteresē un garlaiko. Vai tā tiešām ir? Vai to var mainīt? Kāpēc jauniešiem būtu jāinteresējas par politiku savā valstī? Varbūt tomēr labāk dzīvot neko nezinot?"
 ---
 

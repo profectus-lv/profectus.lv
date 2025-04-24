@@ -3,7 +3,7 @@ export default {
     minutes: "minūtes",
     words: "vārdi",
     share: "Dalīties",
-    event: "Notikums",
+    events: "Notikumi",
     older: "Vecāks",
     newer: "Jaunāks"
 };

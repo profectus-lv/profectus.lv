@@ -2,7 +2,7 @@
 <title>{% if title %}{{ title }} - {% endif %}{{ siteconfig.title }}</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 {% if excerpt %}{% set description = excerpt | truncate(150) %}
-{% elseif page and not posts %}{% set cp = collections.all | getCollectionItem(page) %}{% set description = cp.templateContent | safe | striptags | truncate(150) %}
+{% elseif page and title and not posts %}{% set cp = collections.all | getCollectionItem(page) %}{% set description = cp.templateContent | safe | striptags | truncate(150) %}
 {% else%}{% set description = siteconfig.description | truncate(150) %}
 {% endif %}
 <meta name="description" content="{{ description }}">

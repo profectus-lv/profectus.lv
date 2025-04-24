@@ -2,7 +2,9 @@
 title: "Narkotikas Latvijā: vai varam ko labāku par suņu reidiem?"
 date: "2023-06-09"
 image: /images/2023/narkotikas-lampa.png
-tags: event
+tags:
+    - events
+    - notikumi
 excerpt: "2023. gada 9. jūnijā 21:30, festivāla LAMPA skatuvē “Spuldze”. Narkomānija ir nopietna problēma ar nopietnām sekām, taču narkotiku lietotāji mums ir visapkārt, tostarp jauniešu vidū. Vai Latvijas politika narkotiku jomā ir efektīva, un ko būtu lietderīgi uzlabot?"
 ---
 

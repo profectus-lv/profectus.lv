@@ -2,7 +2,9 @@
 title: "Vai mūsu atbalsts demogrāfijai nav kļūda?"
 date: "2019-06-28"
 image: /images/2019/demography-lampa.png
-tags: event
+tags:
+    - events
+    - notikumi
 excerpt: "2019. gada 28. jūnijā 20:00, festivāla LAMPA skatuvē “Spuldze”. Daudz tiek runāts par demogrāfijas veicināšanu, bet vai šie pasākumi sasniedz savu mērķi un ir vajadzīgi?"
 ---
 

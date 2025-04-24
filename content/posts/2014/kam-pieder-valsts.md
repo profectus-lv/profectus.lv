@@ -3,7 +3,9 @@ title: "Kam pieder valsts: varas avots"
 date: "2014-12-22"
 permalink: /kam-pieder-valsts/
 image: /images/2014/ole-bailey.jpg
-tags: article
+tags:
+    - article
+    - raksti
 author: "Dmitrijs Golubevs"
 ---
 

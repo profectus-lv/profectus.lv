@@ -178,12 +178,22 @@ main {
 
 .content .postproperties {
     @apply text-gray-500;
-    @apply text-sm font-normal;
+    @apply font-header text-sm font-normal;
     @apply mb-4;
 }
 
 .content .postproperties svg {
     @apply h-5 w-5 mr-1;
+}
+
+.content .postproperties .posttag {
+    @apply bg-accent/10 hover:bg-accent/20;
+    @apply transition duration-200 ease-in;
+}
+.content .postproperties .posttag a {
+    @apply text-gray-500 hover:text-accent;
+    @apply no-underline;
+    @apply transition duration-200 ease-in;
 }
 
 .content h1 {
@@ -396,6 +406,7 @@ svg.threads {
     @apply hover:bg-gray-400;
     @apply hover:text-accent;
     @apply cursor-pointer;
+    @apply transition duration-200 ease-in;
 }
 
 .prevnextno {
@@ -410,7 +421,6 @@ svg.threads {
 .prevnextlink {
     @apply text-lg font-medium;
 }
-
 
 /* Reading time */
 
@@ -474,12 +484,22 @@ div.readingtime:hover::before {
 
 .postlist .postproperties {
     @apply text-gray-500;
-    @apply text-sm font-normal;
+    @apply font-header text-sm font-normal;
     @apply pb-6;
 }
 
 .postlist .postproperties svg {
     @apply h-5 w-5 mr-1;
+}
+
+.postlist .postproperties .posttag {
+    @apply bg-accent/10 hover:bg-accent/20;
+    @apply transition duration-200 ease-in;
+}
+.postlist .postproperties .posttag a {
+    @apply text-gray-500 hover:text-accent;
+    @apply no-underline;
+    @apply transition duration-200 ease-in;
 }
 
 /* Collection pagination */
@@ -493,14 +513,15 @@ ul.pagination {
 }
 
 ul.pagination li {
-    @apply mr-3;
+    @apply mr-1.5;
 }
 
 ul.pagination div {
-    @apply border-1 border-accent rounded-full;
-    @apply bg-white hover:text-accent;
+    @apply border-solid border-1 border-gray-400 rounded-full;
+    @apply bg-white hover:bg-gray-400 hover:text-accent;
     @apply text-center;
     @apply h-8 w-8;
+    @apply transition duration-200 ease-in;
 }
 
 ul.pagination div.active {

@@ -2,7 +2,9 @@
 title: "Mīlu šo zemi, bet ienīstu šo valsti. Kapēc?"
 date: "2018-06-29"
 image: /images/2018/lampa2018-banner-small2.png
-tags: event
+tags:
+    - events
+    - notikumi
 excerpt: "2018. gada 29. jūnijā, 16:00, festivāla LAMPA “DOTS” skatuve. Ja “mīlu šo zemi, bet ienīstu šo valsti” ir normāla frāze jauniešu vidū, ja daudziem ir sajūta, ka valsts ir nozagta un neizdevusies, vai bija vērts atgūt neatkarību vispār? Kas tieši raisa tādu neticību?"
 ---
 

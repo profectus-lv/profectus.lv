@@ -1,36 +1,29 @@
 <div class="postpagination">
-	{% if pagination.pages.length > 1 %}
+	{% if pagination.hrefs.length > 1 %}
 	<ul class="pagination flex">
 	    {% if pagination.pageNumber > 0 %}
 	    <li>
 			<div class="leading-relaxed">
-				{% if not pagination.href.first %}
-				<span class="block cursor-not-allowed">&lt;&lt;</a>
-				{% else %}
 				<a href="{{ pagination.href.first }}" class="block">&lt;&lt;</a>
-				{% endif %}
 			</div>
 		</li>
 	    <li>
 			<div class="leading-relaxed">
-				{% if not pagination.href.previous %}
-				<span class="block cursor-not-allowed">&lt;</a>
-				{% else %}
 				<a href="{{ pagination.href.previous }}" class="block">&lt;</a>
-				{% endif %}
 			</div>
 		</li>
 		{% endif %}
-	    {% for pageEntry in pagination.pages %}
-		{% if loop.index0 < 6  and pagination.hrefs[loop.index0 + pagination.pageNumber] %}
+		{% if pagination.pageNumber < 2 %}{% set startWith = 0 %}{% else %}{% set startWith = pagination.pageNumber - 2 %}{% endif %}
+	    {% for pageHref in pagination.hrefs %}
+		{% if loop.index0 < 5  and pagination.hrefs[loop.index0 + startWith] %}
 	    <li>
-			<div class="leading-pagination{% if pagination.hrefs[loop.index0 + pagination.pageNumber] === page.url %} active{% endif %}">
-				<a href="{{ pagination.hrefs[loop.index0 + pagination.pageNumber] }}" class="block">{{ loop.index + pagination.pageNumber }}</a>
+			<div class="leading-pagination{% if pagination.hrefs[loop.index0 + startWith] === page.url %} active{% endif %}">
+				<a href="{{ pagination.hrefs[loop.index0 + startWith] }}" class="block">{{ loop.index + startWith }}</a>
 			</div>
 		</li>
 		{% endif %}
 		{% endfor %}
-		{% if (pagination.pageNumber + 5) < pagination.pages.length %}
+		{% if (startWith + 5) < pagination.hrefs.length %}
 	    <li>
 			<div class="leading-relaxed">
 				<a href="{{ pagination.href.next }}" class="block">&gt;</a>

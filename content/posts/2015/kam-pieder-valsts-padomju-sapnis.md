@@ -2,7 +2,9 @@
 title: "Kam pieder valsts: Padomju sapnis"
 date: "2015-01-13"
 image: /images/2015/padomju-sapnis.jpg
-tags: article
+tags:
+    - article
+    - raksti
 author: "Dmitrijs Golubevs"
 ---
 

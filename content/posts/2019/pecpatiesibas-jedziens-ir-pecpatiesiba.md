@@ -2,7 +2,9 @@
 title: "Pēcpatiesības jēdziens ir pēcpatiesība"
 date: "2019-03-28"
 image: /images/2019/pecpatiesiba.png
-tags: article
+tags:
+    - article
+    - raksti
 author: "Dmitrijs Golubevs"
 ---
 

@@ -2,7 +2,9 @@
 title: "Par tiesu sistēmu un demokrātiju Latvijā"
 date: "2017-07-27"
 image: /images/2017/tiesas-sede.jpg
-tags: article
+tags:
+    - article
+    - raksti
 author: "Dāvids Zalāns"
 ---
 

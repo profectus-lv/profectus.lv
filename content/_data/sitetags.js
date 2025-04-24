@@ -1,9 +1,11 @@
 export default {
     notime: [
-        "event"
+        "events"
     ],
     notag: [
         "article",
-        "posts"
+        "posts",
+        "events",
+        "raksti"
     ]
 };

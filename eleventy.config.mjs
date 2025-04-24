@@ -20,6 +20,7 @@ import hash from "./_11ty/hash.js";
 import externalLinks from "./_11ty/external-links.js";
 import imageTransform from "./_11ty/image-transform.js";
 import htmlMinify from "./_11ty/html-minify.js";
+import tagPagination from "./_11ty/tags.js"
 
 export default eleventyConfig => {
     // Set Markdown library
@@ -95,6 +96,9 @@ export default eleventyConfig => {
 
     // Minifying HTML
     eleventyConfig.addPlugin(htmlMinify);
+
+    // Double pagination for tags
+    eleventyConfig.addPlugin(tagPagination);
 
     return {
         dir: {

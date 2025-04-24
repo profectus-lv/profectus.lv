@@ -2,7 +2,9 @@
 title: "2027. Latvija pasaulē, Ziemeļeiropā un tautsaimniecībā"
 date: "2017-07-01"
 image: /images/2017/lampa2017-latvija-banner.png
-tags: event
+tags:
+    - events
+    - notikumi
 excerpt: "2017. gada 1. jūlijā, 18:30, festivāla LAMPA “STARO” skatuve. Sapnis par Latviju. Rit 2027. gads. Kā mainījās Latvija un kā tai bija jāmainās? Kā pelnām, ko ražojam? Kā ietekmēja mūsu dzīvi tehnoloģijas? Kā mainījās mūsu domāšana un vērtības, un kas palika nemainīgs?"
 ---
 

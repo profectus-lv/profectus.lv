@@ -2,7 +2,9 @@
 title: "Demokrātija mūsdienās un tās attīstības scenāriji: Latvijā un pasaulē"
 date: "2019-06-11"
 image: /images/2019/democracy-aleponija.png
-tags: event
+tags:
+    - events
+    - notikumi
 excerpt: "2019. gada 11. jūnijā, 18:00, Aleponijā, E. Birznieka-Upīša ielā 22, Rīgā. Vai pārstāvnieciskajām demokrātijām ir kādi fundamentāli funkcionēšanas trūkumi? Kāda varēta būt turpmākā pasaules demokrātiju attīstība?"
 ---
 

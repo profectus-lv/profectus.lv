@@ -2,7 +2,9 @@
 title: "Diskusija: Es mīlu šo zemi, bet ienīstu šo valsti. Kapēc?"
 date: "2018-06-28"
 image: /images/2018/ienistu-valsti.jpg
-tags: event
+tags:
+    - events
+    - notikumi
 excerpt: "2018. gada 28. jūnijā, 19:00, grāmatnīca/bārs “Bolderāja”, Avotu ielā 29, Rīgā. Latvija patiesībā ir baigi foršā valsts. Patiešām. Mums visiem ļoti patīk šeit dzīvot, vienlaikus ir tik ļoti daudz lietas, kas šķiet, šeit nav kārtībā. Un tas liek justies slikti."
 ---
 

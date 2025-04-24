@@ -2,7 +2,9 @@
 title: "Kāpēc zāles Latvijā ir tik dārgas? Ko darīt?"
 date: "2020-09-02"
 image: /images/2020/zales-lampa.png
-tags: event
+tags:
+    - events
+    - notikumi
 excerpt: "2020. gada 2. septembrī 17:00, festivāla LAMPA ietvaros koncertzāles “Cēsis” Lielajā zālē. Par zāļu cenām Latvijā tiek runāts ilgstoši un dažādos līmeņos. Ko varam darīt, lai mazinātu zāļu cenas?"
 ---
 

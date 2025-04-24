@@ -2,7 +2,9 @@
 title: "Vai ir jēga no valstīm?"
 date: "2019-06-28"
 image: /images/2019/jega-no-valstim.jpg
-tags: event
+tags:
+    - events
+    - notikumi
 excerpt: "2019. gada 28. jūnijā 22:00, festivāla LAMPA Skeptiskajā teltī. Nācijvalstis tiek pieņemtas par aksiomātiski labu veidojumu teju visur, taču tām ir ārkārtīgi īsa vēsture – vai tās tiešām ir vajadzīgas un nodrošina labāko cilvēkiem? Varbūt tās, tieši pretēji, ir kaitīgas un veicina konfliktu rašanos?"
 ---
 

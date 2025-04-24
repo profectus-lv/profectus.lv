@@ -2,7 +2,9 @@
 title: "Demokrātija interneta laikmetā: liberālisms vs. nacionālisms"
 date: "2020-09-02"
 image: /images/2020/politika-lampa.png
-tags: event
+tags:
+    - events
+    - notikumi
 excerpt: "2020. gada 2. septembrī 14:00, festivāla LAMPA ietvaros koncertzāles “Cēsis” Lielajā zālē. Riski demokrātijai šobrīd un nākotnē un demokrātijas nākotnes attīstības scenāriji Latvijā un pasaulē."
 ---
 

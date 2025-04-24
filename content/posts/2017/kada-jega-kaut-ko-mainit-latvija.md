@@ -2,7 +2,9 @@
 title: "Kāda jēga kaut ko mainīt Latvijā?"
 date: "2017-07-17"
 image: /images/2017/mainit.jpg
-tags: article
+tags:
+    - article
+    - raksti
 author: "Dāvids Zalāns"
 ---
 

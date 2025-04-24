@@ -22,13 +22,15 @@ layout: base.njk
 		{% endif %}
 		{% for posttag in tags %}
 		{% if not sitetags.notag.includes(posttag) %}
-		{% if sitestrings[posttag] %}{% set posttag = sitestrings[posttag] %}{% endif %}
-		<div class="flex flex-none">
-			<svg role="img" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="{{ inlinesvg.hashtag.viewBox }}">
-				<path d="{{ inlinesvg.hashtag.path }}" />
-			</svg>
-			{{ posttag | capitalize }}
-			<span></span>
+		{% if sitestrings[posttag] %}{% set posttagtext = sitestrings[posttag] %}{% else %}{% set posttagtext = posttag %}{% endif %}
+		<div class="posttag flex flex-none">
+			<a href="/{{ posttag }}/" class="inline-flex">
+				<svg role="img" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="{{ inlinesvg.hashtag.viewBox }}">
+					<path d="{{ inlinesvg.hashtag.path }}" />
+				</svg>
+				{{ posttagtext | capitalize }}
+				<span></span>
+			</a>
 		</div>
 		{% endif %}
 		{% endfor %}
