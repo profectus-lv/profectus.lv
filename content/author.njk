@@ -15,7 +15,7 @@ pagination:
 <div class="postlist">
   {% set tagname = posts[0].data.author %}
 	{% if sitestrings[tag.tagName] %}{% set tagname = sitestrings[tag.tagName] %}{% endif %}
-  <h1>{{ tagname | capitalize }}</h1>
+  <h1>{{ tagname }}</h1>
 	{% include "postlist.njk" %}
 </div>
 {% include "postpagination.njk" %}
