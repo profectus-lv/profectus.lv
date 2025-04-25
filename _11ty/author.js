@@ -26,7 +26,7 @@ export default eleventyConfig => {
         let tagMap = [];
         let tagArray = [...tagSet];
         for (let tagName of tagArray) {
-            let tagItems = collection.getAllSorted().filter(function (item) {
+            let tagItems = collection.getAllSorted().reverse().filter(function (item) {
                 return item.data.author && (item.data.author == tagName);
             });
             let pagedItems = chunk(tagItems, pageSize);
