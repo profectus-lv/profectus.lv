@@ -13,11 +13,14 @@
 			{{ post.date | readableDate }}
 		</div>
 		{% if post.data.author %}
-		<div class="flex flex-none">
-        	<svg role="img" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="{{ inlinesvg.author.viewBox }}">
-	    		<path d="{{ inlinesvg.author.path }}" />
-        	</svg>
-        	{{ post.data.author }}
+		{% if sitestrings[post.data.author] %}{% set postauthor = sitestrings[post.data.author] %}{% else %}{% set postauthor = post.data.author %}{% endif %}
+		<div class="postauthor flex flex-none">
+			<a href="/author/{{ postauthor | slugify }}/" class="inline-flex">
+				<svg role="img" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="{{ inlinesvg.author.viewBox }}">
+					<path d="{{ inlinesvg.author.path }}" />
+				</svg>
+				{{ post.data.author }}
+			</a>
 		</div>
 		{% endif %}
 		{% for posttag in post.data.tags %}

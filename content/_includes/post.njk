@@ -13,11 +13,14 @@ layout: base.njk
         	{{ page.date | readableDate }}
 		</div>
 		{% if author %}
-		<div class="flex flex-none">
-        	<svg role="img" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="{{ inlinesvg.author.viewBox }}">
-	    		<path d="{{ inlinesvg.author.path }}" />
-        	</svg>
-        	{{ author }}
+		{% if sitestrings[author] %}{% set postauthor = sitestrings[author] %}{% else %}{% set postauthor = author %}{% endif %}
+		<div class="postauthor flex flex-none">
+			<a href="/author/{{ postauthor | slugify }}/" class="inline-flex">
+				<svg role="img" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="{{ inlinesvg.author.viewBox }}">
+					<path d="{{ inlinesvg.author.path }}" />
+				</svg>
+				{{ author }}
+			</a>
 		</div>
 		{% endif %}
 		{% for posttag in tags %}

@@ -1,0 +1,21 @@
+---
+layout: base.njk
+sitemapPriority: 1
+permalink: /author/{{ tag.tagName | slugify }}/{% if tag.pageNumber %}{{ tag.pageNumber }}/{% endif %}
+pagination:
+  data: collections.authorPagination
+  size: 1
+  alias: tag
+---
+
+{# Note that pagination size is determined by the collection itself (edit tags.js) #}
+{# Note that the permalink prefix (/) is determined by the collection itself #}
+{% set posts = tag.items %}
+{% set pagination = tag %}
+<div class="postlist">
+  {% set tagname = posts[0].data.author %}
+	{% if sitestrings[tag.tagName] %}{% set tagname = sitestrings[tag.tagName] %}{% endif %}
+  <h1>{{ tagname | capitalize }}</h1>
+	{% include "postlist.njk" %}
+</div>
+{% include "postpagination.njk" %}

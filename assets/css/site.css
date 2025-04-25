@@ -186,11 +186,13 @@ main {
     @apply h-5 w-5 mr-1;
 }
 
-.content .postproperties .posttag {
+.content .postproperties .posttag,
+.content .postproperties .postauthor {
     @apply bg-accent/10 hover:bg-accent/20;
     @apply transition duration-200 ease-in;
 }
-.content .postproperties .posttag a {
+.content .postproperties .posttag a,
+.content .postproperties .postauthor a {
     @apply text-gray-500 hover:text-accent;
     @apply no-underline;
     @apply transition duration-200 ease-in;
@@ -492,11 +494,14 @@ div.readingtime:hover::before {
     @apply h-5 w-5 mr-1;
 }
 
-.postlist .postproperties .posttag {
+.postlist .postproperties .posttag,
+.postlist .postproperties .postauthor {
     @apply bg-accent/10 hover:bg-accent/20;
     @apply transition duration-200 ease-in;
 }
-.postlist .postproperties .posttag a {
+
+.postlist .postproperties .posttag a,
+.postlist .postproperties .postauthor a {
     @apply text-gray-500 hover:text-accent;
     @apply no-underline;
     @apply transition duration-200 ease-in;
