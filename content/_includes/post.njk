@@ -5,52 +5,8 @@ layout: base.njk
 <div class="content post">
   	<h1>{{ title }}</h1>
 	{% if siteconfig.features.postproperties %}
-  	<div class="postproperties flex flex-wrap gap-x-10 gap-y-4">
-		<div class="flex flex-none">
-        	<svg role="img" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="{{ inlinesvg.calendar.viewBox }}">
-	    		<path d="{{ inlinesvg.calendar.path }}" />
-        	</svg>
-        	{{ page.date | readableDate }}
-		</div>
-		{% if author %}
-		{% if sitestrings[author] %}{% set postauthor = sitestrings[author] %}{% else %}{% set postauthor = author %}{% endif %}
-		<div class="postauthor flex flex-none">
-			<a href="/author/{{ postauthor | slugify }}/" class="inline-flex">
-				<svg role="img" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="{{ inlinesvg.author.viewBox }}">
-					<path d="{{ inlinesvg.author.path }}" />
-				</svg>
-				{{ author }}
-			</a>
-		</div>
-		{% endif %}
-		{% for posttag in tags %}
-		{% if not sitetags.notag.includes(posttag) %}
-		{% if sitestrings[posttag] %}{% set posttagtext = sitestrings[posttag] %}{% else %}{% set posttagtext = posttag %}{% endif %}
-		<div class="posttag flex flex-none">
-			<a href="/{{ posttag }}/" class="inline-flex">
-				<svg role="img" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="{{ inlinesvg.hashtag.viewBox }}">
-					<path d="{{ inlinesvg.hashtag.path }}" />
-				</svg>
-				{{ posttagtext | capitalize }}
-				<span></span>
-			</a>
-		</div>
-		{% endif %}
-		{% endfor %}
-		{% set notime = false %}
-		{% for notimetag in sitetags.notime %}
-		{% if tags.includes(notimetag) %}{% set notime = true %}{% endif %}
-		{% endfor %}
-		{% if not notime %}
-		<div class="flex flex-none readingtime" data-words="{{ content | striptags | wordcount | formatWords }} {{ sitestrings.words }}">
-        	<svg role="img" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="{{ inlinesvg.readingTime.viewBox }}">
-  	    		<path d="{{ inlinesvg.readingTime.path }}" />
-        	</svg>
-        	{{ content | striptags | wordcount | readingTime }}
-			<span></span>
-		</div>
-		{% endif %}
-	</div>
+	{% set post = collections.posts | getCollectionItem(page) %}
+	{% include "postproperties.njk" %}
 	{% endif %}
 	{% if image %}
 	<img class="postimage" src="{{ image }}" alt="{{ imageAlt }}" />

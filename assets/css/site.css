@@ -176,28 +176,6 @@ main {
     @apply font-body font-normal;
 }
 
-.content .postproperties {
-    @apply text-gray-500;
-    @apply font-header text-sm font-normal;
-    @apply mb-4;
-}
-
-.content .postproperties svg {
-    @apply h-5 w-5 mr-1;
-}
-
-.content .postproperties .posttag,
-.content .postproperties .postauthor {
-    @apply bg-accent/10 hover:bg-accent/20;
-    @apply transition duration-200 ease-in;
-}
-.content .postproperties .posttag a,
-.content .postproperties .postauthor a {
-    @apply text-gray-500 hover:text-accent;
-    @apply no-underline;
-    @apply transition duration-200 ease-in;
-}
-
 .content h1 {
     @apply text-gray-900;
     @apply text-3xl font-bold font-header;
@@ -339,7 +317,7 @@ svg.threads {
 
 .social svg {
     @apply hover:fill-accent;
-    @apply h-5 ml-2 mr-3;
+    @apply h-5 pl-2 pr-2;
     @apply transition duration-200 ease-in;
 }
 
@@ -424,7 +402,31 @@ svg.threads {
     @apply text-lg font-medium;
 }
 
-/* Reading time */
+/* Post properties */
+
+.postproperties {
+    @apply text-gray-500;
+    @apply font-header text-sm font-normal;
+    @apply pb-6;
+}
+
+.postproperties svg {
+    @apply h-5 w-5 mr-1;
+}
+
+.postproperties .posttag,
+.postproperties .postauthor {
+    @apply bg-accent/10 hover:bg-accent/20;
+    @apply transition duration-200 ease-in;
+}
+
+.postproperties .posttag a,
+.postproperties .postauthor a {
+    @apply text-gray-500 hover:text-accent;
+    @apply no-underline;
+    @apply pl-1 pr-1;
+    @apply transition duration-200 ease-in;
+}
 
 .readingtime {
     @apply relative cursor-default;
@@ -482,29 +484,6 @@ div.readingtime:hover::before {
     @apply text-gray-700;
     @apply font-body font-normal text-base;
     @apply pb-4;
-}
-
-.postlist .postproperties {
-    @apply text-gray-500;
-    @apply font-header text-sm font-normal;
-    @apply pb-6;
-}
-
-.postlist .postproperties svg {
-    @apply h-5 w-5 mr-1;
-}
-
-.postlist .postproperties .posttag,
-.postlist .postproperties .postauthor {
-    @apply bg-accent/10 hover:bg-accent/20;
-    @apply transition duration-200 ease-in;
-}
-
-.postlist .postproperties .posttag a,
-.postlist .postproperties .postauthor a {
-    @apply text-gray-500 hover:text-accent;
-    @apply no-underline;
-    @apply transition duration-200 ease-in;
 }
 
 /* Collection pagination */
