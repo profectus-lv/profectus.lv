@@ -2,6 +2,7 @@
 title: "Vai mūsu atbalsts demogrāfijai nav kļūda?"
 date: "2019-06-28"
 image: /images/2019/demography-lampa.png
+place: "Festivāls LAMPA"
 tags:
     - events
     - notikumi

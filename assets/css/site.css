@@ -143,7 +143,7 @@ div.menu > * {
 
 .top-bar a {
     @apply align-middle text-center leading-12;
-    @apply text-2xl font-semibold font-header hover:underline;
+    @apply text-2xl font-semibold font-header hover:no-underline;
     @apply hover:text-accent;
 }
 
@@ -163,7 +163,7 @@ main {
 }
 
 .content {
-    @apply pb-16 mt-4 mx-8 lg:mr-24 lg:ml-24;
+    @apply pb-16 mt-4 mx-8 lg:mx-24;
     @apply leading-relaxed tracking-wider;
 }
 
@@ -333,10 +333,10 @@ svg.threads {
     @apply relative;
 }
 
-.social a::before {
-    @apply absolute -top-10 -left-10 w-38;
+.social a:hover::before {
+    @apply absolute block -top-10 -left-10 w-38;
     @apply p-2.5;
-    @apply text-white bg-black opacity-0;
+    @apply text-white bg-black opacity-100;
     @apply text-center text-xs;
     @apply rounded-md;
     @apply -translate-y-1/2;
@@ -346,10 +346,6 @@ svg.threads {
 .social a.link:active::before {
     @apply -top-8;
     content: "Copied";
-}
-
-.social a:hover::before {
-    @apply block opacity-100;
 }
 
 .social a:hover > span::after {
@@ -368,7 +364,7 @@ svg.threads {
 }
 
 .additions {
-    @apply mt-6 px-4 w-full;
+    @apply mt-6 w-full;
 }
 
 .additions a {
@@ -432,18 +428,14 @@ svg.threads {
     @apply relative cursor-default;
 }
 
-.readingtime::before {
-    @apply absolute -bottom-10 w-25;
+.readingtime:hover::before {
+    @apply absolute block -bottom-10 w-25;
     @apply p-1;
-    @apply bg-black text-white opacity-0;
+    @apply bg-black text-white opacity-100;
     @apply text-center text-xs;
     @apply rounded-md;
     @apply -translate-y-1/2;
     content: attr(data-words);
-}
-
-div.readingtime:hover::before {
-    @apply block opacity-100;
 }
 
 .readingtime:hover > span::after {
@@ -456,13 +448,16 @@ div.readingtime:hover::before {
 /* Post list */
 
 .postlist {
-    @apply pb-8 mt-4 mx-8 lg:mr-24 lg:ml-24;
+    @apply pb-8 mt-4 mx-4 lg:mx-20;
     @apply leading-relaxed tracking-wider;
     @apply font-normal;
 }
 
 .postlist .postlistitem {
+    @apply px-4;
     @apply border-b-1 border-accent;
+    @apply hover:bg-gray-100;
+    @apply transition duration-200 ease-in;
 }
 
 .postlist h1 {
@@ -477,7 +472,7 @@ div.readingtime:hover::before {
 
 .postlist .postlistheading a {
     @apply text-gray-900 hover:text-accent;
-    @apply text-2xl font-semibold font-header hover:underline;
+    @apply text-2xl font-semibold font-header hover:no-underline;
 }
 
 .postlist .postexcerpt {
@@ -489,7 +484,7 @@ div.readingtime:hover::before {
 /* Collection pagination */
 
 .postpagination {
-    @apply mt-2 mx-8 lg:ml-24 pb-16;
+    @apply mt-2 mx-4 lg:mx-20 pb-16;
 }
 
 ul.pagination {

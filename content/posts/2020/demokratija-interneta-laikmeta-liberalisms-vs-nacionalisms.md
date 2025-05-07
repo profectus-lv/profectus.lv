@@ -2,6 +2,7 @@
 title: "Demokrātija interneta laikmetā: liberālisms vs. nacionālisms"
 date: "2020-09-02"
 image: /images/2020/politika-lampa.png
+place: "Festivāls LAMPA"
 tags:
     - events
     - notikumi

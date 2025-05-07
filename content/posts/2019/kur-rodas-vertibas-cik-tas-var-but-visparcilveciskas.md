@@ -2,6 +2,7 @@
 title: "Kur rodas vērtības? Cik tās var būt vispārcilvēciskas?"
 date: "2019-03-06"
 image: /images/2019/trompete-2019-03-06.png
+place: "Trompete"
 tags:
     - events
     - notikumi

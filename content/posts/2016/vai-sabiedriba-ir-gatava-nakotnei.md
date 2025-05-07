@@ -2,6 +2,7 @@
 title: "Vai sabiedrība ir gatava nākotnei?"
 date: "2016-06-01"
 image: /images/2016/lampa-narrow.png
+place: "Festivāls LAMPA"
 tags:
     - events
     - notikumi

@@ -2,6 +2,7 @@
 title: "Diskusija par jauniešu politisko līdzdalību"
 date: "2018-09-11"
 image: /images/2018/kkc-2018-09-11-plakats.jpg
+place: "Kaņepes Kultūras centrs"
 tags:
     - events
     - notikumi

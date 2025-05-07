@@ -3,6 +3,7 @@ title: "Demokrātija mūsdienās un tās attīstības scenāriji: Latvijā un pa
 date: "2019-06-29"
 permalink: /demokratija-musdienas-un-tas-attistibas-scenariji-latvija-un-pasaule-2/
 image: /images/2019/democracy-lampa.png
+place: "Festivāls LAMPA"
 tags:
     - events
     - notikumi

@@ -2,6 +2,7 @@
 title: "2027. Latvija pasaulē, Ziemeļeiropā un tautsaimniecībā"
 date: "2017-07-01"
 image: /images/2017/lampa2017-latvija-banner.png
+place: "Festivāls LAMPA"
 tags:
     - events
     - notikumi

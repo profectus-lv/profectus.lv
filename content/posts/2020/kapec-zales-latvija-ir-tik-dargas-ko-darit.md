@@ -2,6 +2,7 @@
 title: "Kāpēc zāles Latvijā ir tik dārgas? Ko darīt?"
 date: "2020-09-02"
 image: /images/2020/zales-lampa.png
+place: "Festivāls LAMPA"
 tags:
     - events
     - notikumi

@@ -2,6 +2,7 @@
 title: "Mīlu šo zemi, bet ienīstu šo valsti. Kapēc?"
 date: "2018-06-29"
 image: /images/2018/lampa2018-banner-small2.png
+place: "Festivāls LAMPA"
 tags:
     - events
     - notikumi

@@ -2,6 +2,7 @@
 title: "Narkotikas Latvijā: vai varam ko labāku par suņu reidiem?"
 date: "2023-06-09"
 image: /images/2023/narkotikas-lampa.png
+place: "Festivāls LAMPA"
 tags:
     - events
     - notikumi

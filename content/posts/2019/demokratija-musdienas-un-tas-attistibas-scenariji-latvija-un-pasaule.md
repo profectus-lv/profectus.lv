@@ -2,6 +2,7 @@
 title: "Demokrātija mūsdienās un tās attīstības scenāriji: Latvijā un pasaulē"
 date: "2019-06-11"
 image: /images/2019/democracy-aleponija.png
+place: "Aleponija"
 tags:
     - events
     - notikumi

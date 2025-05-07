@@ -16,6 +16,14 @@
 		</a>
 	</div>
 	{% endif %}
+	{% if post.data.place %}
+	<div class="flex flex-none">
+		<svg role="img" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="{{ inlinesvg.map.viewBox }}">
+			<path d="{{ inlinesvg.map.path }}" />
+		</svg>
+		{{ post.data.place }}
+	</div>
+	{% endif %}
 	{% for posttag in post.data.tags %}
 	{% if not sitetags.notag.includes(posttag) %}
 	{% if sitestrings[posttag] %}{% set posttagtext = sitestrings[posttag] %}{% else %}{% set posttagtext = posttag %}{% endif %}

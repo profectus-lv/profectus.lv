@@ -2,6 +2,7 @@
 title: "Vai ir jēga no valstīm?"
 date: "2019-06-28"
 image: /images/2019/jega-no-valstim.jpg
+place: "Festivāls LAMPA"
 tags:
     - events
     - notikumi

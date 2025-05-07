@@ -2,6 +2,7 @@
 title: "Maģiskā domāšana un civilizācijas nākotne"
 date: "2017-06-30"
 image: /images/2017/lampa2017-magic-banner.png
+place: "Festivāls LAMPA"
 tags:
     - events
     - notikumi

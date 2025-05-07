@@ -2,6 +2,7 @@
 title: "Diskusija: Es mīlu šo zemi, bet ienīstu šo valsti. Kapēc?"
 date: "2018-06-28"
 image: /images/2018/ienistu-valsti.jpg
+place: "Grāmatnīca/bārs Bolderāja"
 tags:
     - events
     - notikumi
