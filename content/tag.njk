@@ -12,10 +12,6 @@ pagination:
 {# Note that the permalink prefix (/) is determined by the collection itself #}
 {% set posts = tag.items %}
 {% set pagination = tag %}
-<div class="postlist">
-  {% set tagname = tag.tagName %}
-	{% if sitestrings[tag.tagName] %}{% set tagname = sitestrings[tag.tagName] %}{% endif %}
-  <h1>{{ tagname | capitalize }}</h1>
-	{% include "postlist.njk" %}
-</div>
-{% include "postpagination.njk" %}
+{% set title = tag.tagName | capitalize %}
+{% if sitestrings[tag.tagName] %}{% set title = sitestrings[tag.tagName] | capitalize %}{% endif %}
+{% include "postlist.njk" %}

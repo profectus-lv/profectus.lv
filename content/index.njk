@@ -8,11 +8,8 @@ pagination:
   reverse: true
 ---
 
-<div class="postlist">
-  {% if siteconfig.header %}
-  <img class="siteheader" src="{{ siteconfig.header }}" alt="{{ siteconfig.headerAlt }}" />
-  {% endif %}
-  {% if title %}<h1>{{ title }}</h1>{% endif %}
-	{% include "postlist.njk" %}
-</div>
-{% include "postpagination.njk" %}
+{% if siteconfig.header %}{% set siteheader = true %}{% endif %}
+{% if siteconfig.features.index == "postlist" %}{% include "postlist.njk" %}{% endif %}
+{% if siteconfig.features.index == "singlepost" %}
+{% set cp = collections.all | getCollectionItem(posts[0]) %}{{ cp.templateContent | safe }}
+{% endif %}

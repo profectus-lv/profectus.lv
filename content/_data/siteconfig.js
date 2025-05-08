@@ -112,6 +112,8 @@ export default {
         prevnext: true,
         // Regular base template (regular) or alternative base template without sidebar and other features (primitive)
         base: "regular",
+        // Index page to display postlist (postlist) or a single post (singlepost)
+        index: "postlist",
         // Top bar: none (false), always present (static), appearing and disappearing on scroll (dynamic)
         topbar: "dynamic",
     }
