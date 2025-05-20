@@ -1,6 +1,6 @@
-# Eleventy Chirpy minimal template by lastguru
+# Eleventy Markdown Prime starter repository by lastguru
 
-A minimalistic Eleventy template, loosely based on [Eleventy Chirpy Blog Template](https://github.com/muenzpraeger/eleventy-chirpy-blog-template), inspired by [Chirpy Jekyll Theme](https://github.com/cotes2020/jekyll-theme-chirpy). It has been upgraded to Eleventy 3.0, significantly simplified and reworked, removing many features. Some features are new, some are reimplemented, and some more features will be reintroduced later. More cleanup and reworking is still needed.
+A minimalistic Eleventy starter repository for a text-based blog site, loosely based on [Eleventy Chirpy Blog Template](https://github.com/muenzpraeger/eleventy-chirpy-blog-template), inspired by [Chirpy Jekyll Theme](https://github.com/cotes2020/jekyll-theme-chirpy). It has been upgraded to Eleventy 3, significantly reworked and restructured, but keeping it simple and visually similar. Some features are new, some are reimplemented, and some more features will be reintroduced later. More cleanup and reworking is still needed.
 
 ## [Current live demo](https://emp-starter.lastguru.dev)
 
@@ -8,14 +8,18 @@ A minimalistic Eleventy template, loosely based on [Eleventy Chirpy Blog Templat
 
 ## Current features
 
-- Eleventy 3.0 theme with Tailwind CSS 4
+- Eleventy 3 theme with Tailwind CSS 4
 - Fast and minimalistic responsive design
-- Can be used for a text-based (Markdown) blog
+- Simple grayscale color palette with a configurable accent color
+- Content is exclusively pre-rendered (static site), but supports supplemental JavaScript
+- Can be used for a text-based (Markdown) blog or simple page
 - Logo, site name and main menu are placed on the left sidebar
 - Social network links on the sidebar
-- Convenient configuration
+- Automatic post (index), tag and author pages with pagination
+- Convenient configuration with many options
 - Automatic responsive image optimization (generating AVIF and WEBP with different sizes)
 - SEO optimization, OpenGraph, JSON-LD
-- PWA
+- Special pages: Error 404, robots.txt, sitemap.xml
+- Progressive Web Apps (PWA) support
 
 More features are in the works...

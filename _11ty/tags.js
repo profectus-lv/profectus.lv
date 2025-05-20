@@ -39,7 +39,7 @@
     }]
 */
 
-import { chunk } from "lodash-es";
+import lodash from "@11ty/lodash-custom";
 
 // Collection properties that must be hardcoded here
 // Page size
@@ -65,7 +65,7 @@ export default eleventyConfig => {
         let tagArray = [...tagSet];
         for (let tagName of tagArray) {
             let tagItems = collection.getFilteredByTag(tagName).reverse();
-            let pagedItems = chunk(tagItems, pageSize);
+            let pagedItems = lodash.chunk(tagItems, pageSize);
             let hrefs = [];
             for (let pageNumber = 0, max = pagedItems.length; pageNumber < max; pageNumber++) {
                 hrefs[pageNumber] = linkPrefix + tagName + '/' + (pageNumber == 0 ? '' : pageNumber + '/');

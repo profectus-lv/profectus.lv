@@ -3,7 +3,7 @@
 // Based on the solution suggested here: https://github.com/11ty/eleventy/issues/332#issuecomment-445236776
 // A version of tags.js from this repository
 
-import { chunk } from "lodash-es";
+import lodash from "@11ty/lodash-custom";
 import slugify from "@sindresorhus/slugify";
 
 // Collection properties that must be hardcoded here
@@ -29,7 +29,7 @@ export default eleventyConfig => {
             let tagItems = collection.getAllSorted().reverse().filter(function (item) {
                 return item.data.author && (item.data.author == tagName);
             });
-            let pagedItems = chunk(tagItems, pageSize);
+            let pagedItems = lodash.chunk(tagItems, pageSize);
             let hrefs = [];
             for (let pageNumber = 0, max = pagedItems.length; pageNumber < max; pageNumber++) {
                 hrefs[pageNumber] = linkPrefix + slugify(tagName) + '/' + (pageNumber == 0 ? '' : pageNumber + '/');

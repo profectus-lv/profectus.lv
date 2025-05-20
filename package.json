@@ -1,9 +1,14 @@
 {
-    "name": "lastguru-eleventy-chirpy-minimal",
-    "version": "4.3.5",
+    "name": "eleventy-markdown-prime",
+    "version": "4.4.0",
+    "description": "A starter repository for a text-based blog site using the Eleventy site generator.",
     "type": "module",
-    "private": true,
     "license": "MIT",
+    "author": {
+        "name": "Dmitry Golubev",
+        "url": "https://lastguru.lv"
+    },
+    "homepage": "https://emp-starter.lastguru.dev",
     "scripts": {
         "build": "npm run build:css && npm run build:js && npm run build:eleventy ",
         "build:css": "postcss assets/css/site.css -o assets/css/site-build.css",
@@ -34,7 +39,6 @@
         "rollup": "^4.41.0",
         "@rollup/plugin-terser": "^0.4.4",
         "tailwindcss": "^4.1.7",
-        "@tailwindcss/postcss": "^4.1.7",
-        "lodash-es": "4.17.21"
+        "@tailwindcss/postcss": "^4.1.7"
     }
 }
