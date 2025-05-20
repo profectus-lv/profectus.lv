@@ -17,7 +17,7 @@
 	    {% for pageHref in pagination.hrefs %}
 		{% if loop.index0 < 5  and pagination.hrefs[loop.index0 + startWith] %}
 	    <li>
-			<div class="leading-pagination{% if pagination.hrefs[loop.index0 + startWith] === page.url %} active{% endif %}">
+			<div class="{% if pagination.hrefs[loop.index0 + startWith] === page.url %} active{% endif %}">
 				<a href="{{ pagination.hrefs[loop.index0 + startWith] }}" class="block">{{ loop.index + startWith }}</a>
 			</div>
 		</li>
