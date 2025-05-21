@@ -346,7 +346,7 @@ svg.threads {
 }
 
 .social a:hover::before {
-    @apply absolute block -top-10 -left-10 w-38;
+    @apply absolute block -top-8 -left-30 w-50;
     @apply p-2.5;
     @apply text-white bg-black opacity-100;
     @apply text-center text-xs;
@@ -451,7 +451,7 @@ svg.threads {
 }
 
 .readingtime:hover > span::after {
-    @apply absolute top-2.5 right-10;
+    @apply absolute top-2.5 right-8;
     @apply -mb-1;
     @apply border-8 border-solid border-t-transparent border-r-transparent border-b-black border-l-transparent;
     content: " ";
