@@ -1,36 +1,22 @@
-import { format, formatISO, getYear } from "date-fns";
+import siteconfig from "../content/_data/siteconfig.js";
+import { DateTime } from "luxon";
 
 export default eleventyConfig => {
     // Format dates for sitemap
-    eleventyConfig.addNunjucksFilter("sitemapdate", function (date) {
-        return format(date, "yyyy-MM-dd");
+    eleventyConfig.addNunjucksFilter("isoDate", function (date) {
+        const dt = DateTime.fromISO(date.toISOString());
+        return dt.toISODate();
     });
 
     // Format dates for JSON-LD
-    eleventyConfig.addNunjucksFilter("isodate", function (date) {
-        return formatISO(date);
-    });
-
-    // Extracts the year from a post
-    eleventyConfig.addNunjucksFilter("year", function (post) {
-        if (post && post.date) {
-            return getYear(post.date);
-        }
-        return "n/a";
-    });
-
-    // Extracts the day of a date
-    eleventyConfig.addNunjucksFilter("day", function (date) {
-        return format(date, "dd");
-    });
-
-    // Extracts the month of a date
-    eleventyConfig.addNunjucksFilter("month", function (date) {
-        return format(date, "MMM");
+    eleventyConfig.addNunjucksFilter("isoDateTime", function (date) {
+        const dt = DateTime.fromISO(date.toISOString());
+        return dt.toISO();
     });
 
     // Extracts readable date of a date
     eleventyConfig.addNunjucksFilter("readableDate", function (date) {
-        return format(date, "MMM dd, yyyy");
+        const dt = DateTime.fromISO(date.toISOString());
+        return dt.setLocale(siteconfig.lang).toLocaleString(DateTime.DATE_MED);
     });
 };

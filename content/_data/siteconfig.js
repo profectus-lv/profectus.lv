@@ -15,8 +15,10 @@ export default {
     author: "Domnīca Profectus",
     // Site description, shown below site image (optional)
     description: "Stiprinām demokrātiju un pilsonisko sabiedrību Latvijā un veicinām tās ilgtspēju",
-    // Locale is used for OpenGraph and HTML lang property
+    // Locale for OpenGraph
     locale: "lv_LV",
+    // Language for post properties and HTML lang property
+    lang: "lv",
     // Defines fonts to load from Google Fonts
     // Two fonts are used in this template: header and body
     // Weights need to be defined as well

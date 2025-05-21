@@ -10,7 +10,7 @@
             "name": "{{ siteconfig.author }}"
         },
         "mainEntityOfPage": "{{ page.url | absoluteUrl }}",
-        "datePublished": "{{ page.date | isodate }}",
+        "datePublished": "{{ page.date | isoDateTime }}",
         "description": "{% if title %}{{ currentPost.templateContent | safe | striptags | truncate(150) }}{% else %}{{ siteconfig.description }}{% endif %}"
     }
 </script>
