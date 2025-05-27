@@ -385,7 +385,7 @@ svg.threads {
 
 .additions div {
     @apply text-gray-700 bg-white;
-    @apply border-solid border-1 border-gray-400;
+    @apply border-solid border-1 border-gray-400 rounded-lg;
     @apply h-24 overflow-auto;
     @apply text-center no-underline hover:no-underline;
 }
@@ -413,7 +413,7 @@ svg.threads {
 /* Post properties */
 
 .postproperties {
-    @apply text-gray-500;
+    @apply text-gray-500 fill-gray-500;
     @apply font-header text-sm font-normal;
     @apply pb-4;
 }
@@ -424,16 +424,16 @@ svg.threads {
 
 .postproperties .posttag,
 .postproperties .postauthor {
-    @apply bg-accent/10 hover:bg-accent/20;
-    @apply transition duration-200 ease-in;
+    @apply border-solid border-1 border-accent rounded-sm;
+    @apply -my-0.25;
 }
 
 .postproperties .posttag a,
 .postproperties .postauthor a {
-    @apply text-gray-500 hover:text-accent;
+    @apply bg-accent/10 hover:bg-accent;
+    @apply text-gray-500 fill-gray-500 hover:text-gray-100 hover:fill-gray-100;
     @apply no-underline;
     @apply px-1;
-    @apply transition duration-200 ease-in;
 }
 
 .readingtime {

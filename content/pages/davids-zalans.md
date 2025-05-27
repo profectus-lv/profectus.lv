@@ -10,8 +10,8 @@ Mācījies politikas zinātni maģistrantūrā Latvijas Universitātes Sociālo 
 
 ## Saites
 
-Mani raksti Domnīcā Profectus: [profectus.lv/author/davids-zalans](https://profectus.lv/author/davids-zalans/)<br/>
-Mana mājaslapa: [davidszalans.lv](https://davidszalans.lv)<br/>
-X: [@DavidsZalans](https://x.com/DavidsZalans)<br/>
-Facebook: [Dāvids Zalāns](https://www.facebook.com/david.zalan/)<br/>
+Mani raksti Domnīcā Profectus: [profectus.lv/author/davids-zalans](https://profectus.lv/author/davids-zalans/)  
+Mana mājaslapa: [davidszalans.lv](https://davidszalans.lv)  
+X: [@DavidsZalans](https://x.com/DavidsZalans)  
+Facebook: [Dāvids Zalāns](https://www.facebook.com/david.zalan/)  
 LinkedIn: [Dāvids Zalāns](https://www.linkedin.com/in/dāvids-zalāns-9a88ba31/)

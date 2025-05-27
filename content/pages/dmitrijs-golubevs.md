@@ -12,8 +12,8 @@ Esmu piedalījies Latvijas nodokļu politikas veidošanā, bijis divu ministru �
 
 ## Saites
 
-Mani raksti Domnīcā Profectus: [profectus.lv/author/dmitrijs-golubevs](https://profectus.lv/author/dmitrijs-golubevs/)<br/>
-Mana mājaslapa: [lastguru.lv](https://lastguru.lv)<br/>
-X: [@lastguru_net](https://x.com/lastguru_net)<br/>
-BlueSky: [@lastguru.net](https://bsky.app/profile/lastguru.net)<br/>
+Mani raksti Domnīcā Profectus: [profectus.lv/author/dmitrijs-golubevs](https://profectus.lv/author/dmitrijs-golubevs/)  
+Mana mājaslapa: [lastguru.lv](https://lastguru.lv)  
+X: [@lastguru_net](https://x.com/lastguru_net)  
+BlueSky: [@lastguru.net](https://bsky.app/profile/lastguru.net)  
 Mastodon: [@lastguru@toot.lv](https://toot.lv/@lastguru)

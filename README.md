@@ -15,7 +15,8 @@ A minimalistic Eleventy starter repository for a text-based blog site, loosely b
 - Can be used for a text-based (Markdown) blog or simple page
 - Logo, site name and main menu are placed on the left sidebar
 - Social network links on the sidebar
-- Automatic post (index), tag and author pages with pagination
+- Automatic post list (index), tag and author pages with pagination
+- Can be easily localized
 - Convenient configuration with many options
 - Automatic responsive image optimization (generating AVIF and WEBP with different sizes)
 - SEO optimization, OpenGraph, JSON-LD
