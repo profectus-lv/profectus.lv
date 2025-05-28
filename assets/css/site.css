@@ -440,7 +440,7 @@ svg.threads {
 }
 
 .readingtime:hover::before {
-    @apply absolute block -bottom-11 w-25;
+    @apply absolute block -bottom-11.5 w-25;
     @apply p-1;
     @apply text-gray-700 bg-gray-100;
     @apply text-center text-xs font-semibold;
@@ -528,11 +528,11 @@ ul.pagination div a {
 /* Miscellaneous */
 
 ::placeholder {
-    @apply text-gray-800;
+    @apply text-gray-700;
 }
 
 :-ms-input-placeholder {
-    @apply text-gray-800;
+    @apply text-gray-700;
 }
 
 /* Print media style */
