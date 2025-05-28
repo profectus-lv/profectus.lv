@@ -386,7 +386,7 @@ svg.threads {
 .additions div {
     @apply text-gray-700 bg-gray-100;
     @apply border-solid border-1 border-accent rounded-lg;
-    @apply h-24 overflow-auto;
+    @apply h-22 overflow-hidden;
     @apply text-center no-underline hover:no-underline;
 }
 
@@ -402,12 +402,12 @@ svg.threads {
 }
 
 .prevnexttitle {
-    @apply block mt-1 mb-3;
+    @apply block my-1;
     @apply text-xs font-semibold;
 }
 
 .prevnextlink {
-    @apply text-lg font-medium;
+    @apply text-base font-medium;
 }
 
 /* Post properties */
