@@ -180,7 +180,7 @@ main {
 }
 
 .content .postimage {
-    @apply -mt-3 mb-8;
+    @apply mb-6;
 }
 
 .content .incontent {
@@ -346,11 +346,11 @@ svg.threads {
 }
 
 .social a:hover::before {
-    @apply absolute block -top-8 -left-30 w-50;
+    @apply absolute block -top-8 -left-36 w-54;
     @apply p-2.5;
-    @apply text-white bg-black opacity-100;
-    @apply text-center text-xs;
-    @apply rounded-md;
+    @apply text-gray-700 bg-gray-100;
+    @apply text-center text-xs font-semibold;
+    @apply border-1 border-solid border-accent rounded-md;
     @apply -translate-y-1/2;
     content: attr(aria-label);
 }
@@ -361,9 +361,8 @@ svg.threads {
 }
 
 .social a:hover > span::after {
-    @apply absolute -top-4 left-2;
-    @apply -mb-1;
-    @apply border-8 border-solid border-t-black border-r-transparent border-b-transparent border-l-transparent;
+    @apply absolute -top-3.5 left-2;
+    @apply border-8 border-solid border-t-accent border-r-transparent border-b-transparent border-l-transparent;
     content: " ";
 }
 
@@ -441,19 +440,18 @@ svg.threads {
 }
 
 .readingtime:hover::before {
-    @apply absolute block -bottom-10 w-25;
+    @apply absolute block -bottom-11 w-25;
     @apply p-1;
-    @apply bg-black text-white opacity-100;
-    @apply text-center text-xs;
-    @apply rounded-md;
+    @apply text-gray-700 bg-gray-100;
+    @apply text-center text-xs font-semibold;
+    @apply border-1 border-solid border-accent rounded-md;
     @apply -translate-y-1/2;
     content: attr(data-words);
 }
 
 .readingtime:hover > span::after {
-    @apply absolute top-2.5 right-8;
-    @apply -mb-1;
-    @apply border-8 border-solid border-t-transparent border-r-transparent border-b-black border-l-transparent;
+    @apply absolute top-3 right-6;
+    @apply border-8 border-solid border-t-transparent border-r-transparent border-b-accent border-l-transparent;
     content: " ";
 }
 
