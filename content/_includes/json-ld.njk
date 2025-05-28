@@ -11,6 +11,6 @@
         },
         "mainEntityOfPage": "{{ page.url | absoluteUrl }}",
         "datePublished": "{{ page.date | isoDateTime }}",
-        "description": "{% if title %}{{ currentPost.templateContent | safe | striptags | truncate(150) }}{% else %}{{ siteconfig.description }}{% endif %}"
+        "description": "{% if title %}{{ currentPost.templateContent | safe | striptags | truncate(150, false, "…") }}{% else %}{{ siteconfig.description }}{% endif %}"
     }
 </script>

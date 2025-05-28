@@ -23,13 +23,13 @@ layout: base.njk
 	  	<a href="{{ previousPost.url }}" class="flex-1">
 			<div class="{% if previousPost.url %} prevnextyes{% else %} prevnextno{% endif %}">
 				<span class="prevnexttitle">{{ sitestrings.older }}</span>
-				<span class="prevnextlink">{% if not previousPost.url %} - {% else %}{{ previousPost.data.title | truncate(60) }}{% endif %}</span>
+				<span class="prevnextlink">{% if not previousPost.url %} - {% else %}{{ previousPost.data.title | truncate(60, false, "…") }}{% endif %}</span>
 			</div>
 		</a>
 	  	<a href="{{ nextPost.url }}" class="flex-1">
 		  	<div class="{% if nextPost.url %} prevnextyes{% else %} prevnextno{% endif %}">
 				<span class="prevnexttitle">{{ sitestrings.newer }}</span>
-				<span class="prevnextlink">{% if not nextPost.url %} - {% else %}{{ nextPost.data.title | truncate(60) }}{% endif %}</span>
+				<span class="prevnextlink">{% if not nextPost.url %} - {% else %}{{ nextPost.data.title | truncate(60, false, "…") }}{% endif %}</span>
 			</div>
 		</a>
 	</div>

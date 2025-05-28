@@ -12,7 +12,7 @@ export default eleventyConfig => {
         const excerpt = content.slice(0, content.indexOf("\n"))
             .slice(0, content.lastIndexOf(' ', 350)) //Cap at full words before 350 character cap
             .trim()
-            .concat("...");
+            .concat("…");
     
         return excerpt;
         }
