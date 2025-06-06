@@ -11,7 +11,7 @@ pagination:
 {% if siteconfig.header %}{% set siteheader = true %}{% endif %}
 {% if siteconfig.features.index == "postlist" %}{% include "postlist.njk" %}{% endif %}
 {% if siteconfig.features.index == "singlepost" %}
-<div class="content post">
+<div class="{% if siteconfig.features.base != "primitive" %}content {% endif %}post">
 {% set cp = collections.all | getCollectionItem(posts[0]) %}{{ cp.templateContent | safe }}
 </div>
 {% endif %}

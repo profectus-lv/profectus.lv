@@ -3,8 +3,27 @@
 @import "./prism-okaidia.css";
 @source "./safelist.txt";
 
+@utility h-dvh {
+    @supports (height: 100dvh) {
+        height: 100dvh;
+    }
+    @supports not (height: 100dvh) {
+        height: 100vh;
+    }
+}
+
+@utility max-h-dvh {
+    @supports (max-height: 100dvh) {
+        max-height: 100dvh;
+    }
+    @supports not (max-height: 100dvh) {
+        max-height: 100vh;
+    }
+}
+
 .h-screen {
-    @apply min-h-screen max-h-screen overflow-x-hidden overflow-y-hidden;
+    @apply overflow-x-hidden overflow-y-hidden;
+    @apply h-dvh;
 }
 
 /* Images */
@@ -168,6 +187,7 @@ div.menu > * {
 #right-area {
     @apply overflow-x-hidden overflow-y-auto;
     @apply transition-transform sm:translate-x-0 sm:transition-none;
+    @apply max-h-dvh;
 }
 
 main {
@@ -175,7 +195,7 @@ main {
 }
 
 .content {
-    @apply pb-16 mt-4 mx-8 lg:mx-24;
+    @apply pb-8 mt-4 mx-8 lg:mx-24;
     @apply leading-relaxed tracking-wider;
 }
 
@@ -357,7 +377,7 @@ svg.threads {
 
 .social a.link:active::before {
     @apply -top-8;
-    content: "Copied";
+    content: attr(data-copied);
 }
 
 /* Additions and Previous - Next block */
@@ -482,7 +502,7 @@ svg.threads {
 /* Collection pagination */
 
 .postpagination {
-    @apply mt-2 mx-4 lg:mx-20 pb-16;
+    @apply mt-2 mx-4 lg:mx-20 pb-8;
 }
 
 ul.pagination {
