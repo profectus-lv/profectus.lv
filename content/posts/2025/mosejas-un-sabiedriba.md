@@ -21,4 +21,4 @@ Piedalās:
 
 - Ansis Pūpols, producents, Rīgas Domes deputāts;
 - Arvīds Dravnieks, Publisko tiesību institūta direktors;
-- Khaqan Ahmad Said, students, tulkotājs.
+- Khaqan Ahmad Saim, students, tulkotājs.
