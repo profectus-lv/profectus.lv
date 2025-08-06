@@ -13,13 +13,13 @@
 <meta property="og:title" content="{% if title %}{{ title }} - {% endif %}{{ siteconfig.title }}">
 {% if siteconfig.features.og_description %}<meta property="og:description" content="{{ description }}">{% endif %}
 {% if image %}{% set image_src = image %}{% else %}{% set image_src = siteconfig.openGraphDefaultImage %}{% endif %}
-<meta property="og:image" content="{% imageTransform image_src, 1280 %}">
+<meta property="og:image" content="{{ siteconfig.url }}{% imageTransform image_src, 1200, 'webp' %}">
 <meta property="og:locale" content="{{ siteconfig.locale }}" />
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="{{ page.url | absoluteUrl }}">
 <meta name="twitter:title" content="{% if title %}{{ title }} - {% endif %}{{ siteconfig.title }}">
 {% if siteconfig.features.og_description %}<meta name="twitter:description" content="{{ description }}">{% endif %}
-<meta name="twitter:image" content="{% imageTransform image_src, 1280 %}">
+<meta name="twitter:image" content="{{ siteconfig.url }}{% imageTransform image_src, 1200, 'webp' %}">
 {% if siteconfig.social.twitter_x %}
 <meta name="twitter:site" content="@{{ siteconfig.social.twitter_x }}">
 <meta name="twitter:creator" content="@{{ siteconfig.social.twitter_x }}">
@@ -30,10 +30,10 @@
 <meta name="{{ name }}" content="{{ item.value }}">
 {% endfor %}
 {% for iconsize in siteconfig.appleiconSizes %}
-<link rel="apple-touch-icon" sizes="{{ iconsize }}x{{ iconsize }}" href="{% imageTransform siteconfig.favicon, iconsize %}">
+<link rel="apple-touch-icon" sizes="{{ iconsize }}x{{ iconsize }}" href="{% imageTransform siteconfig.favicon, iconsize, 'png' %}">
 {% endfor %}
 {% for iconsize in siteconfig.faviconSizes %}
-<link rel="icon" type="image/png" sizes="{{ iconsize }}x{{ iconsize }}" href="{% imageTransform siteconfig.favicon, iconsize %}">
+<link rel="icon" type="image/png" sizes="{{ iconsize }}x{{ iconsize }}" href="{% imageTransform siteconfig.favicon, iconsize, 'png' %}">
 {% endfor %}
 {% if siteconfig.webmanifestSizes %}<link rel="manifest" href="/site.webmanifest" crossorigin="use-credentials">{% endif %}
 <link rel="canonical" href="{{ page.url | absoluteUrl }}" />

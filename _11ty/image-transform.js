@@ -33,7 +33,7 @@ const imageTransformParams = {
     }
 };
 
-const imageTransform = async (src, width) => {
+const imageTransform = async (src, width, format) => {
     const options = {
         outputDir: ".cache/images/",
         urlPath: "/images/",
@@ -43,12 +43,12 @@ const imageTransform = async (src, width) => {
 
             return `${name}-${id}-${width}w.${format}`;
         },
-        formats: ["png"],
+        formats: [format],
         widths: [width]
     };
 
     const metadata = await Image(path.join("content", src), options);
-    return metadata.png[0].url;
+    return metadata[format][0].url;
 };
 
 export default eleventyConfig => {
