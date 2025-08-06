@@ -1,22 +1,25 @@
 <meta charset="utf-8">
-<title>{% if title %}{{ title }} - {% endif %}{{ siteconfig.title }}</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{% if title %}{{ title }} - {% endif %}{{ siteconfig.title }}</title>
 {% if excerpt %}{% set description = excerpt | truncate(150, false, "…") %}
 {% elseif page and title and not posts %}{% set cp = collections.all | getCollectionItem(page) %}{% set description = cp.templateContent | safe | striptags | truncate(150, false, "…") %}
-{% else%}{% set description = siteconfig.description | truncate(150, false, "…") %}
+{% else %}{% set description = siteconfig.description | truncate(150, false, "…") %}
 {% endif %}
+<meta name="author" content="{% if author %}{{ author }} - {% endif %}{{ siteconfig.author }}">
 <meta name="description" content="{{ description }}">
 <meta property="og:url" content="{{ page.url | absoluteUrl }}">
 <meta property="og:type" content="{% if title %}article{% else %}website{% endif %}">
+<meta property="og:site_name" content="{{ siteconfig.title }}">
 <meta property="og:title" content="{% if title %}{{ title }} - {% endif %}{{ siteconfig.title }}">
 {% if siteconfig.features.og_description %}<meta property="og:description" content="{{ description }}">{% endif %}
-<meta property="og:image" content="{% if image %}{{ image | addHash  | absoluteUrl }}{% else %}{{ siteconfig.openGraphDefaultImage | addHash | absoluteUrl }}{% endif %}">
-<meta property="og:image:url" content="{% if image %}{{ image | addHash  | absoluteUrl }}{% else %}{{ siteconfig.openGraphDefaultImage | addHash | absoluteUrl }}{% endif %}">
+{% if image %}{% set image_src = image %}{% else %}{% set image_src = siteconfig.openGraphDefaultImage %}{% endif %}
+<meta property="og:image" content="{% imageTransform image_src, 1280 %}">
 <meta property="og:locale" content="{{ siteconfig.locale }}" />
 <meta name="twitter:card" content="summary_large_image">
-<meta nema="twitter:title" content="{% if title %}{{ title }} - {% endif %}{{ siteconfig.title }}">
+<meta name="twitter:url" content="{{ page.url | absoluteUrl }}">
+<meta name="twitter:title" content="{% if title %}{{ title }} - {% endif %}{{ siteconfig.title }}">
 {% if siteconfig.features.og_description %}<meta name="twitter:description" content="{{ description }}">{% endif %}
-<meta name="twitter:image" content="{% if image %}{{ image | addHash | absoluteUrl }}{% else %}{{ siteconfig.openGraphDefaultImage | addHash | absoluteUrl }} {% endif %}">
+<meta name="twitter:image" content="{% imageTransform image_src, 1280 %}">
 {% if siteconfig.social.twitter_x %}
 <meta name="twitter:site" content="@{{ siteconfig.social.twitter_x }}">
 <meta name="twitter:creator" content="@{{ siteconfig.social.twitter_x }}">
@@ -26,13 +29,13 @@
 {% for name, item in meta %}
 <meta name="{{ name }}" content="{{ item.value }}">
 {% endfor %}
-{% for iconsize, iconsrc in siteconfig.appleicons %}
-<link rel="apple-touch-icon" sizes="{{ iconsize }}" href="{{ iconsrc | addHash }}">
+{% for iconsize in siteconfig.appleiconSizes %}
+<link rel="apple-touch-icon" sizes="{{ iconsize }}x{{ iconsize }}" href="{% imageTransform siteconfig.favicon, iconsize %}">
 {% endfor %}
-{% for iconsize, iconsrc in siteconfig.favicons %}
-<link rel="icon" type="image/png" sizes="{{ iconsize }}" href="{{ iconsrc | addHash }}">
+{% for iconsize in siteconfig.faviconSizes %}
+<link rel="icon" type="image/png" sizes="{{ iconsize }}x{{ iconsize }}" href="{% imageTransform siteconfig.favicon, iconsize %}">
 {% endfor %}
-{% if siteconfig.webmanifest %}<link rel="manifest" href="/site.webmanifest" crossorigin="use-credentials">{% endif %}
+{% if siteconfig.webmanifestSizes %}<link rel="manifest" href="/site.webmanifest" crossorigin="use-credentials">{% endif %}
 <link rel="canonical" href="{{ page.url | absoluteUrl }}" />
 {% if siteconfig.features.sitemap %}<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">{% endif %}
 {% if siteconfig.pixels.fbPixel %}<link rel="preconnect" href="https://connect.facebook.net">{% endif %}

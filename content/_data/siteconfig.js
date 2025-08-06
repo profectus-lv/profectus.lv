@@ -42,19 +42,11 @@ export default {
     // set in your Markdown frontmatter; relevant for social
     // sharing.
     openGraphDefaultImage: "/images/profectus-logo-wt.png",
-    // Collection of Favicons, Apple Touch icons and Webmanifest icons
-    favicons: {
-        "16x16": "/assets/favicons/profectus-favicon-16.png",
-        "32x32": "/assets/favicons/profectus-favicon-32.png",
-        "64x64": "/assets/favicons/profectus-favicon-64.png"
-    },
-    appleicons: {
-        "180x180": "/assets/favicons/profectus-favicon-180.png"
-    },
-    webmanifest: {
-        "180x180": "/assets/favicons/profectus-favicon-180.png",
-        "512x512": "/assets/favicons/profectus-favicon-512.png"
-    },
+    // Configuration of the favicons, Apple Touch icons and Webmanifest icons
+    favicon: "images/profectus-favicon.png",
+    faviconSizes: [16, 32, 64],
+    appleiconSizes: [180],
+    webmanifestSizes: [192, 512],
     // Home menu name
     menuHome: "Uz sākumu",
     // Other menu links

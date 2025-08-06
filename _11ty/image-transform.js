@@ -1,13 +1,41 @@
 import path from "node:path";
+import fs from "node:fs";
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
+import Image from "@11ty/eleventy-img";
 
-export default eleventyConfig => {
-    eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
-        // which file extensions to process
-        extensions: "html",
+const imageTransformParams = {
+    // which file extensions to process
+    extensions: "html",
 
-        // filename configuration
-        outputDir: "./_site/images/",
+    // filename configuration
+    outputDir: ".cache/images/",
+    urlPath: "/images/",
+    filenameFormat: function (id, src, width, format, options) {
+        const extension = path.extname(src);
+        const name = path.basename(src, extension);
+
+        return `${name}-${id}-${width}w.${format}`;
+    },
+
+    // optional, output image formats
+    formats: ["avif", "webp", "auto"],
+    svgShortCircuit: true,
+    // formats: ["auto"],
+
+    // optional, output image widths
+    widths: [1280, 960, 640, 320, "auto"],
+
+    // optional, attributes assigned on <img> override these values.
+    defaultAttributes: {
+        loading: "lazy",
+        decoding: "async",
+        sizes: "auto",
+    }
+};
+
+const imageTransform = async (src, width) => {
+    const options = {
+        outputDir: ".cache/images/",
         urlPath: "/images/",
         filenameFormat: function (id, src, width, format, options) {
             const extension = path.extname(src);
@@ -15,19 +43,23 @@ export default eleventyConfig => {
 
             return `${name}-${id}-${width}w.${format}`;
         },
+        formats: ["png"],
+        widths: [width]
+    };
 
-        // optional, output image formats
-        formats: ["avif", "webp", "auto"],
-        // formats: ["auto"],
+    const metadata = await Image(path.join("content", src), options);
+    return metadata.png[0].url;
+};
 
-        // optional, output image widths
-        widths: [1280, 960, 640, 320, "auto"],
+export default eleventyConfig => {
+    eleventyConfig.addPlugin(eleventyImageTransformPlugin, imageTransformParams);
 
-        // optional, attributes assigned on <img> override these values.
-        defaultAttributes: {
-            loading: "lazy",
-            decoding: "async",
-            sizes: "auto",
-        },
-    });
+    eleventyConfig.addShortcode("imageTransform", imageTransform);
+    
+    // Copy the optimized images to the public folder after build
+    eleventyConfig.on("eleventy.after", () => {
+		fs.cpSync(".cache/images/", "_site/images/", {
+			recursive: true
+		});
+	});
 };

@@ -399,8 +399,17 @@ svg.threads {
 .additions div {
     @apply text-gray-700 bg-gray-100;
     @apply border-solid border-1 border-accent rounded-lg;
-    @apply h-22 overflow-hidden;
-    @apply text-center no-underline hover:no-underline;
+    @apply h-22 px-2;
+    @apply overflow-hidden;
+    @apply no-underline hover:no-underline;
+}
+
+.prevnextprev {
+    @apply text-left;
+}
+
+.prevnextnext {
+    @apply text-right;
 }
 
 .prevnextyes {

@@ -8,10 +8,10 @@ permalink: /site.webmanifest
     "background_color": "#000000",
     "display": "standalone",
     "icons": [
-    {% for iconsize, iconsrc in siteconfig.webmanifest %}
+    {% for iconsize in siteconfig.webmanifestSizes %}
         {
-            "src": "{{ iconsrc | addHash }}",
-            "sizes": "{{ iconsize }}",
+            "src": "{% imageTransform siteconfig.favicon, iconsize %}",
+            "sizes": "{{ iconsize }}x{{ iconsize }}",
             "type": "image/png"
         }{% if not loop.last %},{% endif %}
     {% endfor %}

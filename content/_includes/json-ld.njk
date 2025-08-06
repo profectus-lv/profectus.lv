@@ -7,7 +7,7 @@
         "image": ["{% if image %}{{ image | absoluteUrl }}{% else %}{{ siteconfig.openGraphDefaultImage | absoluteUrl }}{% endif %}"],
         "author": {
             "@type": "Person",
-            "name": "{{ siteconfig.author }}"
+            "name": "{% if author %}{{ author }} - {% endif %}{{ siteconfig.author }}"
         },
         "mainEntityOfPage": "{{ page.url | absoluteUrl }}",
         "datePublished": "{{ page.date | isoDateTime }}",
