@@ -10,7 +10,7 @@ import slugify from "@sindresorhus/slugify";
 // Page size
 const pageSize = 10;
 // Permalink prefix for forming URLs
-const linkPrefix = '/author/';
+const linkPrefix = "/author/";
 
 const authorPagination = (collection) => {
     // Get unique list of authors as tags
@@ -21,12 +21,15 @@ const authorPagination = (collection) => {
         }
     });
 
+    // Cache the reversed collection once
+    const reversedCollection = collection.getAllSorted().reverse();
+
     // Get each item that matches the tag
     let tagMap = [];
     let tagArray = [...tagSet];
     for (let tagName of tagArray) {
-        let tagItems = collection.getAllSorted().reverse().filter(function (item) {
-            return item.data.author && (item.data.author == tagName);
+        let tagItems = reversedCollection.filter(function (item) {
+            return item.data.author && (item.data.author === tagName);
         });
         let pagedItems = lodash.chunk(tagItems, pageSize);
         let hrefs = [];

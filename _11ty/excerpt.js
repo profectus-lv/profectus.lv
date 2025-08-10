@@ -1,17 +1,12 @@
 const excerpt = (article) => {
-    if (!Object.prototype.hasOwnProperty.call(article, "templateContent")) {
-        console.warn(
-            'Failed to extract excerpt: Document has no property "templateContent".'
-        );
-        return null;
-    }
-
     const content = article.templateContent;
+    const firstLine = content.indexOf("\n") > 0 ? content.indexOf("\n") : content.length; // Cap at first line
+    const wordCap = content.lastIndexOf(' ', 350); // Cap at full words before 350 character cap
 
-    const excerpt = content.slice(0, content.indexOf("\n"))
-        .slice(0, content.lastIndexOf(' ', 350)) //Cap at full words before 350 character cap
-        .trim()
-        .concat("…");
+    let excerpt = content.slice(0, Math.min(firstLine, wordCap)).trim();
+    if (excerpt.length < content.length) {
+        excerpt += "…";
+    }
 
     return excerpt;
 };

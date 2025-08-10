@@ -8,7 +8,7 @@
 		<div class="postlistheading">
 			<a href="{{ post.url | url }}">{{ post.data.title }}</a>
 		</div>
-		<div class="postexcerpt">{% if post.data.excerpt %} {{ post.data.excerpt }} {% else %} {% excerpt post %} {% endif %}</div>
+		<div class="postexcerpt">{% if post.data.excerpt %}{{ post.data.excerpt }}{% else %}{% excerpt post %}{% endif %}</div>
 		{% if siteconfig.features.postproperties %}
 		{% include "postproperties.njk" %}
 		{% endif %}

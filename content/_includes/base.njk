@@ -18,11 +18,14 @@
                     {% include "topbar.njk" %}
                 </div>
                 {% endif %}
-                <div class="grid grid-flow-col grid-cols-auto xl:grid-cols-[auto_6rem] max-w-content">
+                <div class="max-w-content">
                     <main>
                         {{ content | safe }}
                     </main>
                 </div>
+                {% if siteconfig.features.footer %}
+                    {% include "footer.njk" %}
+                {% endif %}
             </div>
         </div>
     {% endif %}

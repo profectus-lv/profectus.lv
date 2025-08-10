@@ -20,12 +20,12 @@
 <meta name="twitter:title" content="{% if title %}{{ title }} - {% endif %}{{ siteconfig.title }}">
 {% if siteconfig.features.og_description %}<meta name="twitter:description" content="{{ description }}">{% endif %}
 <meta name="twitter:image" content="{{ siteconfig.url }}{% imageTransform image_src, 1200, 'webp' %}">
-{% if siteconfig.social.twitter_x %}
-<meta name="twitter:site" content="@{{ siteconfig.social.twitter_x }}">
-<meta name="twitter:creator" content="@{{ siteconfig.social.twitter_x }}">
+{% if siteelements.social.twitter_x %}
+<meta name="twitter:site" content="@{{ siteelements.social.twitter_x }}">
+<meta name="twitter:creator" content="@{{ siteelements.social.twitter_x }}">
 {% endif %}
 {% if siteconfig.pixels.fbApp %}<meta property="fb:app_id" content="{{ siteconfig.pixels.fbApp }}">{% endif %}
-{% if siteconfig.social.fbPage %}<meta property="article:publisher" content="https://www.facebook.com/{{ siteconfig.social.fbPage }}/">{% endif %}
+{% if siteelements.social.fbPage %}<meta property="article:publisher" content="https://www.facebook.com/{{ siteelements.social.fbPage }}/">{% endif %}
 {% for name, item in meta %}
 <meta name="{{ name }}" content="{{ item.value }}">
 {% endfor %}

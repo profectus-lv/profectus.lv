@@ -18,13 +18,13 @@ const options = {
     rel: "noopener"
 };
 
-const extLinks = async (rawContent, outputPath) => {
+const externalContentLinks = async (rawContent, outputPath) => {
     let content = rawContent;
     if (outputPath && outputPath.endsWith(".html")) {
         const dom = parse(content);
         const links = dom.querySelectorAll("a");
         links.forEach((link) => {
-            const href = link.getAttribute('href');
+            const href = link.getAttribute("href");
             if (href && checkHrefs(href)) {
                 link.setAttribute("target", options.target);
                 link.setAttribute("rel", options.rel);
@@ -37,5 +37,5 @@ const extLinks = async (rawContent, outputPath) => {
 };
 
 export default eleventyConfig => {
-    eleventyConfig.addTransform('externalContentLinks', extLinks);
+    eleventyConfig.addTransform('externalContentLinks', externalContentLinks);
 };

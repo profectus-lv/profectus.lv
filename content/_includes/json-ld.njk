@@ -1,16 +1,19 @@
-{% set currentPost = collections.posts | getCollectionItem(page) %}
+{% if excerpt %}{% set description = excerpt | truncate(150, false, "…") %}
+{% elseif page and title and not posts %}{% set cp = collections.all | getCollectionItem(page) %}{% set description = cp.templateContent | safe | striptags | truncate(150, false, "…") %}
+{% else %}{% set description = siteconfig.description | truncate(150, false, "…") %}
+{% endif %}
 <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "{% if title %}{{ title }} - {% endif %}{{ siteconfig.title }}",
-        "image": ["{% if image %}{{ image | absoluteUrl }}{% else %}{{ siteconfig.openGraphDefaultImage | absoluteUrl }}{% endif %}"],
-        "author": {
-            "@type": "Person",
-            "name": "{% if author %}{{ author }} - {% endif %}{{ siteconfig.author }}"
-        },
-        "mainEntityOfPage": "{{ page.url | absoluteUrl }}",
-        "datePublished": "{{ page.date | isoDateTime }}",
-        "description": "{% if title %}{{ currentPost.templateContent | safe | striptags | truncate(150, false, "…") }}{% else %}{{ siteconfig.description }}{% endif %}"
-    }
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "{% if title %}{{ title }} - {% endif %}{{ siteconfig.title }}",
+    "image": ["{% if image %}{{ image | absoluteUrl }}{% else %}{{ siteconfig.openGraphDefaultImage | absoluteUrl }}{% endif %}"],
+    "author": {
+        "@type": "Person",
+        "name": "{% if author %}{{ author }}{% else %}{{ siteconfig.author }}{% endif %}"
+    },
+    "mainEntityOfPage": "{{ page.url | absoluteUrl }}",
+    "datePublished": "{{ page.date | isoDateTime }}",
+    "description": "{{ description }}"
+}
 </script>

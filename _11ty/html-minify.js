@@ -1,9 +1,9 @@
-import htmlmin from 'html-minifier-terser';
+import htmlmin from "html-minifier-terser";
 
-const isProduction = process.env.NODE_ENV === 'production';
+const isProduction = process.env.NODE_ENV === "production";
 
 const minifyHTML = (content, path) => {
-    if (path && path.endsWith('.html') && isProduction) {
+    if (path && path.endsWith(".html") && isProduction) {
         return htmlmin.minify(content, {
             useShortDoctype: true,
             collapseBooleanAttributes: true,
@@ -18,5 +18,5 @@ const minifyHTML = (content, path) => {
 };
 
 export default eleventyConfig => {
-    eleventyConfig.addTransform('minifyHTML', minifyHTML);
+    eleventyConfig.addTransform("minifyHTML", minifyHTML);
 };

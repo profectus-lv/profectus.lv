@@ -1,32 +1,41 @@
 export default {
-    // Website title, shown in left sidebar and in page title
+    // Main website title (displayed in the sidebar and page title)
     title: "Domnīca Profectus",
-    // Site URL to generate absolute URLs. Used across the board.
+
+    // Base site URL for generating absolute URLs (used throughout the site)
     url: process.env.URL || "https://profectus.lv",
-    // Profile image for left sidebar
+
+    // Sidebar profile image (relative path from the site root)
     image: "/images/profectus-logo-wt.png",
-    // Image alt text for left sidebar
+    // Alt text for the sidebar profile image (for accessibility)
     imageAlt: "Domnīca Profectus",
-    // Header image fot the landing page
+
+    // Header image for the landing page (relative path from the site root)
     header: "",
-    // Image alt text for the header
+    // Alt text for the header image (for accessibility)
     headerAlt: "",
-    // Author name, used in JSON-LD
+
+    // Author name (used in meta tags and JSON-LD structured data)
     author: "Domnīca Profectus",
-    // Site description, shown below site image (optional)
+
+    // Short site description (displayed below the sidebar image and used in meta tags)
     description: "Stiprinām demokrātiju un pilsonisko sabiedrību Latvijā un veicinām tās ilgtspēju",
-    // Locale for OpenGraph
+
+    // OpenGraph locale (used for social sharing metadata)
     locale: "lv_LV",
-    // Language for post properties and HTML lang property
+
+    // Default language for HTML lang and post properties
     lang: "lv",
-    // Defines fonts to load from Google Fonts
-    // Two fonts are used in this template: header and body
-    // Weights need to be defined as well
-    // Weights starting with "0," are non-italic
-    // Weights starting with "1," are italic
-    // Value of "swap" controls "font-display: swap" behavior:
-    // - disabled by default to avoid flash unstyled text (FOUT)
-    // - if flash of invisible text (FOIT) is more disturbing, enable it
+ 
+    // Google Fonts configuration for typography
+    // - 'swap': controls 'font-display: swap' behavior
+    //   - false by default to avoid flash unstyled text (FOUT)
+    //   - if flash of invisible text (FOIT) is more disturbing, enable it
+    // - 'body' and 'header': specify font families and weights
+    // 
+    // Every weight and style used anywhere must be defined here:
+    // - weights starting with "0," are non-italic
+    // - weights starting with "1," are italic
     fonts: {
         swap: false,
         body: {
@@ -38,77 +47,55 @@ export default {
             weights: "0,400;0,500;0,600;0,700"
         }
     },
-    // OpenGraph default image, in case you don't have an `image`
-    // set in your Markdown frontmatter; relevant for social
-    // sharing.
+
+    // Default OpenGraph image (used if no image is specified in page frontmatter)
     openGraphDefaultImage: "/images/profectus-logo-wt.png",
-    // Configuration of the favicons, Apple Touch icons and Webmanifest icons
+
+    // Favicon and icon configuration
+    // - 'favicon': main favicon path
+    // - 'faviconSizes': sizes for PNG favicons
+    // - 'appleiconSizes': sizes for Apple Touch icons
+    // - 'webmanifestSizes': sizes for Webmanifest icons
     favicon: "images/profectus-favicon.png",
     faviconSizes: [16, 32, 64],
     appleiconSizes: [180],
     webmanifestSizes: [192, 512],
-    // Home menu name
-    menuHome: "Uz sākumu",
-    // Other menu links
-    menuItems: {
-        "Raksti": "/raksti/",
-        "Notikumi": "/notikumi/",
-        "Par mums": "/par-mums/",
-        "Ziedo!": "/ziedo/"
-    },
-    // Social links (optional, used for links in the left sidebar)
-    social: {
-        // GitHub ID
-//        github: "",
-        // Linkedin ID
-//        linkedin: "",
-        // Twitter ID
-        twitter_x: "ProfectusLV",
-        // YouTube ID/Channel
-//        youtube: "",
-        // Facebook page ID
-//        fbPage: "",
-        // Facebook profile ID
-        fbProfile: "ProfectusLV",
-        // Mastodon profile link
-//        mastodon: "",
-        // Bluesky profile link
-//        bluesky: "",
-        // Instagram profile ID
-//        instagram: "-",
-        // Threads profile ID
-//        threads: "-",
-    },
-    // Analytics pixels and other IDs for sharing and tracking
-    // (optional)
+
+    // Analytics and tracking IDs (optional)
     pixels: {
         // Facebook App ID
 //        fbApp: "",
-        // Facebook Pixel
+        // Facebook Pixel ID
 //        fbPixel: "",
-        // Google Analytics ID
+        // Google Analytics Tag ID
         googleTag: "UA-16574330-6",
     },
+
+    // Feature toggles and layout options
     features: {
-        // Should the postproperties be displayed?
+        // Display post properties (e.g., author, date) on posts
         postproperties: true,
-        // Should description also be put in OpenGraph and Twitter meta tags?
+        // Include description in OpenGraph and Twitter meta tags
         og_description: true,
-        // Should JSON-LD be compiled and included?
+        // Generate and include JSON-LD structured data
         json_ld: true,
-        // Should sitemap be included?
+        // Generate a sitemap.xml file
         sitemap: true,
-        // Should the local javascript be included?
+        // Include local JavaScript bundle
         js: true,
-        // Should sharer be enabled on pages and posts?
+        // Enable social sharing buttons on posts/pages
         sharer: true,
-        // Should previous/next post navigation be enabled on posts?
+        // Enable previous/next post navigation
         prevnext: true,
-        // Regular base template (regular) or alternative base template without sidebar and other features (primitive)
+        // Base layout: 'regular' (with sidebar) or 'primitive' (minimal layout)
         base: "regular",
-        // Index page to display postlist (postlist) or a single post (singlepost)
+        // Index page type: 'postlist' (list of posts) or 'singlepost' (single post)
         index: "postlist",
-        // Top bar: none (false), always present (static), appearing and disappearing on scroll (dynamic)
+        // Top bar behavior: false (none), 'static' (always visible), or 'dynamic' (shows/hides on scroll)
         topbar: "dynamic",
+        // Location of the Privacy Policy link: 'footer', 'sidebar', or false (none)
+        privacyPolicy: false,
+        // Display footer information (e.g., copyright, author)
+        footer: true,
     }
 };

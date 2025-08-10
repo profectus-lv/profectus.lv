@@ -25,7 +25,7 @@
 	</div>
 	{% endif %}
 	{% for posttag in post.data.tags %}
-	{% if not sitetags.notag.includes(posttag) %}
+	{% if posttag not in sitetags.notag %}
 	{% if sitestrings[posttag] %}{% set posttagtext = sitestrings[posttag] %}{% else %}{% set posttagtext = posttag %}{% endif %}
 	<div class="posttag flex flex-none">
 		<a href="/{{ posttag }}/" class="inline-flex">
@@ -40,7 +40,7 @@
 	{% endfor %}
 	{% set notime = false %}
 	{% for notimetag in sitetags.notime %}
-	{% if post.data.tags.includes(notimetag) %}{% set notime = true %}{% endif %}
+	{% if notimetag in post.data.tags %}{% set notime = true %}{% endif %}
 	{% endfor %}
 	{% if not notime %}
 	<div class="flex flex-none readingtime" data-words="{{ post.templateContent | striptags | wordcount | formatWords }} {{ sitestrings.words }}">

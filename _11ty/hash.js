@@ -15,7 +15,7 @@ const addHash = (absolutePath) => {
     const fileContent = readFileSync(`${process.cwd()}${realPath}`, {
         encoding: "utf-8"
     }).toString();
-    const hash = createHash('md5').update(fileContent.toString()).digest('hex');
+    const hash = createHash('md5').update(fileContent).digest('hex');
     hashes.set(absolutePath, hash);
     return `${absolutePath}?hash=${hash}`;
 };

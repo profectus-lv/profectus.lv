@@ -17,6 +17,11 @@ export default eleventyConfig => {
     // Extracts readable date of a date
     eleventyConfig.addNunjucksFilter("readableDate", function (date) {
         const dt = DateTime.fromISO(date.toISOString());
-        return dt.setLocale(siteconfig.lang).toLocaleString(DateTime.DATE_MED);
+        return dt.setLocale(siteconfig.lang || "en").toLocaleString(DateTime.DATE_MED);
+    });
+
+    // Shortcode for current year
+    eleventyConfig.addShortcode("year", function () {
+        return new Date().getFullYear();
     });
 };
