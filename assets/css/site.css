@@ -4,20 +4,24 @@
 @source "./safelist.txt";
 
 @utility h-dvh {
+    height: 100vh;
     @supports (height: 100dvh) {
         height: 100dvh;
-    }
-    @supports not (height: 100dvh) {
-        height: 100vh;
     }
 }
 
 @utility max-h-dvh {
+    max-height: 100vh;
     @supports (max-height: 100dvh) {
         max-height: 100dvh;
     }
-    @supports not (max-height: 100dvh) {
-        max-height: 100vh;
+}
+
+/* Add: largest viewport height utility to avoid gaps on viewport changes */
+@utility h-lvh {
+    height: 100vh;
+    @supports (height: 100lvh) {
+        height: 100lvh;
     }
 }
 
@@ -40,13 +44,34 @@ img.siteheader {
 /* Left sidebar */
 
 #sidebar {
-    @apply transition-transform sm:transition-none;
+    @apply fixed top-0 left-0 z-30;
+    @apply w-sidebar bg-sidebar;
+    @apply h-lvh;
+    @apply transition-transform sm:transition-none translate-x-0;
+    @apply overflow-visible; /* allow bleed pseudo to extend */
+    @apply flex flex-col;
+}
+
+#sidebar.is-closed {
+    @apply -translate-x-sidebar sm:translate-x-0;
+}
+
+/* Bleed the sidebar background above and below viewport */
+#sidebar::before {
+    @apply fixed left-0 w-sidebar bg-sidebar pointer-events-none;
+    @apply top-[-25vh] h-[150vh];
+    content: "";
 }
 
 .sidebar {
-    @apply bg-sidebar;
-    @apply px-2 h-dvh w-sidebar;
+    @apply px-2 h-dvh overflow-hidden;
     @apply tracking-wider text-center font-header;
+}
+
+.sidebar svg.sidebar-close {
+    @apply sm:hidden;
+    @apply absolute top-2 right-2 w-8 h-8;
+    @apply rounded-md border-1 border-accent;
 }
 
 .sidebar .sitehero {
@@ -188,8 +213,7 @@ div.menu > * {
 
 #right-area {
     @apply overflow-x-hidden overflow-y-auto;
-    @apply transition-transform sm:translate-x-0 sm:transition-none;
-    @apply max-h-dvh;
+    @apply sm:ml-sidebar; /* sit beside the fixed sidebar on desktop */
     @apply flex flex-col;
 }
 

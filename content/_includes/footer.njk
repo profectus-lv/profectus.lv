@@ -19,7 +19,7 @@
             </span>
             {% if siteconfig.features.privacyPolicy == "footer" and siteelements.privacyPolicy %}
             <span class="footer-privacy-sep">&middot;</span>
-            <a href="{{ siteelements.privacyPolicy.url }}" class="footer-privacy-policy">
+            <a href="{{ siteelements.privacyPolicy.url }}" class="footer-privacy-policy" aria-label="{{ siteelements.privacyPolicy.name }}">
                 {{ siteelements.privacyPolicy.name }}
             </a>
             {% endif %}

@@ -5,6 +5,15 @@ export default {
     copy_to_clipboard: "Kopēt saiti starpliktuvē",
     copied: "Saite ir nokopēta",
     events: "Notikumi",
-    older: "Vecāks",
-    newer: "Jaunāks"
+    older: "Vecāks ieraksts",
+    newer: "Jaunāks ieraksts",
+    posts_by: "Ieraksti no",
+    posts_tagged: "Ieraksti ar birku",
+    first_page: "Pirmā lapa",
+    previous_page: "Iepriekšējā lapa",
+    go_to_page: "Doties uz lapu",
+    next_page: "Nākamā lapa",
+    last_page: "Pēdējā lapa",
+    open_sidebar_menu: "Atvērt sānu izvēlni",
+    close_sidebar_menu: "Aizvērt sānu izvēlni"
 };
