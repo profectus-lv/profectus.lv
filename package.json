@@ -1,6 +1,6 @@
 {
     "name": "eleventy-markdown-prime",
-    "version": "4.6.1",
+    "version": "4.6.2",
     "description": "A starter repository for a text-based blog site using the Eleventy site generator.",
     "type": "module",
     "license": "MIT",
@@ -38,7 +38,7 @@
         "postcss-cli": "^11.0.1",
         "rollup": "^4.46.2",
         "@rollup/plugin-terser": "^0.4.4",
-        "tailwindcss": "^4.1.11",
-        "@tailwindcss/postcss": "^4.1.11"
+        "tailwindcss": "^4.1.12",
+        "@tailwindcss/postcss": "^4.1.12"
     }
 }

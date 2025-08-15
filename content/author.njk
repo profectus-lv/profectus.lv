@@ -14,4 +14,9 @@ pagination:
 {% set pagination = tag %}
 {% set title = tag.tagName %}
 {% if sitestrings[tag.tagName] %}{% set title = sitestrings[tag.tagName] %}{% endif %}
+{% set author = siteauthors[tag.tagName] %}
+{% set authorCard = siteconfig.features.authorCard and author %}
+{% if authorCard %}
+{% include "authorcard.njk" %}
+{% endif %}
 {% include "postlist.njk" %}

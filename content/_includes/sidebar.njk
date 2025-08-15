@@ -14,100 +14,24 @@
             {{ siteconfig.description }}
         </div>
     </div>
+    {% if siteconfig.features.sitesocial == "above" %}
+        {% include "sitesocial.njk" %}
+    {% endif %}
     <div class="menu">
-        <ul class="list-none">
+        <ul>
             <li class="navitem {{ page.url | isHomeLink('/') }}">
-                <a href="/" class="block no-underline" aria-label="{{ siteelements.menuHome }}">{{ siteelements.menuHome }}</a>
+                <a href="/" aria-label="{{ siteelements.menuHome }}">{{ siteelements.menuHome }}</a>
             </li>
             {% for name, link in siteelements.menuItems %}
             <li class="navitem {{ page.url | isActiveLink(link) }}">
-                <a href="{{ link }}" class="block no-underline" aria-label="{{ name }}">{{ name }}</a>
+                <a href="{{ link }}" aria-label="{{ name }}">{{ name }}</a>
             </li>
             {% endfor %}
         </ul>
     </div>
-    <div class="sitesocial grid grid-cols-{{ siteelements.social | length }}">
-        {% if siteelements.social.linkedin %}
-        <a href="https://linkedin.com/in/{{ siteelements.social.linkedin }}" aria-label="Open LinkedIn profile" target="_blank" rel="noopener">
-            <svg role="img" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="{{ inlinesvg.linkedin.viewBox }}">
-                <title>LinkedIn</title>
-                <path d="{{ inlinesvg.linkedin.path }}" />
-            </svg>
-        </a>
-        {% endif %}
-        {% if siteelements.social.github %}
-        <a href="https://github.com/{{ siteelements.social.github }}" aria-label="Open GitHub profile" target="_blank" rel="noopener">
-            <svg role="img" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="{{ inlinesvg.github.viewBox }}">
-                <title>GitHub</title>
-                <path d="{{ inlinesvg.github.path }}" />
-            </svg>
-        </a>
-        {% endif %}
-        {% if siteelements.social.twitter_x %}
-        <a href="https://x.com/{{ siteelements.social.twitter_x }}" aria-label="Open X profile" target="_blank" rel="noopener">
-            <svg role="img" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="{{ inlinesvg.twitter_x.viewBox }}">
-                <title>X</title>
-                <path d="{{ inlinesvg.twitter_x.path }}" />
-            </svg>
-        </a>
-        {% endif %}
-        {% if siteelements.social.youtube %}
-        <a href="https://www.youtube.com/channel/{{ siteelements.social.youtube }}" aria-label="Open YouTube channel" target="_blank" rel="noopener">
-            <svg role="img" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="{{ inlinesvg.youtube.viewBox }}">
-                <title>YouTube</title> 
-                <path d="{{ inlinesvg.youtube.path }}" />
-            </svg>
-        </a>
-        {% endif %}
-        {% if siteelements.social.fbPage %}
-        <a href="https://facebook.com/{{ siteelements.social.fbPage }}" aria-label="Open Facebook page" target="_blank" rel="noopener">
-            <svg role="img" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="{{ inlinesvg.facebookInverse.viewBox }}">
-                <title>Facebook page</title>
-                <path d="{{ inlinesvg.facebookInverse.path }}" />
-            </svg>
-        </a>
-        {% endif %}
-        {% if siteelements.social.fbProfile %}
-        <a href="https://facebook.com/{{ siteelements.social.fbProfile }}" aria-label="Open Facebook profile" target="_blank" rel="noopener">
-            <svg role="img" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="{{ inlinesvg.facebook.viewBox }}">
-                <title>Facebook</title>
-                <path d="{{ inlinesvg.facebook.path }}" />
-            </svg>
-        </a>
-        {% endif %}
-        {% if siteelements.social.instagram %}
-        <a href="https://instagram.com/{{ siteelements.social.instagram }}" aria-label="Open Instagram profile" target="_blank" rel="noopener">
-            <svg role="img" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="{{ inlinesvg.instagram.viewBox }}">
-                <title>Instagram</title>
-                <path d="{{ inlinesvg.instagram.path }}" />
-            </svg>
-        </a>
-        {% endif %}
-        {% if siteelements.social.threads %}
-        <a href="https://threads.net/@{{ siteelements.social.threads }}" aria-label="Open Threads profile" target="_blank" rel="noopener">
-            <svg role="img" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="{{ inlinesvg.threads.viewBox }}">
-                <title>Threads</title>
-                <path d="{{ inlinesvg.threads.path }}" />
-            </svg>
-        </a>
-        {% endif %}
-        {% if siteelements.social.mastodon %}
-        <a href="{{ siteelements.social.mastodon }}" aria-label="Open Mastodon profile" target="_blank" rel="me noopener">
-            <svg role="img" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="{{ inlinesvg.mastodon.viewBox }}">
-                <title>Mastodon</title>
-                <path d="{{ inlinesvg.mastodon.path }}" />
-            </svg>
-        </a>
-        {% endif %}
-        {% if siteelements.social.bluesky %}
-        <a href="{{ siteelements.social.bluesky }}" aria-label="Open Bluesky profile" target="_blank" rel="me noopener">
-            <svg role="img" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="{{ inlinesvg.bluesky.viewBox }}">
-                <title>Bluesky</title>
-                <path d="{{ inlinesvg.bluesky.path }}" />
-            </svg>
-        </a>
-        {% endif %}
-    </div>
+    {% if siteconfig.features.sitesocial == "below" %}
+        {% include "sitesocial.njk" %}
+    {% endif %}
     <div class="privacy-policy">
         {% if siteconfig.features.privacyPolicy == "sidebar" %}
         <a href="{{ siteelements.privacyPolicy.url }}" aria-label="{{ siteelements.privacyPolicy.name }}">{{ siteelements.privacyPolicy.name }}</a>

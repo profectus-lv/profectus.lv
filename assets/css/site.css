@@ -3,6 +3,24 @@
 @import "./prism-okaidia.css";
 @source "./safelist.txt";
 
+/* Site CSS structure (TOC)
+   1) Utilities
+   2) Base elements (images, placeholders)
+   3) Sidebar (layout, menu, social, privacy)
+   4) Mobile top bar
+   5) Content area shell
+   6) Content typography/components (tables, lists, code)
+   7) Social/share components
+   8) Additions & Prev/Next
+   9) Post properties
+   10) Post list (incl. thumbnails, responsive tweaks)
+   11) Pagination
+   12) Footer
+   13) Author card
+   14) Miscellaneous
+   15) Print
+*/
+
 @utility h-dvh {
     height: 100vh;
     @supports (height: 100dvh) {
@@ -33,7 +51,8 @@
 /* Images */
 
 img {
-    @apply rounded-lg shadow-lg block mx-auto h-auto;
+    @apply block mx-auto h-auto;
+    @apply rounded-lg shadow-lg;
 }
 
 img.siteheader {
@@ -79,13 +98,14 @@ img.siteheader {
 }
 
 .sidebar .sitehero img {
-    @apply max-h-48 max-w-56 object-cover;
+    @apply max-w-56 max-h-48 object-cover;
 }
 
 .sidebar .sitetitle {
     @apply font-semibold text-2xl;
     @apply text-white hover:text-accent;
     @apply pt-6;
+    @apply transition-colors duration-200 ease-in;
 }
 
 .sidebar .sitetitle a {
@@ -102,21 +122,32 @@ img.siteheader {
     @apply text-base/10 font-medium uppercase;
     @apply text-gray-400 hover:text-accent;
     @apply px-1;
+    @apply transition-colors duration-200 ease-in;
 }
 
 .sidebar .navitem.active {
     @apply text-white hover:text-accent;
+    @apply transition-colors duration-200 ease-in;
 }
 
-div.menu ul {
+.menu ul {
+    @apply list-none;
     @apply pl-0;
 }
 
-div.menu ul > li:last-child > a {
-    @apply -mr-[3px] max-w-[calc(100%-3px)];
+.menu a {
+    @apply block;
+    @apply no-underline;
 }
 
-div.menu ul > li:last-child::after {
+/* NOTE: The menu indicator uses intentional “magic numbers” to create an effect
+    beside the active/hovered item. These offsets are tuned to the current line-height
+    and spacing. Do not change without revisiting the visual effect (values
+    like -right-29, -top-90, etc. are expected here). */
+.menu ul > li:last-child > a {
+    @apply -mr-[3px] max-w-[calc(100%-3px)];
+}
+.menu ul > li:last-child::after {
     @apply invisible relative pointer-events-none;
     @apply bg-accent;
     @apply border-solid border-r-2 border-r-accent;
@@ -125,44 +156,44 @@ div.menu ul > li:last-child::after {
     content: "";
 }
 
-div.menu ul > li.active:nth-last-child(9) ~ li:last-child::after,
-div.menu ul > li.navitem:nth-last-child(9):hover ~ li:last-child::after {
+.menu ul > li.active:nth-last-child(9) ~ li:last-child::after,
+.menu ul > li.navitem:nth-last-child(9):hover ~ li:last-child::after {
     @apply visible -top-90;
 }
-div.menu ul > li.active:nth-last-child(8) ~ li:last-child::after,
-div.menu ul > li.navitem:nth-last-child(8):hover ~ li:last-child::after {
+.menu ul > li.active:nth-last-child(8) ~ li:last-child::after,
+.menu ul > li.navitem:nth-last-child(8):hover ~ li:last-child::after {
     @apply visible -top-80;
 }
-div.menu ul > li.active:nth-last-child(7) ~ li:last-child::after,
-div.menu ul > li.navitem:nth-last-child(7):hover ~ li:last-child::after {
+.menu ul > li.active:nth-last-child(7) ~ li:last-child::after,
+.menu ul > li.navitem:nth-last-child(7):hover ~ li:last-child::after {
     @apply visible -top-70;
 }
-div.menu ul > li.active:nth-last-child(6) ~ li:last-child::after,
-div.menu ul > li.navitem:nth-last-child(6):hover ~ li:last-child::after {
+.menu ul > li.active:nth-last-child(6) ~ li:last-child::after,
+.menu ul > li.navitem:nth-last-child(6):hover ~ li:last-child::after {
     @apply visible -top-60;
 }
-div.menu ul > li.active:nth-last-child(5) ~ li:last-child::after,
-div.menu ul > li.navitem:nth-last-child(5):hover ~ li:last-child::after {
+.menu ul > li.active:nth-last-child(5) ~ li:last-child::after,
+.menu ul > li.navitem:nth-last-child(5):hover ~ li:last-child::after {
     @apply visible -top-50;
 }
-div.menu ul > li.active:nth-last-child(4) ~ li:last-child::after,
-div.menu ul > li.navitem:nth-last-child(4):hover ~ li:last-child::after {
+.menu ul > li.active:nth-last-child(4) ~ li:last-child::after,
+.menu ul > li.navitem:nth-last-child(4):hover ~ li:last-child::after {
     @apply visible -top-40;
 }
-div.menu ul > li.active:nth-last-child(3) ~ li:last-child::after,
-div.menu ul > li.navitem:nth-last-child(3):hover ~ li:last-child::after {
+.menu ul > li.active:nth-last-child(3) ~ li:last-child::after,
+.menu ul > li.navitem:nth-last-child(3):hover ~ li:last-child::after {
     @apply visible -top-30;
 }
-div.menu ul > li.active:nth-last-child(2) ~ li:last-child::after,
-div.menu ul > li.navitem:nth-last-child(2):hover ~ li:last-child::after {
+.menu ul > li.active:nth-last-child(2) ~ li:last-child::after,
+.menu ul > li.navitem:nth-last-child(2):hover ~ li:last-child::after {
     @apply visible -top-20;
 }
-div.menu ul > li.active:nth-last-child(1):last-child::after,
-div.menu ul > li.navitem:nth-last-child(1):last-child:hover::after {
+.menu ul > li.active:nth-last-child(1):last-child::after,
+.menu ul > li.navitem:nth-last-child(1):last-child:hover::after {
     @apply visible -top-10;
 }
 
-div.menu > * {
+.menu > * {
     @apply transition-transform duration-400;
 }
 
@@ -176,13 +207,16 @@ div.menu > * {
 
 .sidebar svg {
     @apply fill-gray-400 hover:fill-accent;
-    @apply transition duration-200 ease-in;
+    @apply transition-colors duration-200 ease-in;
 }
 
 .sidebar .privacy-policy {
-    @apply text-gray-400 hover:text-accent;
     @apply text-sm font-normal;
     @apply py-2;
+}
+.sidebar .privacy-policy a {
+    @apply text-gray-400 hover:text-accent;
+    @apply transition-colors duration-200 ease-in;
 }
 
 /* Mobile top bar */
@@ -196,13 +230,14 @@ div.menu > * {
 }
 
 .top-bar svg {
-    @apply block align-middle h-12 leading-12 ml-3 pb-3 pt-4;
+    @apply block align-middle h-12 leading-12 ml-3 pt-4 pb-3;
 }
 
 .top-bar a {
     @apply align-middle text-center leading-12;
     @apply text-2xl font-semibold font-header hover:no-underline;
     @apply hover:text-accent;
+    @apply transition-colors duration-200 ease-in;
 }
 
 .top-bar.hide {
@@ -212,9 +247,9 @@ div.menu > * {
 /* Content area */
 
 #right-area {
+    @apply flex flex-col;
     @apply overflow-x-hidden overflow-y-auto;
     @apply sm:ml-sidebar; /* sit beside the fixed sidebar on desktop */
-    @apply flex flex-col;
 }
 
 .max-w-content {
@@ -336,9 +371,11 @@ dd {
     @apply border-b-1 border-accent;
 }
 
+/* Content table styles */
+/* Intentionally left blank for future zebra-striping adjustments on even rows. */
 .content table tbody tr:nth-child(even) {
 }
-
+/* Zebra striping uses odd rows for now; even rows may be styled later. */
 .content table tbody tr:nth-child(odd) {
     @apply bg-gray-100;
 }
@@ -386,9 +423,9 @@ svg.threads {
 }
 
 .social svg {
-    @apply hover:fill-accent;
     @apply h-5 px-2;
-    @apply transition duration-200 ease-in;
+    @apply hover:fill-accent;
+    @apply transition-colors duration-200 ease-in;
 }
 
 .social span {
@@ -454,7 +491,7 @@ svg.threads {
     @apply hover:bg-accent;
     @apply hover:text-gray-100;
     @apply cursor-pointer;
-    @apply transition duration-200 ease-in;
+    @apply transition-colors duration-200 ease-in;
 }
 
 .prevnextno {
@@ -479,7 +516,7 @@ svg.threads {
 }
 
 .postproperties svg {
-    @apply h-5 w-5 mr-1;
+    @apply w-5 h-5 mr-1;
 }
 
 .postproperties .posttag,
@@ -494,6 +531,7 @@ svg.threads {
     @apply text-gray-500 fill-gray-500 hover:text-gray-100 hover:fill-gray-100;
     @apply no-underline;
     @apply px-1;
+    @apply transition-colors duration-200 ease-in;
 }
 
 .readingtime {
@@ -522,7 +560,7 @@ svg.threads {
     @apply px-4;
     @apply border-b-1 border-accent;
     @apply hover:bg-gray-100;
-    @apply transition duration-200 ease-in;
+    @apply transition-colors duration-200 ease-in;
 }
 
 .postlist h1 {
@@ -538,12 +576,54 @@ svg.threads {
 .postlist .postlistheading a {
     @apply text-gray-900 hover:text-accent;
     @apply text-2xl font-semibold font-header hover:no-underline;
+    @apply transition-colors duration-200 ease-in;
 }
 
 .postlist .postexcerpt {
     @apply text-gray-700;
     @apply font-body font-normal text-base;
     @apply pb-4;
+}
+
+/* Post list thumbnails (responsive)
+   - Mobile: full-width, stacked above excerpt (w-full h-50)
+   - sm: stacked above excerpt, medium size and centered (sm:w-48 sm:h-28 sm:mx-auto)
+   - md+: side-by-side row with compact image; right variant enlarged at md
+*/
+.postlist .postthumb {
+	@apply w-full h-50;
+	@apply sm:w-56 sm:h-32 sm:mx-auto;
+	@apply md:w-32 md:h-20 md:mx-0;
+	@apply object-cover rounded-md;
+	@apply self-start mb-4;
+	@apply md:flex-none;
+	@apply transition-shadow duration-200 ease-in;
+}
+
+/* Clickable thumbnail wrapper */
+.postlist .postthumblink {
+	@apply block rounded-md;
+}
+
+/* Hover/focus effect: stronger shadow + accent-colored ring (simulates colored shadow) */
+.postlist a.postthumblink:hover .postthumb,
+.postlist a.postthumblink:focus-visible .postthumb {
+	@apply shadow-xl ring-1 ring-accent;
+}
+
+.postlist .thumb-right .postthumb {
+	@apply md:w-40 md:h-24;
+}
+/* Keep items aligned so postproperties sits at the bottom on wider rows. */
+.postlist .postlistrow {
+	@apply items-stretch;
+}
+.postlist .postlistside {
+	@apply min-w-0;
+	@apply md:flex-1 md:flex md:flex-col;
+}
+.postlist .postlistside .postexcerpt {
+	@apply md:flex-1;
 }
 
 /* Collection pagination */
@@ -564,9 +644,9 @@ ul.pagination div {
     @apply border-solid border-1 border-accent rounded-full;
     @apply bg-gray-100 hover:bg-accent;
     @apply hover:text-gray-100;
-    @apply text-center;
-    @apply h-8 w-8;
-    @apply transition duration-200 ease-in;
+    @apply text-center leading-relaxed;
+    @apply w-8 h-8;
+    @apply transition-colors duration-200 ease-in;
 }
 
 ul.pagination div.active {
@@ -575,6 +655,7 @@ ul.pagination div.active {
 }
 
 ul.pagination div a {
+    @apply block;
     @apply font-body font-normal text-lg;
     @apply hover:no-underline;
     @apply pt-[1.5px];
@@ -598,17 +679,76 @@ ul.pagination div a {
 }
 
 .footer .footer-copyright a {
-    @apply hover:text-accent;
     @apply no-underline;
+    @apply hover:text-accent;
+    @apply transition-colors duration-200 ease-in;
 }
 
 .footer .footer-privacy-policy {
     @apply text-gray-400 hover:text-accent;
     @apply no-underline;
+    @apply transition-colors duration-200 ease-in;
 }
 
 .footer .footer-privacy-sep {
     @apply px-2;
+}
+
+/* Author card */
+.authorcard {
+	@apply bg-gray-100 text-gray-700;
+	@apply border-solid border-1 border-accent rounded-lg;
+	@apply p-4 my-4 mx-4 lg:mx-20;
+}
+
+.authorcard .authorcard-row {
+	@apply flex flex-col sm:flex-row items-start sm:items-center gap-4;
+}
+
+.authorcard .authorcard-main {
+	@apply flex-1 min-w-0;
+}
+
+.authorcard .authorcard-photo {
+	@apply w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32;
+	@apply rounded-full object-cover;
+	@apply ring-1 ring-accent/30;
+}
+
+.authorcard .authorcard-name {
+	@apply font-header text-xl font-semibold text-gray-900;
+}
+
+.authorcard .authorcard-bio {
+	@apply mt-1;
+    @apply font-body text-base leading-relaxed;
+}
+
+.authorcard .authorcard-link {
+	@apply inline-flex items-center gap-2 align-middle;
+	@apply font-header text-gray-500 hover:text-accent;
+	@apply hover:no-underline;
+	@apply transition-colors duration-200 ease-in;
+}
+
+.authorcard .authorcard-infoitem svg {
+	@apply h-4 w-4 flex-none;
+	@apply fill-gray-500;
+	@apply transition-colors duration-200 ease-in;
+}
+
+.authorcard .authorcard-link:hover svg {
+	@apply fill-accent;
+}
+
+.authorcard .authorsocial {
+	@apply flex items-center flex-wrap gap-2 mt-3;
+}
+
+.authorcard .authorsocial svg {
+	@apply h-5 w-5;
+	@apply fill-gray-500 hover:fill-accent;
+	@apply transition-colors duration-200 ease-in;
 }
 
 /* Miscellaneous */

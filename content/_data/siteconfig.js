@@ -97,5 +97,11 @@ export default {
         privacyPolicy: false,
         // Display footer information (e.g., copyright, author)
         footer: true,
+        // Location of the site social block relative to the sidebar main menu: false, 'below', or 'above'
+        sitesocial: "below",
+        // Postlist thumbnail: false | 'left' | 'right'
+        postlistThumbnail: "right",
+        // Show author business card on author listing pages
+        authorCard: true,
     }
 };

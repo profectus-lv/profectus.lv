@@ -1,0 +1,39 @@
+<div class="authorcard">
+	<div class="authorcard-row">
+		<img class="authorcard-photo" src="{{ author.photo }}" alt="{{ author.fullName }}" />
+		<div class="authorcard-main">
+			<div class="authorcard-name">{{ author.fullName }}</div>
+			{% if author.bio %}<p class="authorcard-bio">{{ author.bio }}</p>{% endif %}
+			<div class="authorcard-links">
+				{% if author.aboutMe %}
+				<div class="authorcard-infoitem">
+					<a class="authorcard-link" href="{{ author.aboutMe }}">
+						<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="{{ inlinesvg.web.viewBox }}"><path d="{{ inlinesvg.web.path }}" /></svg>
+						{{ sitestrings.about_me }}
+					</a>
+				</div>
+				{% endif %}
+				{% if author.website %}
+				<div class="authorcard-infoitem">
+					<a class="authorcard-link" href="{{ author.website }}" target="_blank" rel="noopener">
+						<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="{{ inlinesvg.web.viewBox }}"><path d="{{ inlinesvg.web.path }}" /></svg>
+						{{ author.website | replace('https://','') | replace('http://','') }}
+					</a>
+				</div>
+				{% endif %}
+				{% if author.email %}
+				<div class="authorcard-infoitem">
+					<a class="authorcard-link" href="mailto:{{ author.email }}">
+						<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="{{ inlinesvg.email.viewBox }}"><path d="{{ inlinesvg.email.path }}" /></svg>
+						{{ author.email }}
+					</a>
+				</div>
+				{% endif %}
+			</div>
+			{% set social = author.social or {} %}
+			{% if social and (social | length) %}
+  			{% include "sitesocial.njk" %}
+  			{% endif %}
+		</div>
+	</div>
+</div>

@@ -14,6 +14,7 @@ export default {
     go_to_page: "Doties uz lapu",
     next_page: "Nākamā lapa",
     last_page: "Pēdējā lapa",
+    about_me: "Par mani",
     open_sidebar_menu: "Atvērt sānu izvēlni",
     close_sidebar_menu: "Aizvērt sānu izvēlni"
 };
