@@ -8,5 +8,8 @@ export default {
         "events",
         "raksti",
         "authorcard"
+    ],
+    events: [
+        "events"
     ]
 };
