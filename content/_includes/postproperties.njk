@@ -6,13 +6,13 @@
 		{{ post.date | readableDate }}
 	</div>
 	{% if post.data.author %}
-	{% if sitestrings[post.data.author] %}{% set postauthor = sitestrings[post.data.author] %}{% else %}{% set postauthor = post.data.author %}{% endif %}
+	{% if siteauthors[post.data.author] %}{% set postauthor = siteauthors[post.data.author].fullName %}{% else %}{% set postauthor = post.data.author %}{% endif %}
 	<div class="postauthor flex flex-none">
-		<a href="/author/{{ postauthor | slugify }}/" class="inline-flex" aria-label="{{ sitestrings.posts_by }} {{ postauthor }}">
+		<a href="/author/{{ post.data.author | slugify }}/" class="inline-flex" aria-label="{{ sitestrings.posts_by }} {{ postauthor }}">
 			<svg role="img" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="{{ inlinesvg.author.viewBox }}">
 				<path d="{{ inlinesvg.author.path }}" />
 			</svg>
-			{{ post.data.author }}
+			{{ postauthor }}
 		</a>
 	</div>
 	{% endif %}

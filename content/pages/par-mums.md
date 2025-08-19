@@ -1,8 +1,6 @@
 ---
-layout: page.njk
-permalink: /par-mums/
 title: Par mums
-sitemapPriority: 1
+profilePage: true
 ---
 
 ## PROFECTUS – IZAUGSME

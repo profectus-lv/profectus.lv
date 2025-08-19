@@ -15,7 +15,8 @@ const checkHrefs = (href) => {
 
 const options = {
     target: "_blank",
-    rel: "noopener"
+    rel: "noopener",
+    merel: "me noopener"
 };
 
 const externalContentLinks = async (rawContent, outputPath) => {
@@ -25,9 +26,10 @@ const externalContentLinks = async (rawContent, outputPath) => {
         const links = dom.querySelectorAll("a");
         links.forEach((link) => {
             const href = link.getAttribute("href");
+            const me = link.getAttribute("rel") && link.getAttribute("rel").includes("me");
             if (href && checkHrefs(href)) {
                 link.setAttribute("target", options.target);
-                link.setAttribute("rel", options.rel);
+                link.setAttribute("rel", me ? options.merel : options.rel);
             }
         });
         content = dom.toString();

@@ -1,8 +1,5 @@
 ---
-layout: page.njk
 title: Ziedo mums!
-permalink: /ziedo/
-sitemapPriority: 1
 ---
 
 Atbalsti demokrātiju un pilsonisko sabiedrību Latvijā arī Tu!

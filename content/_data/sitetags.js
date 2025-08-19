@@ -6,6 +6,7 @@ export default {
         "article",
         "posts",
         "events",
-        "raksti"
+        "raksti",
+        "authorcard"
     ]
 };

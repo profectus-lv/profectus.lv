@@ -17,6 +17,8 @@ export default {
 
     // Author name (used in meta tags and JSON-LD structured data)
     author: "Domnīca Profectus",
+    // Author type ("Person" or "Organization", used in JSON-LD)
+    authorType: "Organization",
 
     // Short site description (displayed below the sidebar image and used in meta tags)
     description: "Stiprinām demokrātiju un pilsonisko sabiedrību Latvijā un veicinām tās ilgtspēju",

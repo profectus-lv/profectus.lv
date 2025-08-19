@@ -2,7 +2,7 @@
 <html lang="{{ siteconfig.lang }}">
     <head>
         {% include "head.njk" %}
-        {% if siteconfig.features.json_ld %}{% include "json-ld.njk" %}{% endif %}
+        {% include "json-ld.njk" %}
     </head>
     <body>
     {% if siteconfig.features.base == "primitive" %}

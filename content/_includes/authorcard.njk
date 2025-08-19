@@ -1,36 +1,36 @@
 <div class="authorcard">
 	<div class="authorcard-row">
-		<img class="authorcard-photo" src="{{ author.photo }}" alt="{{ author.fullName }}" />
+		<img class="authorcard-photo" src="{{ authorCard.photo }}" alt="{{ authorCard.fullName }}" />
 		<div class="authorcard-main">
-			<div class="authorcard-name">{{ author.fullName }}</div>
-			{% if author.bio %}<p class="authorcard-bio">{{ author.bio }}</p>{% endif %}
+			<div class="authorcard-name">{{ authorCard.fullName }}</div>
+			{% if authorCard.bio %}<p class="authorcard-bio">{{ authorCard.bio }}</p>{% endif %}
 			<div class="authorcard-links">
-				{% if author.aboutMe %}
+				{% if authorCard.aboutMe %}
 				<div class="authorcard-infoitem">
-					<a class="authorcard-link" href="{{ author.aboutMe }}">
+					<a class="authorcard-link" href="{{ authorCard.aboutMe }}">
 						<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="{{ inlinesvg.web.viewBox }}"><path d="{{ inlinesvg.web.path }}" /></svg>
 						{{ sitestrings.about_me }}
 					</a>
 				</div>
 				{% endif %}
-				{% if author.website %}
+				{% if authorCard.website %}
 				<div class="authorcard-infoitem">
-					<a class="authorcard-link" href="{{ author.website }}" target="_blank" rel="noopener">
+					<a class="authorcard-link" href="{{ authorCard.website }}" target="_blank" rel="noopener">
 						<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="{{ inlinesvg.web.viewBox }}"><path d="{{ inlinesvg.web.path }}" /></svg>
-						{{ author.website | replace('https://','') | replace('http://','') }}
+						{{ authorCard.website | replace('https://','') | replace('http://','') }}
 					</a>
 				</div>
 				{% endif %}
-				{% if author.email %}
+				{% if authorCard.email %}
 				<div class="authorcard-infoitem">
-					<a class="authorcard-link" href="mailto:{{ author.email }}">
+					<a class="authorcard-link" href="mailto:{{ authorCard.email }}">
 						<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="{{ inlinesvg.email.viewBox }}"><path d="{{ inlinesvg.email.path }}" /></svg>
-						{{ author.email }}
+						{{ authorCard.email }}
 					</a>
 				</div>
 				{% endif %}
 			</div>
-			{% set social = author.social or {} %}
+			{% set social = authorCard.social or {} %}
 			{% if social and (social | length) %}
   			{% include "sitesocial.njk" %}
   			{% endif %}

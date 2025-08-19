@@ -1,5 +1,5 @@
 export default {
-    // Label for the home menu link
+    // Label for the home menu link (mandatory)
     menuHome: "Uz sākumu",
     // Additional menu items (key: label, value: URL)
     menuItems: {
@@ -9,7 +9,7 @@ export default {
         "Ziedo!": "/ziedo/"
     },
 
-    // Social media links (used for sidebar icons/links)
+    // Social media profiles for the site (the object must be present, but profiles are optional)
     social: {
         // GitHub username
 //        github: "",

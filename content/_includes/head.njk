@@ -5,27 +5,11 @@
 {% elseif page and title and not posts %}{% set cp = collections.all | getCollectionItem(page) %}{% set description = cp.templateContent | safe | striptags | truncate(150, false, "…") %}
 {% else %}{% set description = siteconfig.description | truncate(150, false, "…") %}
 {% endif %}
-<meta name="author" content="{% if author %}{{ author }} - {% endif %}{{ siteconfig.author }}">
+<meta name="author" content="{% if author %}{% if siteauthors[author] %}{{ siteauthors[author].fullName }}{% else %}{{ author }}{% endif %}{% else %}{{ siteconfig.author }}{% endif %}">
 <meta name="description" content="{{ description }}">
-<meta property="og:url" content="{{ page.url | absoluteUrl }}">
-<meta property="og:type" content="{% if title %}article{% else %}website{% endif %}">
-<meta property="og:site_name" content="{{ siteconfig.title }}">
-<meta property="og:title" content="{% if title %}{{ title }} - {% endif %}{{ siteconfig.title }}">
-{% if siteconfig.features.og_description %}<meta property="og:description" content="{{ description }}">{% endif %}
 {% if image %}{% set image_src = image %}{% else %}{% set image_src = siteconfig.openGraphDefaultImage %}{% endif %}
-<meta property="og:image" content="{{ siteconfig.url }}{% imageTransform image_src, 1200, 'webp' %}">
-<meta property="og:locale" content="{{ siteconfig.locale }}" />
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:url" content="{{ page.url | absoluteUrl }}">
-<meta name="twitter:title" content="{% if title %}{{ title }} - {% endif %}{{ siteconfig.title }}">
-{% if siteconfig.features.og_description %}<meta name="twitter:description" content="{{ description }}">{% endif %}
-<meta name="twitter:image" content="{{ siteconfig.url }}{% imageTransform image_src, 1200, 'webp' %}">
-{% if siteelements.social.twitter_x %}
-<meta name="twitter:site" content="@{{ siteelements.social.twitter_x }}">
-<meta name="twitter:creator" content="@{{ siteelements.social.twitter_x }}">
-{% endif %}
-{% if siteconfig.pixels.fbApp %}<meta property="fb:app_id" content="{{ siteconfig.pixels.fbApp }}">{% endif %}
-{% if siteelements.social.fbPage %}<meta property="article:publisher" content="https://www.facebook.com/{{ siteelements.social.fbPage }}/">{% endif %}
+{% include "opengraph.njk" %}
+{% include "twittercard.njk" %}
 {% for name, item in meta %}
 <meta name="{{ name }}" content="{{ item.value }}">
 {% endfor %}
@@ -39,6 +23,7 @@
 <link rel="canonical" href="{{ page.url | absoluteUrl }}" />
 {% if siteconfig.features.sitemap %}<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">{% endif %}
 {% if siteconfig.pixels.fbPixel %}<link rel="preconnect" href="https://connect.facebook.net">{% endif %}
+{% if siteconfig.pixels.googleTag %}<link rel="preconnect" href="https://www.googletagmanager.com">{% endif %}
 {% if siteconfig.fonts %}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

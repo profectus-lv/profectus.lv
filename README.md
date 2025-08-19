@@ -16,6 +16,9 @@ A minimalistic Eleventy starter repository for a text-based blog site, loosely b
 - Logo, site name and main menu are placed on the left sidebar
 - Social network links on the sidebar
 - Automatic post list (index), tag and author pages with pagination
+- Optional post thumbnails in post lists
+- Author business cards on author pages (photo, bio, links)
+- Footer component with copyright/privacy information
 - Can be easily localized
 - Convenient configuration with many options
 - Automatic responsive image optimization (generating AVIF and WEBP with different sizes)

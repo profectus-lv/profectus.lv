@@ -1,7 +1,7 @@
 // Custom collection for double pagination
 // Makes an author collection that is paginated like with tags
 // Based on the solution suggested here: https://github.com/11ty/eleventy/issues/332#issuecomment-445236776
-// A version of tags.js from this repository
+// A version of tag.js from this repository
 
 import lodash from "@11ty/lodash-custom";
 import slugify from "@sindresorhus/slugify";

@@ -20,7 +20,7 @@ import hash from "./_11ty/hash.js";
 import externalLinks from "./_11ty/external-links.js";
 import imageTransform from "./_11ty/image-transform.js";
 import htmlMinify from "./_11ty/html-minify.js";
-import tagPagination from "./_11ty/tags.js";
+import tagPagination from "./_11ty/tag.js";
 import authorPagination from "./_11ty/author.js";
 
 export default eleventyConfig => {

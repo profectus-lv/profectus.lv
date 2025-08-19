@@ -1,9 +1,6 @@
 ---
-layout: page.njk
 title: Dmitrijs Golubevs
-permalink: /dmitrijs-golubevs/
 image: /images/Dmitrijs-Golubevs.jpg
-sitemapPriority: 1
 ---
 
 IT eksperts ar 22 gadu pieredzi daudzās tehnoloģijās, strādājot dažādās lomās (sistēmu projektēšana, analīze, programmēšana, dokumentēšana, testēšana, vadība, apmācība). Nodarbojos ar sistēmu analīzi enerģētikas un komunālo pakalpojumu jomā. Pēdējos gadus arī izstrādāju dažādus tīmekļa projektus. Man piemīt plašs interešu loks, analītiska pieeja un spēja ātri un patstāvīgi apgūt jaunas zināšanas. Iesaistos arī dažādos sabiedriskos projektos. Aktīvi atbalstu humānisma vērtības: faktos balstīto politiku, kritisko domāšanu un iekļaujošo sabiedrību.
