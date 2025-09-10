@@ -1,5 +1,6 @@
 ---
 title: Ziedo mums!
+permalink: /ziedo/
 ---
 
 Atbalsti demokrātiju un pilsonisko sabiedrību Latvijā arī Tu!
