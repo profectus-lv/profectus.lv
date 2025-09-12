@@ -224,7 +224,7 @@ img.siteheader {
 .top-bar {
     @apply sm:hidden;
     @apply border-accent border-b-1 shadow-lg;
-    @apply bg-white;
+    @apply bg-rightarea;
     @apply top-0 h-12 z-10;
     @apply transition-transform duration-200 ease-in;
 }
@@ -250,6 +250,7 @@ img.siteheader {
     @apply flex flex-col;
     @apply overflow-x-hidden overflow-y-auto;
     @apply sm:ml-sidebar; /* sit beside the fixed sidebar on desktop */
+    @apply bg-rightarea;
 }
 
 .max-w-content {
