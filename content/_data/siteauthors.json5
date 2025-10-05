@@ -1,4 +1,4 @@
-export default {
+{
 	"Dmitrijs Golubevs": {
 		// Author's full name (mandatory)
 		fullName: "Dmitrijs Golubevs",
@@ -32,4 +32,4 @@ export default {
 			linkedin: "dāvids-zalāns-9a88ba31",
 		}
 	}
-};
+}

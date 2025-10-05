@@ -1,4 +1,4 @@
-export default {
+{
     words: "vārdi",
     share: "Dalīties",
     share_on: "Dalīties tīklā",
@@ -17,4 +17,4 @@ export default {
     about_me: "Par mani",
     open_sidebar_menu: "Atvērt sānu izvēlni",
     close_sidebar_menu: "Aizvērt sānu izvēlni"
-};
+}
