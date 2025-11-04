@@ -1,12 +1,8 @@
-# Eleventy Markdown Prime starter repository by lastguru
+# Think tank "Profectus" - [profectus.lv](https://profectus.lv)
 
-Eleventy Markdown Prime is a minimalistic, opinionated starter for text‑first blogs built with Eleventy 3 and Tailwind CSS 4. It is loosely based on [Eleventy Chirpy Blog Template](https://github.com/muenzpraeger/eleventy-chirpy-blog-template), inspired by the popular [Chirpy Jekyll Theme](https://github.com/cotes2020/jekyll-theme-chirpy), keeping a familiar look while significantly reworking and restructuring the implementation. It strives to be fast, accessible, and easy to customize, while remaining simple and visually similar. Some features are new, some are reimplemented, and additional ones will be reintroduced over time.
+This is the main webpage for the think tank "Profectus" (Domnīca Profectus). It is based on the [Eleventy Markdown Prime](https://github.com/lastguru-net/emp) template by [Dmitry Golubev](https://lastguru.lv).
 
-## [Current live demo](https://emp-starter.lastguru.dev)
-
-![Sample screenshot](/content/images/sample.png)
-
-## Current features
+## Features
 
 - Eleventy 3 theme with Tailwind CSS 4
 - Fast and minimalistic responsive design
@@ -28,4 +24,22 @@ Eleventy Markdown Prime is a minimalistic, opinionated starter for text‑first 
 - Special pages: Error 404, robots.txt, sitemap.xml
 - Progressive Web Apps (PWA) support
 
-More features are in the works...
+## Installation
+
+```
+npm install
+```
+
+## Local testing
+
+```
+npm run build
+```
+
+## Running in production
+
+Some features are disabled by default for testing and debugging purposes. When running in production, ensure that the `NODE_ENV` variable is set to `production`.
+
+## Additional info
+
+More info on running, modifying and configuring the template is available on the its demo page: [Eleventy Markdown Prime Demo](https://emp-starter.lastguru.dev).
