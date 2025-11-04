@@ -4,6 +4,7 @@
 {% set description -%}{% getShortDescription %}{%- endset %}
 <meta name="author" content="{% if author %}{{ siteauthors[author].fullName if siteauthors[author] else author }}{% else %}{{ siteauthors[siteconfig.author].fullName if siteauthors[siteconfig.author] else siteconfig.author }}{% endif %}">
 <meta name="description" content="{{ description }}">
+{% if siteelements.features.generator %}<meta name="generator" content="Eleventy">{% endif %}
 {% if image %}{% set image_src = image %}{% else %}{% set image_src = siteconfig.openGraphDefaultImage %}{% endif %}
 {% include "opengraph.njk" %}
 {% include "twittercard.njk" %}
