@@ -16,5 +16,6 @@
     last_page: "Pēdējā lapa",
     about_me: "Par mani",
     open_sidebar_menu: "Atvērt sānu izvēlni",
-    close_sidebar_menu: "Aizvērt sānu izvēlni"
+    close_sidebar_menu: "Aizvērt sānu izvēlni",
+    pinned_badge: "Pinned"
 }
