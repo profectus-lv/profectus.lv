@@ -4,6 +4,9 @@ export default {
 
     // Base site URL for generating absolute URLs (used throughout the site)
     url: "https://profectus.lv",
+    // Alternative/internal URLs that should not be treated as external
+    internalUrls: [
+    ],
 
     // Sidebar profile image (relative path from the site root)
     image: "/images/profectus-logo-wt.png",
@@ -20,7 +23,7 @@ export default {
 
     // OpenGraph locale (used for social sharing metadata)
     locale: "lv_LV",
-    // Default language for HTML lang and post properties
+    // Default language for HTML lang and post properties and site strings
     lang: "lv",
  
     // Default OpenGraph image (used if no image is specified in page frontmatter)
@@ -44,5 +47,15 @@ export default {
 //        fbPixel: "",
         // Google Analytics Tag ID
         googleTag: "UA-16574330-6",
-    }
+    },
+
+    // Pagination configuration
+    // - 'postsPerPage': number of posts per paginated page
+    // - 'authorLinkPrefix': permalink prefix for author paginated listings
+    // - 'tagLinkPrefix': permalink prefix for tag paginated listings
+    pagination: {
+        postsPerPage: 10,
+        authorLinkPrefix: "/author/",
+        tagLinkPrefix: "/",
+    },
 }

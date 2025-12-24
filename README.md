@@ -7,6 +7,7 @@ This is the main webpage for the think tank "Profectus" (Domnīca Profectus). It
 - Eleventy 3 theme with Tailwind CSS 4
 - Fast and minimalistic responsive design
 - Simple grayscale color palette with a configurable accent color
+- Light and dark modes with an optional toggle
 - Content is exclusively pre-rendered (static site), but supports supplemental JavaScript
 - Can be used for a text-based (Markdown) blog or simple page
 - Logo, site name and main menu are placed on the left sidebar
@@ -18,6 +19,7 @@ This is the main webpage for the think tank "Profectus" (Domnīca Profectus). It
 - Can be easily localized
 - Convenient configuration with many options
 - Automatic responsive image optimization (generating AVIF and WEBP with different sizes)
+- Optional LQIP generation
 - Comprehensive JSON-LD structured data support
 - SEO optimization, OpenGraph and Twitter Cards
 - RSS, Atom and JSON feeds
