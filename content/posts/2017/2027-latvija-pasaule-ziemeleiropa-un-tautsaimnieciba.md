@@ -15,10 +15,10 @@ Gaidām uz diskusiju festivāla LAMPA “STARO” skatuvē, 2017. gada 1. jūlij
 
 Dalībnieki:
 
-– Pēteris Strautiņš, DnB bankas ekonomikas eksperts
-– Inga Antāne, Biedrības “Baltijas asociācija – Transports un Loģistika” prezidente
-– Jāna Jēruma-Grīnberga, bīskape
-– Ģirts Rungainis, Prudentia partneris
-– Ģirts Greiškalns, ārvalstu investīciju eksperts, uzņēmējs
+- Pēteris Strautiņš, DnB bankas ekonomikas eksperts
+- Inga Antāne, Biedrības “Baltijas asociācija – Transports un Loģistika” prezidente
+- Jāna Jēruma-Grīnberga, bīskape
+- Ģirts Rungainis, Prudentia partneris
+- Ģirts Greiškalns, ārvalstu investīciju eksperts, uzņēmējs
 
 Diskusiju vadīs IT eksperts Dmitrijs Golubevs

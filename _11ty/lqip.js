@@ -2,27 +2,17 @@
 // More info: https://leanrada.com/notes/css-only-lqip/
 // Adapted from: https://github.com/Kalabasa/leanrada.com/blob/src/main/scripts/update/lqip/lqip.mjs
 // and https://github.com/Virtuouz/SiteStitcher/blob/main/utils/lqip.js
-import fs from "node:fs";
+import { readFile, access } from "node:fs/promises";
 import path from "node:path";
 import sharp from "sharp";
 import JSON5 from "json5";
 
 let siteelementsCache = null;
-const loadSiteelements = () => {
+const loadSiteelements = async () => {
     if (siteelementsCache) return siteelementsCache;
-    const raw = fs.readFileSync("content/_data/siteelements.json5", "utf8");
+    const raw = await readFile("content/_data/siteelements.json5", "utf8");
     siteelementsCache = JSON5.parse(raw);
     return siteelementsCache;
-};
-
-// recursive DOM walker to collect image nodes
-const collectImages = (nodes, out) => {
-    if (!nodes) return;
-    for (const node of Array.isArray(nodes) ? nodes : [nodes]) {
-        if (!node) continue;
-        if (node.type === "tag" && node.name === "img") out.push(node);
-        if (node.children && node.children.length) collectImages(node.children, out);
-    }
 };
 
 const isSkippable = (node) => {
@@ -115,22 +105,24 @@ const imgCache = new Map();
 const calculateLqip = async (src) => {
     if (imgCache.has(src)) return imgCache.get(src);
     const filePath = path.join(process.cwd(), "content", src);
-    if (!filePath || !fs.existsSync(filePath)) {
+    try {
+        await access(filePath);
+    } catch (err) {
         imgCache.set(src, null);
         return null;
     }
 
-    const stats = await sharp(filePath).stats();
+    const img = sharp(filePath);
+    const stats = await img.clone().stats();
     const dominantColor = [
         Math.round(stats.dominant.r),
         Math.round(stats.dominant.g),
         Math.round(stats.dominant.b),
     ];
 
-    const buf = await sharp(filePath)
+    const buf = await img.clone()
         .gamma(2)
-        .resize(3, 2, { fit: "fill" })
-        .sharpen({ sigma: 0.5 })
+        .resize(3, 2, { fit: "fill", kernel: sharp.kernel.mks2013 })
         .removeAlpha()
         .toFormat("raw", { bitdepth: 8 })
         .toBuffer();
@@ -186,7 +178,7 @@ const addClassOnce = (existing, cls) => {
 
 const applyLqip = () => {
     return async (tree) => {
-        const siteelements = loadSiteelements();
+        const siteelements = await loadSiteelements();
         if (!siteelements?.features?.lqip) return tree;
 
         const transformTag = async (node) => {

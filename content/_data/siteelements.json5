@@ -44,12 +44,16 @@
         authorCard: true,
         // Toggle for showing "Powered by" text/link in the footer
         poweredBy: true,
+        // Toggle for showing RSS feed link in the footer
+        rssInFooter: true,
         // Include generator meta tag
         generator: true,
         // Toggle Lean Rada CSS-only LQIP placeholders
         lqip: true,
         // Toggle syntax highlighting CSS
         syntaxHighlighting: true,
+        // Toggle Minisearch modal search
+        search: true,
         // Sitehero image style: 'square', 'rounded'
         siteheroStyle: "square",
         // Enable initial-letter styling on first paragraph

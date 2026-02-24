@@ -17,9 +17,9 @@ Gaidām uz diskusiju festivāla LAMPA skeptiskajā teltī, 2017. gada 30. jūnij
 
 Dalībnieki:
 
-– Laimdota Straujuma, bijusī Ministru prezidente
-– Artūrs Utināns, ārsts psihoterapeits
-– Mārtiņš Hiršs, drošības un stratēģiskās pētniecības centra pētnieks
-– Arets Paeglis, Latvijas Transhumānistu asociācijas vadītājs
+- Laimdota Straujuma, bijusī Ministru prezidente
+- Artūrs Utināns, ārsts psihoterapeits
+- Mārtiņš Hiršs, drošības un stratēģiskās pētniecības centra pētnieks
+- Arets Paeglis, Latvijas Transhumānistu asociācijas vadītājs
 
 Diskusiju vadīs IT eksperts Dmitrijs Golubevs.
