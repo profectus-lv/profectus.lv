@@ -1,19 +1,11 @@
-// Transform to add Lean Rada CSS-only LQIP placeholders to images
-// More info: https://leanrada.com/notes/css-only-lqip/
+// CSS-only LQIP placeholders (Lean Rada technique)
+// https://leanrada.com/notes/css-only-lqip/
 // Adapted from: https://github.com/Kalabasa/leanrada.com/blob/src/main/scripts/update/lqip/lqip.mjs
 // and https://github.com/Virtuouz/SiteStitcher/blob/main/utils/lqip.js
 import { readFile, access } from "node:fs/promises";
 import path from "node:path";
 import sharp from "sharp";
-import JSON5 from "json5";
-
-let siteelementsCache = null;
-const loadSiteelements = async () => {
-    if (siteelementsCache) return siteelementsCache;
-    const raw = await readFile("content/_data/siteelements.json5", "utf8");
-    siteelementsCache = JSON5.parse(raw);
-    return siteelementsCache;
-};
+import { loadConfig } from "./config.js";
 
 const isSkippable = (node) => {
     const src = node.attrs.src;
@@ -24,18 +16,14 @@ const isSkippable = (node) => {
     return ext === ".svg";
 };
 
-const clamp = (value, min, max) => {
-  return Math.min(max, Math.max(min, value));
-}
+const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
 
-const gamma_inv = (x) => {
-  return x >= 0.04045 ? Math.pow((x + 0.055) / 1.055, 2.4) : x / 12.92;
-}
+const gammaInv = (x) => x >= 0.04045 ? Math.pow((x + 0.055) / 1.055, 2.4) : x / 12.92;
 
 const rgbToOkLab = (rgb) => {
-    const r = gamma_inv(rgb.r / 255);
-    const g = gamma_inv(rgb.g / 255);
-    const b = gamma_inv(rgb.b / 255);
+    const r = gammaInv(rgb.r / 255);
+    const g = gammaInv(rgb.g / 255);
+    const b = gammaInv(rgb.b / 255);
 
     const l = Math.cbrt(0.4122214708 * r + 0.5363325363 * g + 0.0514459929 * b);
     const m = Math.cbrt(0.2119034982 * r + 0.6806995451 * g + 0.1073969566 * b);
@@ -46,15 +34,13 @@ const rgbToOkLab = (rgb) => {
         a: l * +1.9779984951 + m * -2.428592205 + s * +0.4505937099,
         b: l * +0.0259040371 + m * +0.7827717662 + s * -0.808675766
     };
-}
+};
 
 // Scales a or b of Oklab to move away from the center
 // so that euclidean comparison won't be biased to the center
-const scaleComponentForDiff = (x, chroma) => {
-    return x / (1e-6 + Math.pow(chroma, 0.5));
-}
+const scaleComponentForDiff = (x, chroma) => x / (1e-6 + Math.pow(chroma, 0.5));
 
-// find the best bit configuration that would produce a color closest to target
+// Find the best bit configuration producing the closest color to target
 const findOklabBits = (targetL, targetA, targetB) => {
     const targetChroma = Math.hypot(targetA, targetB);
     const scaledTargetA = scaleComponentForDiff(targetA, targetChroma);
@@ -68,7 +54,7 @@ const findOklabBits = (targetL, targetA, targetB) => {
             for (let bbbi = 0; bbbi <= 0b111; bbbi++) {
                 const { L, a, b } = bitsToLab(lli, aaai, bbbi);
 
-                // gray is a common average colour and i don't like that
+                // Penalize gray (a common but undesirable average)
                 const grayPenalty = aaai === 4 && bbbi === 3 ? 0.04 : 0;
 
                 const chroma = Math.hypot(a, b);
@@ -92,14 +78,14 @@ const findOklabBits = (targetL, targetA, targetB) => {
     }
 
     return { ll: bestBits[0], aaa: bestBits[1], bbb: bestBits[2] };
-}
+};
 
 const bitsToLab = (ll, aaa, bbb) => {
     const L = (ll / 0b11) * 0.6 + 0.2;
     const a = (aaa / 0b1000) * 0.7 - 0.35;
     const b = ((bbb + 1) / 0b1000) * 0.7 - 0.35;
     return { L, a, b };
-}
+};
 
 const imgCache = new Map();
 const calculateLqip = async (src) => {
@@ -117,7 +103,7 @@ const calculateLqip = async (src) => {
     const dominantColor = [
         Math.round(stats.dominant.r),
         Math.round(stats.dominant.g),
-        Math.round(stats.dominant.b),
+        Math.round(stats.dominant.b)
     ];
 
     const buf = await img.clone()
@@ -126,15 +112,15 @@ const calculateLqip = async (src) => {
         .removeAlpha()
         .toFormat("raw", { bitdepth: 8 })
         .toBuffer();
-    
+
     const {
         L: rawBaseL,
         a: rawBaseA,
-        b: rawBaseB,
+        b: rawBaseB
     } = rgbToOkLab({
         r: dominantColor[0],
         g: dominantColor[1],
-        b: dominantColor[2],
+        b: dominantColor[2]
     });
     const { ll, aaa, bbb } = findOklabBits(rawBaseL, rawBaseA, rawBaseB);
     const { L: baseL, a: baseA, b: baseB } = bitsToLab(ll, aaa, bbb);
@@ -176,9 +162,10 @@ const addClassOnce = (existing, cls) => {
     return parts.join(" ");
 };
 
+// PostHTML plugin: apply LQIP to all eligible images
 const applyLqip = () => {
     return async (tree) => {
-        const siteelements = await loadSiteelements();
+        const siteelements = await loadConfig("siteelements");
         if (!siteelements?.features?.lqip) return tree;
 
         const transformTag = async (node) => {

@@ -16,7 +16,7 @@
 		social: {
 			twitter_x: "lastguru_net",
 			mastodon: "https://toot.lv/@lastguru",
-			bluesky: "https://bsky.app/profile/lastguru.net",
+			bluesky: "https://bsky.app/profile/lastguru.net"
 		}
 	},
 	"Dāvids Zalāns": {
@@ -29,7 +29,7 @@
 		social: {
 			twitter_x: "DavidsZalans",
 			fbProfile: "david.zalan",
-			linkedin: "dāvids-zalāns-9a88ba31",
+			linkedin: "dāvids-zalāns-9a88ba31"
 		}
 	}
 }

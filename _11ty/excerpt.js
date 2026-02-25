@@ -1,9 +1,10 @@
+// Excerpt extraction from content
 import siteconfig from "../content/_data/siteconfig.js";
 
 const stripTags = (value = "") => value.replace(/<[^>]*>/g, " ");
 const collapseWhitespace = (value = "") => value.replace(/\s+/g, " ").trim();
 export const extractExcerpt = (text = "", limit = 250) => {
-    const plain = stripTags(text);
+    const plain = stripTags(text).trim();
     if (!plain) return "";
     const newlineIndex = plain.indexOf("\n");
     const firstLineLimit = newlineIndex > 0 ? newlineIndex : plain.length;
@@ -21,12 +22,16 @@ export const extractExcerpt = (text = "", limit = 250) => {
     }
     return excerpt;
 };
+
+// Find the collection entry for the current page
 const findCollectionItem = (collections = {}, page = {}) => {
     if (!collections.all || !page.url) {
         return undefined;
     }
-    return collections.all.find(entry => entry.url === page.url);
+    return collections.all.find((entry) => entry.url === page.url);
 };
+
+// Short description for meta tags and JSON-LD
 const deriveShortDescription = (ctx = {}) => {
     let source = "";
     if (ctx.excerpt) {
@@ -40,13 +45,14 @@ const deriveShortDescription = (ctx = {}) => {
     return extractExcerpt(source, 150);
 };
 
+// Excerpt shortcode for post lists
 const getExcerpt = (article = {}) => {
     return extractExcerpt(article.templateContent || "", 250);
 };
 
-export default eleventyConfig => {
-    eleventyConfig.addShortcode("getExcerpt", getExcerpt); 
-    eleventyConfig.addNunjucksShortcode("getShortDescription", function() {
+export default (eleventyConfig) => {
+    eleventyConfig.addShortcode("getExcerpt", getExcerpt);
+    eleventyConfig.addNunjucksShortcode("getShortDescription", function () {
         return deriveShortDescription(this.ctx);
     });
 };

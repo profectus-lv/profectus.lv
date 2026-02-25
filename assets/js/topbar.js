@@ -1,5 +1,6 @@
 // Bundled by content/utils/js.njk
-document.addEventListener("DOMContentLoaded", function () {
+// Auto-hide top bar on scroll
+document.addEventListener("DOMContentLoaded", () => {
     const areaEl = document.getElementById("right-area");
     const barEl = document.getElementById("top-bar");
     if (!areaEl || !barEl) return;
@@ -8,10 +9,10 @@ document.addEventListener("DOMContentLoaded", function () {
     let ticking = false;
     areaEl.addEventListener(
         "scroll",
-        function () {
+        () => {
             if (!ticking) {
                 ticking = true;
-                window.requestAnimationFrame(function () {
+                window.requestAnimationFrame(() => {
                     // read scrollTop here so we get the latest value at frame time
                     const scrollTop = areaEl.scrollTop;
                     if (scrollTop >= 45) {

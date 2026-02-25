@@ -1,9 +1,14 @@
+// Bundled by content/utils/js.njk
 const escapeHtml = (value = "") => String(value)
     .replaceAll("&", "&amp;")
     .replaceAll("<", "&lt;")
     .replaceAll(">", "&gt;")
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#39;");
+
+const maxResults = 8;
+const minQueryLength = 2;
+let searchStrings = {};
 
 let searchRoot = null;
 let searchInput = null;
@@ -12,20 +17,10 @@ let searchResults = null;
 let isInitialized = false;
 let miniSearch = null;
 
-const runtimeConfig = {
-    indexUrl: cfg.indexUrl,
-    maxResults: 8,
-    minQueryLength: 2,
-    strings: {
-        noResults: cfg.noResults,
-        placeholder: cfg.placeholder
-    }
-};
-
 const renderResults = (query) => {
     const q = String(query).trim();
 
-    if (q.length < runtimeConfig.minQueryLength) {
+    if (q.length < minQueryLength) {
         searchResults.innerHTML = "";
         return;
     }
@@ -35,10 +30,10 @@ const renderResults = (query) => {
             prefix: true,
             fuzzy: 0.2
         })
-        .slice(0, runtimeConfig.maxResults);
+        .slice(0, maxResults);
 
     if (!found.length) {
-        searchResults.innerHTML = `<div class="search-empty">${escapeHtml(runtimeConfig.strings.noResults)}</div>`;
+        searchResults.innerHTML = '<div class="search-empty">' + escapeHtml(searchStrings.noResults) + "</div>";
         return;
     }
 
@@ -49,20 +44,19 @@ const renderResults = (query) => {
         const tags = result.tags;
         const meta = tags.length ? tags.join(" · ") : "";
 
-        return `
-            <a class="search-result-item" href="${escapeHtml(url)}">
-                <div class="search-result-title">${escapeHtml(title)}</div>
-                ${excerpt ? `<div class="search-result-excerpt">${escapeHtml(excerpt)}</div>` : ""}
-                ${meta ? `<div class="search-result-meta">${escapeHtml(meta)}</div>` : ""}
-            </a>
-        `;
+        return '<a class="search-result-item" href="' + escapeHtml(url) + '">' +
+                '<div class="search-result-title">' + escapeHtml(title) + "</div>" +
+                (excerpt ? '<div class="search-result-excerpt">' + escapeHtml(excerpt) + "</div>" : "") +
+                (meta ? '<div class="search-result-meta">' + escapeHtml(meta) + "</div>" : "") +
+            "</a>";
     }).join("");
 };
 
 const loadIndex = async () => {
     const miniSearchModule = await import("/assets/js/minisearch.js");
-    const response = await fetch(runtimeConfig.indexUrl, { credentials: "same-origin" });
+    const response = await fetch(indexUrl, { credentials: "same-origin" });
     const payload = await response.json();
+    searchStrings = payload.strings;
     miniSearch = miniSearchModule.default.loadJS(payload.index, payload.options);
 };
 
@@ -73,8 +67,8 @@ const initSearch = async () => {
     searchInput = document.getElementById("search-input");
     searchResults = document.getElementById("search-results");
 
-    searchInput.setAttribute("placeholder", runtimeConfig.strings.placeholder);
     await loadIndex();
+    searchInput.setAttribute("placeholder", searchStrings.placeholder);
 
     searchInput.addEventListener("input", (event) => {
         renderResults(event.target.value);

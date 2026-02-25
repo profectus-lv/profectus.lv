@@ -1,5 +1,4 @@
-// PostHTML plugin to ensure external links open in a new window
-// and have for SEO reasons `rel="noopener"` set.
+// PostHTML plugin: add target="_blank" and rel="noopener" to external links
 import siteconfig from "../content/_data/siteconfig.js";
 
 const isExternalHref = (href) => {
@@ -20,19 +19,19 @@ const isExternalHref = (href) => {
         href.startsWith("data:")
     ) return false;
 
-	// main site URL, and any additional internal URLs
-	const internalPrefixes = [
-		siteconfig.url,
-		...(Array.isArray(siteconfig.internalUrls) ? siteconfig.internalUrls : [])
-	];
+    // main site URL, and any additional internal URLs
+    const internalPrefixes = [
+        siteconfig.url,
+        ...(Array.isArray(siteconfig.internalUrls) ? siteconfig.internalUrls : [])
+    ];
 
-	// if href starts with any internal prefix, treat as internal
-	for (const prefix of internalPrefixes) {
-		if (prefix && href.startsWith(prefix)) return false;
-	}
+    // if href starts with any internal prefix, treat as internal
+    for (const prefix of internalPrefixes) {
+        if (prefix && href.startsWith(prefix)) return false;
+    }
 
-	// otherwise it's external
-	return true;
+    // otherwise it's external
+    return true;
 };
 
 const ensureRelTokens = (rel, tokensToEnsure) => {
@@ -48,6 +47,7 @@ const ensureRelTokens = (rel, tokensToEnsure) => {
     return Array.from(existing).join(" ");
 };
 
+// PostHTML plugin: mark external links with target and rel attributes
 const externalContentLinks = () => {
     return (tree) => {
         // Use PostHTML's native matcher/traversal
@@ -68,6 +68,5 @@ const externalContentLinks = () => {
 };
 
 export default (eleventyConfig) => {
-    // Runs in Eleventy's HTML pipeline (before writing the final .html files)
     eleventyConfig.htmlTransformer.addPosthtmlPlugin("html", externalContentLinks);
 };

@@ -56,6 +56,6 @@ export default {
     pagination: {
         postsPerPage: 10,
         authorLinkPrefix: "/author/",
-        tagLinkPrefix: "/",
-    },
-}
+        tagLinkPrefix: "/"
+    }
+};
