@@ -3,14 +3,7 @@ import MiniSearch from "minisearch";
 import siteconfig from "../content/_data/siteconfig.js";
 import { loadConfig } from "./config.js";
 import { extractExcerpt } from "./excerpt.js";
-
-const stripTags = (value = "") => String(value).replace(/<[^>]*>/g, " ");
-const collapseWhitespace = (value = "") => String(value).replace(/\s+/g, " ").trim();
-const toArray = (value) => Array.isArray(value) ? value : (value ? [value] : []);
-const capitalize = (value = "") => {
-    const text = String(value);
-    return text ? text.charAt(0).toUpperCase() + text.slice(1) : text;
-};
+import { stripTags, collapseWhitespace, toArray, capitalize } from "./collections.js";
 
 const indexOptions = {
     idField: "id",
@@ -61,6 +54,9 @@ const buildSearchIndex = async (allItems) => {
         },
         strings: {
             noResults: localizedStrings.search_no_results,
+            noResultsStatus: localizedStrings.search_no_results_status,
+            result: localizedStrings.search_result,
+            results: localizedStrings.search_results,
             placeholder: localizedStrings.search_placeholder
         },
         index: miniSearch.toJSON()

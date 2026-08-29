@@ -29,6 +29,8 @@ This is the main webpage for the think tank "Profectus" (Domnīca Profectus). It
 
 ## Installation
 
+Node.js 24 or newer is required.
+
 ```
 npm install
 ```

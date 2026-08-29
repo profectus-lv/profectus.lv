@@ -11,7 +11,7 @@ excerpt: "2019. gada 28. jūnijā 20:00, festivāla LAMPA skatuvē “Spuldze”
 
 2019\. gada 28. jūnijā 20:00, festivāla LAMPA skatuvē “Spuldze”.
 
-Daudz tiek runāts par demogrāfijas veicināšanu, bet vai šie pasākumi sasniedz savu mērķi un ir vajadzīgi? Vai ir kādi pasākumi, ko aizmirst šajās diskusijās? Vai demogrāfiju vispār var veicināt, ņemot vērā, ka dzimstība mazinās visās attīstītajās valstīs, un ka sieviešu skaits reproduktīvajā vecumā mums ir neproporcionāli zems? Vai to arī vispār vajag veicināt – ir daudzas mazākas valstis, kam šis aspekts netraucē attīstīties.
+Daudz tiek runāts par demogrāfijas veicināšanu, bet vai šie pasākumi sasniedz savu mērķi un ir vajadzīgi? Vai ir kādi pasākumi, ko aizmirst šajās diskusijās? Vai demogrāfiju vispār var veicināt, ņemot vērā, ka dzimstība mazinās visās attīstītajās valstīs, un ka sieviešu skaits reproduktīvajā vecumā mums ir neproporcionāli zems? Vai to arī vispār vajag veicināt - ir daudzas mazākas valstis, kam šis aspekts netraucē attīstīties.
 
 Sarunu vada humānists, IT eksperts Dmitrijs Golubevs.
 

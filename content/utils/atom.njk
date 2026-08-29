@@ -14,12 +14,12 @@ eleventyImport:
 <feed xmlns="http://www.w3.org/2005/Atom">
     <title>{{ siteconfig.title }}</title>
     <subtitle>{{ siteconfig.description }}</subtitle>
-    <link href="{{ siteconfig.url }}" />
+    <link href="{{ '/' | absoluteUrl }}" />
     <link href="{{ '/atom.xml' | absoluteUrl }}" rel="self" />
-    <link rel="alternate" type="text/html" href="{{ siteconfig.url }}" />
-    <id>{{ siteconfig.url }}/</id>
-    <icon>{{ siteconfig.url }}{% imageTransform siteconfig.favicon, 64, 'png' %}</icon>
-    <logo>{{ siteconfig.url }}{% imageTransform siteconfig.image, 512, 'png' %}</logo>
+    <link rel="alternate" type="text/html" href="{{ '/' | absoluteUrl }}" />
+    <id>{{ '/' | absoluteUrl }}</id>
+    <icon>{% imageTransformAbsoluteUrl siteconfig.favicon, 64, 'png' %}</icon>
+    <logo>{% imageTransformAbsoluteUrl siteconfig.image, 512, 'png' %}</logo>
     <author>
         <name>{{ publisherName }}</name>{% if publisherEmail %}
         <email>{{ publisherEmail }}</email>{% endif %}{% if publisherWebsite %}
@@ -34,14 +34,8 @@ eleventyImport:
         {% set activeAuthorId = item.data.author or siteconfig.author %}
         {% set activeAuthorData = siteauthors[activeAuthorId] %}
         {% set activeAuthorDisplayName = activeAuthorData.fullName or activeAuthorId %}
-        {% set authorPageUrl = ('/author/' ~ (activeAuthorId | slugify) ~ '/') | absoluteUrl %}
-        {% set itemKeywords = [] %}
-        {% for t in item.data.tags %}
-            {% if t not in sitetags.notag %}
-                {% set kw = sitestrings[siteconfig.lang][t] or t %}
-                {% set itemKeywords = itemKeywords.concat([kw]) %}
-            {% endif %}
-        {% endfor %}
+        {% set authorPageUrl = (siteconfig.pagination.authorLinkPrefix ~ (activeAuthorId | empSlugify) ~ '/') | absoluteUrl %}
+        {% set itemKeywords = item.data.tags | getKeywords %}
         <entry>
             <title>{{ item.data.title }}</title>
             <link rel="alternate" href="{{ itemUrl }}" />

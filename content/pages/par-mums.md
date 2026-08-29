@@ -3,7 +3,7 @@ title: Par mums
 profilePage: true
 ---
 
-## PROFECTUS – IZAUGSME
+## PROFECTUS - IZAUGSME
 
 Domnīca Profectus ir dibināta ar mērķi stiprināt demokrātiju un pilsonisko sabiedrību Latvijā un veicināt tās ilgtspējīgu attīstību. Uzskatām, ka Latvija ir pelnījusi zināšanās un faktos balstītu politiku, atbalstām kritisko domāšanu un vēlamies ieinteresēt un izglītot Latvijas sabiedrību, īpaši jauniešus, par politiskajiem procesiem Latvijā un pasaulē.
 

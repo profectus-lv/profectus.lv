@@ -12,12 +12,12 @@ eleventyImport:
     {% set publisherWebsite = publisherData.website %}
     "version": "https://jsonfeed.org/version/1.1",
     "title": "{{ siteconfig.title | jsonEscape | safe }}",
-    "home_page_url": "{{ siteconfig.url }}",
+    "home_page_url": "{{ '/' | absoluteUrl }}",
     "feed_url": "{{ ("/feed.json" | absoluteUrl) }}",
     "description": "{{ siteconfig.description | jsonEscape | safe }}",
     "language": "{{ siteconfig.lang }}",
-    "icon": "{{ siteconfig.url }}{% imageTransform siteconfig.image, 512, 'png' %}",
-    "favicon": "{{ siteconfig.url }}{% imageTransform siteconfig.favicon, 64, 'png' %}",
+    "icon": "{% imageTransformAbsoluteUrl siteconfig.image, 512, 'png' %}",
+    "favicon": "{% imageTransformAbsoluteUrl siteconfig.favicon, 64, 'png' %}",
     "authors": [
         {
             "name": "{{ publisherName | jsonEscape | safe }}"{% if publisherWebsite %},
@@ -33,14 +33,8 @@ eleventyImport:
             {% set activeAuthorId = item.data.author or siteconfig.author %}
             {% set activeAuthorData = siteauthors[activeAuthorId] %}
             {% set activeAuthorDisplayName = activeAuthorData.fullName or activeAuthorId %}
-            {% set authorPageUrl = ('/author/' ~ (activeAuthorId | slugify) ~ '/') | absoluteUrl %}
-            {% set itemKeywords = [] %}
-            {% for t in item.data.tags %}
-                {% if t not in sitetags.notag %}
-                    {% set kw = sitestrings[siteconfig.lang][t] or t %}
-                    {% set itemKeywords = itemKeywords.concat([kw]) %}
-                {% endif %}
-            {% endfor %}
+            {% set authorPageUrl = (siteconfig.pagination.authorLinkPrefix ~ (activeAuthorId | empSlugify) ~ '/') | absoluteUrl %}
+            {% set itemKeywords = item.data.tags | getKeywords %}
             {% set itemImageSrc = item.data.image or siteconfig.openGraphDefaultImage %}
             {
                 "id": "{{ itemUrl }}",
@@ -52,7 +46,7 @@ eleventyImport:
                 "content_html": "{{ itemExcerpt | jsonEscape | safe }}",
                 {% endif %}
                 "summary": "{{ itemExcerpt | jsonEscape | safe }}",
-                "image": "{{ siteconfig.url }}{% imageTransform itemImageSrc, 1200, 'webp' %}",
+                "image": "{% imageTransformAbsoluteUrl itemImageSrc, 1200, 'webp' %}",
                 "tags": [{% set comma = joiner() %}
                     {% for tag in itemKeywords -%}
                         {{ comma() }} "{{ tag | jsonEscape | safe }}"
